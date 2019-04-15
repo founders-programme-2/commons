@@ -12,7 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage:client":"npm test -- --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +34,12 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.17.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/serviceWorker.js",
+      "!src/index.js",
+      "src/*.js"
+    ]
   }
 }
