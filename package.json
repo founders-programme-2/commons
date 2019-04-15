@@ -1,0 +1,22 @@
+{
+  "name": "commons",
+  "version": "1.0.0",
+  "description": "Repository for the Founders Program project \"Commons\". April 2019",
+  "main": "index.js",
+  "scripts": {
+    "client:init": "cd client && npm i",
+    "client:build": "cd client && npm run build",
+    "test": "cd client && npm test",
+    "coverage": "cd client && npm run coverage:client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/founders-programme-2/commons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/founders-programme-2/commons/issues"
+  },
+  "homepage": "https://github.com/founders-programme-2/commons#readme"
+}
