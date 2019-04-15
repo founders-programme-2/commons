@@ -6,7 +6,8 @@
   "scripts": {
     "client:init": "cd client && npm i",
     "client:build": "cd client && npm run build",
-    "test": "cd client && npm test"
+    "test": "cd client && npm test",
+    "coverage": "cd client && npm run coverage:client"
   },
   "repository": {
     "type": "git",
