@@ -5,12 +5,8 @@ class App extends Component {
   state = {};
 
   render() {
-    return(
-      <div>
-     <h1>Commons, Hello world</h1>
-     <p>Hello world </p>
-     </div>
-    )
+    return 
+     <h1>Commons</h1>
   }
 }
 
