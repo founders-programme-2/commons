@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/founders-programme-2/commons#readme",
   "dependencies": {
+    "eslint": "^5.16.0",
     "express": "^4.16.4",
     "express-favicon": "^2.0.1"
   }
