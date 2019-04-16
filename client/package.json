@@ -9,7 +9,6 @@
     "styled-components": "^4.2.0",
     "eslint-plugin-import": "^2.17.1",
     "babel-eslint": "^9.0.0",
-    "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
@@ -33,7 +32,9 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+  "eslint": "^5.12.0"
+  },
   "jest": {
     "collectCoverageFrom": [
       "!src/serviceWorker.js",
