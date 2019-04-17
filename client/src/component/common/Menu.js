@@ -1,5 +1,5 @@
 import React from 'react';
-import { elastic as Menu } from 'react-burger-menu';
+import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
 import {
   Home,
@@ -10,7 +10,7 @@ import {
   KeyTerms,
   Workshop,
   Theory,
-} from '../../assets/menuImages/home.svg';
+} from '../../assets/menuImages/MenuImages';
 
 export default props => {
   return (
