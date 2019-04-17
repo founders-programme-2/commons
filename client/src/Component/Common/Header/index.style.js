@@ -18,20 +18,21 @@ export const Line = styled.div`
   border-radius: 1rem;
 `;
 
-export const HeaderImg = styled.img`
-  width: 17rem;
-  height: 17rem;
-  margin-right: 2rem;
-`;
-
 export const HeaderTitle = styled.div`
   display: flex;
   margin: 2rem 2rem;
   align-items: center;
+  justify-content: center;
+`;
+
+export const HeaderImg = styled.img`
+  width: 10rem;
+  height: auto;
+  margin-right: 2rem;
 `;
 
 export const Title = styled.h1`
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 900;
   color: #000000;
 `;
