@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import './App.css';
+
+import Menu from './component/common/Menu';
 
 // burger menu components
-import Menu from './component/common/Menu';
 import Home from './component/views/Home';
 import About from './component/views/About';
 import HowTo from './component/views/HowTo';
