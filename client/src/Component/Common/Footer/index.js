@@ -4,6 +4,7 @@ import {
   NextButton,
   PreviousButton,
   BackToSecnario,
+  Line,
 } from './Footer.style';
 
 class Footer extends Component {
@@ -11,11 +12,14 @@ class Footer extends Component {
 
   render() {
     return (
-      <Buttons>
-        <NextButton type="button" />
-        <BackToSecnario>Back to secnario</BackToSecnario>
-        <PreviousButton type="button" />
-      </Buttons>
+      <React.Fragment>
+        <Buttons>
+        {/* <Line /> */}
+          <NextButton type="button" />
+          <BackToSecnario>Back to secnario</BackToSecnario>
+          <PreviousButton type="button" />
+        </Buttons>
+      </React.Fragment>
     );
   }
 }

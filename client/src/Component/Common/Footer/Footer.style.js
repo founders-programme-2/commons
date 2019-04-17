@@ -11,7 +11,7 @@ export const NextButton = styled.button`
   height: 4rem;
   width: 6.3rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  background: #ffc729;
+  background: #faa634;
   transform: rotate(270deg);
   font-size: 1rem;
   left: 14.6rem;
@@ -24,7 +24,7 @@ export const PreviousButton = styled.button`
   height: 3.9rem;
   width: 6.3rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  background: #ffc729;
+  background: #faa634;
   transform: rotate(90deg);
   font-size: 1rem;
   border: none;
@@ -32,7 +32,7 @@ export const PreviousButton = styled.button`
 `;
 
 export const BackToSecnario = styled.button`
-  background: #ffc729;
+  background: #faa634;
   height: 4rem;
   width: 12.5rem;
   border: none;
@@ -41,4 +41,10 @@ export const BackToSecnario = styled.button`
   border-radius: 0.5rem;
   color: #5b5b68;
   box-shadow: 0.2rem 0.2rem #5b5b68;
+`;
+
+export const Line = styled.div`
+  /* margin-bottom: 40.5rem; */
+  border: 0.3rem solid #faa634;
+  border-radius: 1rem;
 `;
