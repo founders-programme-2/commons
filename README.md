@@ -1,6 +1,7 @@
 # Commons
 
 [![Build Status](https://travis-ci.org/founders-programme-2/commons.svg?branch=master)](https://travis-ci.org/founders-programme-2/commons)
+[![codecov](https://codecov.io/gh/founders-programme-2/commons/branch/master/graph/badge.svg)](https://codecov.io/gh/founders-programme-2/commons)
 
 Repository for the Founders Program project "Commons". April 2019
 

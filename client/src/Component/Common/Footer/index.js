@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
-import {PreviousButton} from './Footer.style'
+import {
+  Buttons,
+  NextButton,
+  PreviousButton,
+  BackToSecnario,
+} from './Footer.style';
 
 class Footer extends Component {
   state = {};
 
   render() {
-    return <PreviousButton></PreviousButton>;
+    return (
+      <Buttons>
+        <NextButton type="button" />
+        <BackToSecnario type="button" />
+        <PreviousButton type="button" />
+      </Buttons>
+    );
   }
 }
 
