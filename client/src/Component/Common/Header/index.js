@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Menu from '../Menu';
 import logo from '../../../assets/logo.svg';
-import InstructionLogo from '../../../assets/instruction.svg';
 import {
   Title,
   Logo,
@@ -11,25 +11,40 @@ import {
   HeaderTitle,
 } from './index.style';
 
-class Header extends Component {
-  state = {};
+const Header = props => {
+  const { headerImg, titleText } = props;
 
-  render() {
-    return (
-      <div>
-        <HeaderWrapper>
-          <Logo src={logo} alt="logo" />
-          <Menu />
-        </HeaderWrapper>
-        <Line />
+  return (
+    <div>
+      <HeaderWrapper>
+        <Logo src={logo} alt="logo" />
+        <Menu />
+      </HeaderWrapper>
+      <Line />
+
+      {headerImg ? (
         <HeaderTitle>
-          <HeaderImg src={InstructionLogo} alt="header-img" />
-          <Title>How to play</Title>
+          <HeaderImg src={headerImg} alt="header-img" />
+          <Title>{titleText}</Title>
         </HeaderTitle>
-        <Line />
-      </div>
-    );
-  }
-}
+      ) : (
+        <HeaderTitle>
+          <Title>{titleText}</Title>
+        </HeaderTitle>
+      )}
+
+      <Line />
+    </div>
+  );
+};
+
+Header.propTypes = {
+  headerImg: PropTypes.string,
+  titleText: PropTypes.string.isRequired,
+};
+
+Header.defaultProps = {
+  headerImg: PropTypes.bool,
+};
 
 export default Header;
