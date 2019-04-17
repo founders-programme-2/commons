@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
+import {PreviousButton} from './Footer.style'
 
 class Footer extends Component {
   state = {};
 
   render() {
-    return (
-        <React.Fragment>
-        <button></button>
-        <button></button>
-        </React.Fragment>
-    )
+    return <PreviousButton></PreviousButton>;
   }
 }
 
