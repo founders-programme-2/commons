@@ -5,14 +5,14 @@ import Footer from './Component/Common/Footer';
 import Menu from './component/common/Menu';
 
 // burger menu components
-import Home from './component/views/Home';
-import About from './component/views/About';
-import HowTo from './component/views/HowTo';
-import Play from './component/views/Play';
-import Methods from './component/views/Methods';
-import KeyTerms from './component/views/KeyTerms';
-import Workshop from './component/views/Workshop';
-import Theory from './component/views/Theory';
+import Home from './Component/views/Home';
+import About from './Component/views/About';
+import HowTo from './Component/views/HowTo';
+import Play from './Component/views/Play';
+import Methods from './Component/views/Methods';
+import KeyTerms from './Component/views/KeyTerms';
+import Workshop from './Component/views/Workshop';
+import Theory from './Component/views/Theory';
 
 class App extends Component {
   state = {};
