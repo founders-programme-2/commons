@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header headerImg={null} titleText="Your scenario" />
       </div>
     );
   }
