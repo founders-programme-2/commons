@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import Menu from '../Menu';
 import logo from '../../../assets/logo.svg';
-import { Title, Img, HeaderWrapper, Line } from './index.style';
+import InstructionLogo from '../../../assets/instruction.svg';
+import {
+  Title,
+  Logo,
+  HeaderWrapper,
+  Line,
+  HeaderImg,
+  HeaderTitle,
+} from './index.style';
 
 class Header extends Component {
   state = {};
@@ -10,9 +18,14 @@ class Header extends Component {
     return (
       <div>
         <HeaderWrapper>
-          <Img src={logo} alt="logo" />
+          <Logo src={logo} alt="logo" />
           <Menu />
         </HeaderWrapper>
+        <Line />
+        <HeaderTitle>
+          <HeaderImg src={InstructionLogo} alt="header-img" />
+          <Title>How to play</Title>
+        </HeaderTitle>
         <Line />
       </div>
     );
