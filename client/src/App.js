@@ -3,7 +3,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 import Home from './component/views/Home';
-import BurgerMenu from './component/common/BurgerMenu';
+import Menu from './component/common/Menu';
 
 class App extends Component {
   state = {};
@@ -13,7 +13,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/menu" component={BurgerMenu} />
+          <Route path="/menu" component={Menu} />
         </Switch>
       </BrowserRouter>
     );
