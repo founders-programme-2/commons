@@ -13,7 +13,7 @@ class Footer extends Component {
     return (
       <Buttons>
         <NextButton type="button" />
-        <BackToSecnario type="button" />
+        <BackToSecnario>Back to secnario</BackToSecnario>
         <PreviousButton type="button" />
       </Buttons>
     );
