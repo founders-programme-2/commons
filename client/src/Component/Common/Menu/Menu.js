@@ -10,7 +10,7 @@ import {
   KeyTerms,
   Workshop,
   Theory,
-} from '../../assets/menuImages/MenuImages';
+} from '../../../assets/menuImages/MenuImages';
 
 export default props => {
   return (
