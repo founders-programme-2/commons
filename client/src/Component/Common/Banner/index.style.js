@@ -57,8 +57,31 @@ export const TitleText = styled.h1`
   color: #000000;
 `;
 
+export const TitleTextSub = styled.h1`
+  font-weight: bold;
+  transform: skewY(12deg);
+  padding: 5% 5% 0% 5%;
+  margin: auto auto;
+  display: block;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #000000;
+`;
+
+
+export const SubtitleText = styled.h2`
+  transform: skewY(12deg);
+  margin: 0 5% 12%;
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
+  color: #000000;
+  font: 'Open Sans';
+`;
+
 export const BannerLogo = styled.img`
   display: block;
   margin: 4rem auto;
 `;
-
