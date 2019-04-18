@@ -9,7 +9,7 @@ export const Buttons = styled.div`
 
 export const FooterComponent = styled.div`
   height: 70%;
-  margin-top: 440px;
+  margin-top: 44rem;
 `;
 
 export const NextButton = styled.button`
