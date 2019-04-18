@@ -9,22 +9,19 @@ export const Buttons = styled.div`
 
 export const FooterComponent = styled.div`
   margin-top: 40.5rem;
+  position: fixed;
 `;
 export const NextButton = styled.button`
-  /* height: 3.8rem; */
   width: 5.2rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background: #faa634;
   transform: rotate(270deg);
   font-size: 1rem;
-  left: 14.6rem;
-  top: 71.5rem;
   border: none;
   border-radius: 0.5rem;
 `;
 
 export const PreviousButton = styled.button`
-  /* height: 3.8rem; */
   width: 5.2rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background: #faa634;
