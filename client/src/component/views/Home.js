@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Common/Header';
+import Header from '../Common/Header/index';
 import instructionLogo from '../../assets/instruction.svg';
 
 const Home = () => {
