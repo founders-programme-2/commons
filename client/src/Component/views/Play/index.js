@@ -1,9 +1,13 @@
 import React from 'react';
+import Header from '../../Common/Header';
+import Footer from '../../Common/Footer';
 
 const Play = () => {
   return (
     <div>
-      <h1>Hello from Play.js</h1>
+      <Header titleText="Choose your game play:" />
+      <h1>Choose your game play:</h1>
+      <Footer />
     </div>
   );
 };
