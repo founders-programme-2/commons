@@ -5,7 +5,6 @@ import {
   PreviousButton,
   BackToSecnario,
   Line,
-  FooterComponent,
 } from './Footer.style';
 
 class Footer extends Component {
@@ -13,14 +12,14 @@ class Footer extends Component {
 
   render() {
     return (
-      <FooterComponent>
+      <React.Fragment>
         <Line />
         <Buttons>
           <NextButton type="button" />
           <BackToSecnario>Review your scenario</BackToSecnario>
           <PreviousButton type="button" />
         </Buttons>
-      </FooterComponent>
+      </React.Fragment>
     );
   }
 }

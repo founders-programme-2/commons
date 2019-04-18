@@ -7,11 +7,6 @@ export const Buttons = styled.div`
   padding: 0.9rem;
 `;
 
-export const FooterComponent = styled.div`
-  /* height: 70%; */
-  /* margin-top: 44rem; */
-`;
-
 export const NextButton = styled.button`
   width: 5.2rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
