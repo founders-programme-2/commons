@@ -20,7 +20,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   box-sizing: border-box;
-  padding: 2rem;
+  /* Padding was interfering with background for Banner component. Is this necessary here? */
+  /* padding: 2rem; */
 }
 
 :root {
