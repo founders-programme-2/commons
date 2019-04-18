@@ -6,7 +6,7 @@ import Menu from './Component/Common/Menu/Menu';
 
 // burger menu components
 import Landing from './Component/views/Landing';
-import About from './Component/views/About';
+import About from './Component/views/About/index';
 import HowTo from './Component/views/HowTo';
 import Play from './Component/views/Play';
 import Methods from './Component/views/Methods';
