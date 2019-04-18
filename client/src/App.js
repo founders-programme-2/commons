@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Footer from './Component/Common/Footer';
-import Menu from './component/common/Menu';
+import Menu from './Component/Common/Menu/Menu';
 
 // burger menu components
 import Home from './Component/views/Home';
