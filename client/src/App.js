@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
+import Footer from './Component/Common/Footer';
 import Menu from './Component/Common/Menu/Menu';
 
 // burger menu components
@@ -29,6 +30,7 @@ class App extends Component {
           <Route path="/keyTerms" component={KeyTerms} />
           <Route path="/workshop" component={Workshop} />
           <Route path="/theory" component={Theory} />
+          <Route path="/footer" component={Footer} />
         </Switch>
       </BrowserRouter>
     );
