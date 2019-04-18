@@ -4,47 +4,52 @@ export const Buttons = styled.div`
   display: flex;
   margin-top: 40.5rem;
   justify-content: space-between;
-  padding: 2.5rem;
+  padding: 0.9rem;
 `;
 
 export const FooterComponent = styled.div`
-  margin-top: 40.5rem;
-  position: fixed;
+  height: 70%;
+  margin-top: 440px;
 `;
+
 export const NextButton = styled.button`
   width: 5.2rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  background: #faa634;
+  background: #ffc729;
   transform: rotate(270deg);
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const PreviousButton = styled.button`
   width: 5.2rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  background: #faa634;
+  background: #ffc729;
   transform: rotate(90deg);
   font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const BackToSecnario = styled.button`
-  background: #faa634;
-  height: 4.3rem;
+  background: #ffc729;
+  height: 4.9rem;
   width: 12.5rem;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 1rem;
   border-radius: 0.5rem;
   color: black;
-  box-shadow: 0.1rem 0.2rem #5b5b68;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const Line = styled.div`
   margin-bottom: -40rem;
-  border: 0.2rem solid #faa634;
+  border: 0.2rem solid #ffc729;
   border-radius: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;

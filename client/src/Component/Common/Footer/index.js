@@ -17,7 +17,7 @@ class Footer extends Component {
         <Line />
         <Buttons>
           <NextButton type="button" />
-          <BackToSecnario>review your scenario</BackToSecnario>
+          <BackToSecnario>Review your scenario</BackToSecnario>
           <PreviousButton type="button" />
         </Buttons>
       </FooterComponent>
