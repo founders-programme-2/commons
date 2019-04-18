@@ -50,37 +50,37 @@ class MenuBar extends Component {
               onClick={() => this.closeMenu()}
             />
           </MenuHover>
-          <Link to="./" className="menu-item">
+          <Link to="./" onClick={() => this.closeMenu()}>
             <Home />
-            <p className="menuText">Home</p>
+            <p>Home</p>
           </Link>
-          <Link to="./about" className="menu-item">
+          <Link to="./about" onClick={() => this.closeMenu()}>
             <About />
-            <p className="menuText">About</p>
+            <p>About</p>
           </Link>
-          <Link to="./howTo" className="menu-item">
+          <Link to="./howTo" onClick={() => this.closeMenu()}>
             <HowTo />
-            <p className="menuText">How-To</p>
+            <p>How-To</p>
           </Link>
-          <Link to="./play" className="menu-item">
+          <Link to="./play" onClick={() => this.closeMenu()}>
             <Play />
-            <p className="menuText">Play</p>
+            <p>Play</p>
           </Link>
-          <Link to="./methods" className="menu-item">
+          <Link to="./methods" onClick={() => this.closeMenu()}>
             <Methods />
-            <p className="menuText">Methods</p>
+            <p>Methods</p>
           </Link>
-          <Link to="./keyTerms" className="menu-item">
+          <Link to="./keyTerms" onClick={() => this.closeMenu()}>
             <KeyTerms />
-            <p className="menuText">Key Terms</p>
+            <p>Key Terms</p>
           </Link>
-          <Link to="./workshop" className="menu-item">
+          <Link to="./workshop" onClick={() => this.closeMenu()}>
             <Workshop />
-            <p className="menuText">Workshop</p>
+            <p>Workshop</p>
           </Link>
-          <Link to="./theory" className="menu-item">
+          <Link to="./theory" onClick={() => this.closeMenu()}>
             <Theory />
-            <p className="menuText">Theory</p>
+            <p>Theory</p>
           </Link>
         </Menu>
         <MenuHover>
