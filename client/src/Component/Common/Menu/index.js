@@ -43,11 +43,13 @@ class MenuBar extends Component {
           customCrossIcon={false}
           customBurgerIcon={false}
         >
-          <FontAwesomeIcon
-            icon="times"
-            size="5x"
-            onClick={() => this.closeMenu()}
-          />
+          <MenuHover>
+            <FontAwesomeIcon
+              icon="times"
+              size="5x"
+              onClick={() => this.closeMenu()}
+            />
+          </MenuHover>
           <Link to="./" className="menu-item">
             <Home />
             <p className="menuText">Home</p>
