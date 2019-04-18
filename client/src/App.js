@@ -7,11 +7,11 @@ import Menu from './Component/Common/Menu/Menu';
 import Home from './Component/views/Home';
 import About from './Component/views/About';
 import HowTo from './Component/views/HowTo';
-import Play from './Component/views/Play';
-import Methods from './Component/views/Methods';
-import KeyTerms from './Component/views/KeyTerms';
-import Workshop from './Component/views/Workshop';
-import Theory from './Component/views/Theory';
+import Play from './Component/views/Play/Play';
+import Methods from './Component/views/Methods/Methods';
+import KeyTerms from './Component/views/KeyTerms/KeyTerms';
+import Workshop from './Component/views/Workshop/Workshop';
+import Theory from './Component/views/Theory/Theory';
 
 class App extends Component {
   state = {};
