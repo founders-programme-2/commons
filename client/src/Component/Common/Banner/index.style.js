@@ -69,7 +69,6 @@ export const TitleTextSub = styled.h1`
   color: #000000;
 `;
 
-
 export const SubtitleText = styled.h2`
   transform: skewY(12deg);
   margin: 0 5% 12%;

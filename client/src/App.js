@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Footer from './Component/Common/Footer';
 import Menu from './Component/Common/Menu/Menu';
 import Error404 from './Component/views/Error404';
+import ErrorResources from './Component/views/ErrorResources';
 
 // burger menu components
 import Landing from './Component/views/Landing';
@@ -32,6 +33,7 @@ class App extends Component {
           <Route path="/workshop" component={Workshop} />
           <Route path="/theory" component={Theory} />
           <Route path="/error404" component={Error404} />
+          <Route path="/errorResources" component={ErrorResources} />
           <Route path="/footer" component={Footer} />
         </Switch>
       </BrowserRouter>

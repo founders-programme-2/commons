@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '../Common/Banner/index';
 
-const error404 = () => {
+const Error404 = () => {
   return (
     <div>
       <Banner
@@ -12,4 +12,4 @@ const error404 = () => {
   );
 };
 
-export default error404;
+export default Error404;
