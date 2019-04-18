@@ -7,4 +7,5 @@ export const ContentAbout = styled.div`
   font-size: 1.8rem;
   text-align: left;
   font-weight: normal;
+  margin-bottom: 6rem;
 `;
