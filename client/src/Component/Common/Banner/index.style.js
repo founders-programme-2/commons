@@ -65,6 +65,7 @@ export const TitleTextSub = styled.h1`
   display: block;
   text-align: center;
   font-size: 6rem;
+  line-height: 4.5rem;
   font-weight: 700;
   color: #000000;
 `;

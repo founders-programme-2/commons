@@ -5,7 +5,7 @@ const Error404 = () => {
   return (
     <div>
       <Banner
-        title="404"
+        title="404!"
         subtitle="Sorry, the page you are looking for is unavailable."
       />
     </div>
