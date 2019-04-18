@@ -4,7 +4,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Menu from './Component/Common/Menu/Menu';
 
 // burger menu components
-import Home from './Component/views/Home';
+import Landing from './Component/views/Landing';
 import About from './Component/views/About';
 import HowTo from './Component/views/HowTo';
 import Play from './Component/views/Play';
@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Landing} />
           <Route path="/menu" component={Menu} />
           <Route path="/about" component={About} />
           <Route path="/howTo" component={HowTo} />
