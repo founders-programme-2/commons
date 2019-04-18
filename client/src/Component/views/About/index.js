@@ -23,7 +23,7 @@ const About = () => {
           connections and collaborations can take place - the Slipham Connected
           Commons.
         </p>
-        <br/>
+        <br />
         <p Style="font-weight:bold">
           Your goal is to select the tools that you would use to faciliate
           creating this Connected Commons Program. You have a limited amount of

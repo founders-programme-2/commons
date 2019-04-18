@@ -29,7 +29,7 @@ export const PreviousButton = styled.button`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-export const BackToSecnario = styled.button`
+export const BackToScenerio = styled.button`
   background: #faa634;
   height: 4.9rem;
   width: 12.5rem;

@@ -3,7 +3,7 @@ import {
   Buttons,
   NextButton,
   PreviousButton,
-  BackToSecnario,
+  BackToScenerio,
   Line,
 } from './Footer.style';
 
@@ -16,7 +16,7 @@ class Footer extends Component {
         <Line />
         <Buttons>
           <NextButton type="button" />
-          <BackToSecnario>Review your scenario</BackToSecnario>
+          <BackToScenerio>Review your scenario</BackToScenerio>
           <PreviousButton type="button" />
         </Buttons>
       </React.Fragment>
