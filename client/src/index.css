@@ -1,6 +1,6 @@
 /* Fonts */
 
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900|Open+Sans");
 
 *,
 *::after,
@@ -20,8 +20,11 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   box-sizing: border-box;
-  /* Padding was interfering with background for Banner component. Is this necessary here? */
-  /* padding: 2rem; */
+  padding: 2rem;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
 }
 
 :root {

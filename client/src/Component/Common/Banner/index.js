@@ -1,8 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import logo from '../../../assets/logo2.svg';
-import { BackgroundWrapper, TitleText, BannerLogo } from './index.style';
+import {
+  BackgroundWrapper,
+  TitleText,
+  TitleTextSub,
+  BannerLogo,
+  SubtitleText,
+} from './index.style';
 
-const BannerTitle = ({title}) => {
+const BannerTitle = ({ title, subtitle }) => {
+  if (subtitle) {
+    return (
+      <div>
+        <BannerLogo src={logo} />
+        <BackgroundWrapper>
+          <TitleTextSub>{title}</TitleTextSub>
+          <SubtitleText>{subtitle}</SubtitleText>
+        </BackgroundWrapper>
+      </div>
+    );
+  }
   return (
     <div>
       <BannerLogo src={logo} />
@@ -11,6 +29,15 @@ const BannerTitle = ({title}) => {
       </BackgroundWrapper>
     </div>
   );
+};
+
+BannerTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+};
+
+BannerTitle.defaultProps = {
+  subtitle: PropTypes.bool,
 };
 
 export default BannerTitle;

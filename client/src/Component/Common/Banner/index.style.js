@@ -38,7 +38,7 @@ export const BackgroundWrapper = styled.header`
   height: 21rem;
   width: 100vw;
   padding: 0;
-  margin: 0;
+  margin: -2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,8 +57,31 @@ export const TitleText = styled.h1`
   color: #000000;
 `;
 
+export const TitleTextSub = styled.h1`
+  font-weight: bold;
+  transform: skewY(12deg);
+  padding: 5% 5% 0% 5%;
+  margin: auto auto;
+  display: block;
+  text-align: center;
+  font-size: 6rem;
+  line-height: 4.5rem;
+  font-weight: 700;
+  color: #000000;
+`;
+
+export const SubtitleText = styled.h2`
+  transform: skewY(12deg);
+  margin: 0 5% 12%;
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
+  color: #000000;
+  font: 'Open Sans';
+`;
+
 export const BannerLogo = styled.img`
   display: block;
   margin: 4rem auto;
 `;
-
