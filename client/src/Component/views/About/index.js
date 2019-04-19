@@ -24,7 +24,7 @@ const About = () => {
           Commons.
         </p>
         <br />
-        <p Style="font-weight:bold">
+        <p style={{ fontWeight: 'bold' }}>
           Your goal is to select the tools that you would use to faciliate
           creating this Connected Commons Program. You have a limited amount of
           resources and must choose wisely.
