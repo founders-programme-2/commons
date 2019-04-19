@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Menu from '../Menu';
+import MenuBar from '../Menu';
 import logo from '../../../assets/logo.svg';
 import {
   Title,
@@ -18,7 +18,7 @@ const Header = props => {
     <div>
       <HeaderWrapper>
         <Logo src={logo} alt="logo" />
-        <Menu />
+        <MenuBar />
       </HeaderWrapper>
       <Line />
 
