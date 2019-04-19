@@ -38,7 +38,7 @@ export const BackgroundWrapper = styled.header`
   height: 21rem;
   width: 100vw;
   padding: 0;
-  margin: 0;
+  margin: -2rem;
   display: flex;
   flex-direction: column;
   align-items: center;

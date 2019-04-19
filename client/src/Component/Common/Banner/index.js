@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import logo from '../../../assets/logo2.svg';
 import {
   BackgroundWrapper,
@@ -28,6 +29,15 @@ const BannerTitle = ({ title, subtitle }) => {
       </BackgroundWrapper>
     </div>
   );
+};
+
+BannerTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+};
+
+BannerTitle.defaultProps = {
+  subtitle: PropTypes.bool,
 };
 
 export default BannerTitle;
