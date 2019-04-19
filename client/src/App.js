@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
+import Menu from './Component/Common/Menu';
 import Footer from './Component/Common/Footer';
-import Menu from './Component/Common/Menu/Menu';
 import Error404 from './Component/views/Error404';
 import ErrorResources from './Component/views/ErrorResources';
 
