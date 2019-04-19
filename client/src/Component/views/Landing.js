@@ -4,7 +4,7 @@ import Banner from '../Common/Banner/index';
 const Home = () => {
   return (
     <div>
-      <Banner title="Commons" />
+      <Banner title="Commons" subtitle={null} />
     </div>
   );
 };
