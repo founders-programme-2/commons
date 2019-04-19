@@ -5,7 +5,7 @@ import Footer from '../../Common/Footer';
 const Play = () => {
   return (
     <div>
-      <Header titleText="Choose your game play:" />
+      <Header headerImg={null} titleText="Choose your game play" />
       <h1>Choose your game play:</h1>
       <Footer />
     </div>
