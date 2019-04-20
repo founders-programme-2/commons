@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Menu from './Component/Common/Menu';
-import Footer from './Component/Common/Footer';
 import Error404 from './Component/views/Error404';
 import ErrorResources from './Component/views/ErrorResources';
 
 // burger menu components
 import Landing from './Component/views/Landing';
-import About from './Component/views/About/index';
+import About from './Component/views/About';
 import HowTo from './Component/views/HowTo';
 import Play from './Component/views/Play';
 import Methods from './Component/views/Methods';
@@ -34,7 +33,6 @@ class App extends Component {
           <Route path="/theory" component={Theory} />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
-          <Route path="/footer" component={Footer} />
         </Switch>
       </BrowserRouter>
     );
