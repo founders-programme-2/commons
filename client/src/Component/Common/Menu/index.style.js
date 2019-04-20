@@ -49,7 +49,7 @@ export const BurgerMenu = styled(Menu)`
 export const XIcon = styled.div`
   :hover {
     cursor: pointer;
-    color: #e882a8;
+    color: var(--highlight-color);
   }
   margin-top: 1rem;
 `;
@@ -57,7 +57,7 @@ export const XIcon = styled.div`
 export const BurgerIcon = styled.div`
   :hover {
     cursor: pointer;
-    color: #e882a8;
+    color: var(--highlight-color);
   }
   margin: 2rem;
 `;
@@ -73,7 +73,7 @@ export const MenuChild = styled(Link)`
   padding: 2rem 5rem;
   &:hover {
     cursor: pointer;
-    color: #e882a8;
+    color: var(--highlight-color);
   }
 `;
 
@@ -83,12 +83,12 @@ export const TopLink = styled(MenuChild)`
 
 export const MenuText = styled.p`
   display: inline;
-  color: black;
+  color: var(--paragraph-color);
   font-size: 2rem;
   text-decoration: none;
   margin-left: 2rem;
   &:hover {
     cursor: pointer;
-    color: #e882a8;
+    color: var(--highlight-color);
   }
 `;
