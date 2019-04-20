@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { bubble as Menu } from 'react-burger-menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MenuHover, MenuWrapper, LinkSty, TopLink, P } from './index.style';
+import {
+  BurgerMenu,
+  BurgerIcon,
+  MenuChild,
+  TopLink,
+  MenuText,
+  XIcon,
+} from './index.style';
 import {
   Home,
   About,
@@ -31,66 +37,70 @@ class MenuBar extends Component {
     const { menuOpen } = this.state;
     return (
       <div>
-        <Menu
+        <BurgerMenu
           right
           isOpen={menuOpen}
           onStateChange={state => this.handleStateChange(state)}
           customCrossIcon={false}
           customBurgerIcon={false}
           width="100%"
+          noOverlay
         >
-          <MenuWrapper>
-            <MenuHover>
-              <FontAwesomeIcon
-                icon="times"
-                size="5x"
-                onClick={() => this.toggleMenu()}
-              />
-            </MenuHover>
+          <XIcon>
+            <FontAwesomeIcon
+              icon="times"
+              size="5x"
+              onClick={() => this.toggleMenu()}
+            />
+          </XIcon>
 
-            <TopLink to="./" onClick={() => this.toggleMenu()}>
-              <Home />
-              <P>Home</P>
-            </TopLink>
+          <TopLink to="./" onClick={() => this.toggleMenu()}>
+            <Home />
+            <MenuText>Home</MenuText>
+          </TopLink>
 
-            <LinkSty to="./about" onClick={() => this.toggleMenu()}>
-              <About />
-              <P>About</P>
-            </LinkSty>
+          <MenuChild to="./about" onClick={() => this.toggleMenu()}>
+            <About />
+            <MenuText>About</MenuText>
+          </MenuChild>
 
-            <LinkSty to="./howTo" onClick={() => this.toggleMenu()}>
-              <HowTo />
-              <P>How-To</P>
-            </LinkSty>
-            <LinkSty to="./play" onClick={() => this.toggleMenu()}>
-              <Play />
-              <P>Play</P>
-            </LinkSty>
-            <LinkSty to="./methods" onClick={() => this.toggleMenu()}>
-              <Methods />
-              <P>Methods</P>
-            </LinkSty>
-            <LinkSty to="./keyTerms" onClick={() => this.toggleMenu()}>
-              <KeyTerms />
-              <P>Key Terms</P>
-            </LinkSty>
-            <LinkSty to="./workshop" onClick={() => this.toggleMenu()}>
-              <Workshop />
-              <P>Workshop</P>
-            </LinkSty>
-            <LinkSty to="./theory" onClick={() => this.toggleMenu()}>
-              <Theory />
-              <P>Theory</P>
-            </LinkSty>
-          </MenuWrapper>
-        </Menu>
-        <MenuHover>
+          <MenuChild to="./howTo" onClick={() => this.toggleMenu()}>
+            <HowTo />
+            <MenuText>How-To</MenuText>
+          </MenuChild>
+
+          <MenuChild to="./play" onClick={() => this.toggleMenu()}>
+            <Play />
+            <MenuText>Play</MenuText>
+          </MenuChild>
+
+          <MenuChild to="./methods" onClick={() => this.toggleMenu()}>
+            <Methods />
+            <MenuText>Methods</MenuText>
+          </MenuChild>
+
+          <MenuChild to="./keyTerms" onClick={() => this.toggleMenu()}>
+            <KeyTerms />
+            <MenuText>Key Terms</MenuText>
+          </MenuChild>
+
+          <MenuChild to="./workshop" onClick={() => this.toggleMenu()}>
+            <Workshop />
+            <MenuText>Workshop</MenuText>
+          </MenuChild>
+
+          <MenuChild to="./theory" onClick={() => this.toggleMenu()}>
+            <Theory />
+            <MenuText>Theory</MenuText>
+          </MenuChild>
+        </BurgerMenu>
+        <BurgerIcon>
           <FontAwesomeIcon
             icon="bars"
             size="8x"
             onClick={() => this.toggleMenu()}
           />
-        </MenuHover>
+        </BurgerIcon>
       </div>
     );
   }

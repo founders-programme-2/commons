@@ -1,16 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { stack as Menu } from 'react-burger-menu';
 
 // eslint-disable-next-line import/prefer-default-export
-export const MenuHover = styled.div`
-  :hover {
-    cursor: pointer;
-  }
-`;
 
-export const MenuWrapper = styled.div`
+export const BurgerMenu = styled(Menu)`
   background: rgba(241, 231, 103, 1);
   background: -moz-linear-gradient(
     left,
@@ -44,8 +38,6 @@ export const MenuWrapper = styled.div`
     rgba(255, 199, 41, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#ffc729', GradientType=1 );
-
-  width: 100vw;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -54,25 +46,47 @@ export const MenuWrapper = styled.div`
   margin: 0;
 `;
 
-export const LinkSty = styled(Link)`
+export const XIcon = styled.div`
+  :hover {
+    cursor: pointer;
+    color: #e882a8;
+  }
+  margin-top: 1rem;
+`;
+
+export const BurgerIcon = styled.div`
+  :hover {
+    cursor: pointer;
+    color: #e882a8;
+  }
+  margin: 2rem;
+`;
+
+
+export const MenuChild = styled(Link)`
   color: black;
   font-size: 2rem;
   text-decoration: none;
   display: flex;
   border-top: 1px black solid;
-  padding: 2rem;
-  margin: 0 5rem;
+  width: 80vw;
+  padding: 2rem 5rem;
+  &:hover {
+    cursor: pointer;
+    color: #e882a8;
+  }
 `;
 
-export const TopLink = styled(LinkSty)`
+export const TopLink = styled(MenuChild)`
   border: none;
-`
+`;
 
-export const P = styled.p`
+export const MenuText = styled.p`
+  display: inline;
   color: black;
   font-size: 2rem;
   text-decoration: none;
-  padding-left: 2rem;
+  margin-left: 2rem;
   &:hover {
     cursor: pointer;
     color: #e882a8;
