@@ -3,13 +3,14 @@ import styled from 'styled-components';
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 4rem 2.5rem;
+  margin-top: -2rem;
 `;
 
 export const Logo = styled.img`
   width: 8.5rem;
   height: 8.5rem;
   display: block;
+  margin: 2rem;
 `;
 
 export const Line = styled.div`
