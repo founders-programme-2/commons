@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 import Error404 from './Component/views/Error404';
 import ErrorResources from './Component/views/ErrorResources';
@@ -19,19 +19,21 @@ class App extends Component {
 
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/about" component={About} />
-        <Route path="/howTo" component={HowTo} />
-        <Route path="/play" component={Play} />
-        <Route path="/methods" component={Methods} />
-        <Route path="/keyTerms" component={KeyTerms} />
-        <Route path="/workshop" component={Workshop} />
-        <Route path="/theory" component={Theory} />
-        <Route path="/error404" component={Error404} />
-        <Route path="/errorResources" component={ErrorResources} />
-        <Redirect to="/error404" />
-      </Switch>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/about" component={About} />
+          <Route path="/howTo" component={HowTo} />
+          <Route path="/play" component={Play} />
+          <Route path="/methods" component={Methods} />
+          <Route path="/keyTerms" component={KeyTerms} />
+          <Route path="/workshop" component={Workshop} />
+          <Route path="/theory" component={Theory} />
+          <Route path="/error404" component={Error404} />
+          <Route path="/errorResources" component={ErrorResources} />
+          <Redirect to="/error404" />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
