@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 export const CardWrapper = styled.section`
   background: var(--background-color);
   border-radius: 5px 5px 5px 5px;
@@ -36,18 +35,26 @@ export const Info = styled.section`
 export const CardTitle = styled.h2`
   font-size: 1.8rem;
   font-family: Poppins;
-`
+  margin: 0 0 -2rem 0;
+`;
 
 export const MoreInfo = styled(Link)`
   font-family: Open Sans;
-`
+`;
 
 export const ResourcePoints = styled.div`
-  margin: 1rem auto;
-  display: block;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+`;
 
 export const ResourceStars = styled.img`
   height: 14px;
   width: 14px;
-`
+`;
+
+export const StarWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;

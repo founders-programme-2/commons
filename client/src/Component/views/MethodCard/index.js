@@ -9,6 +9,7 @@ import {
   ResourcePoints,
   ResourceStars,
   CardTitle,
+  StarWrapper
 } from './index.style';
 import star from '../../../assets/star.svg';
 
@@ -45,8 +46,8 @@ const CardComponent = props => {
           <ResourcePoints>
             {resourcePoints} resource points
             <br />
-            {starsRender}
           </ResourcePoints>
+          <StarWrapper>{starsRender}</StarWrapper>
         </Info>
       </CardWrapper>
     </React.Fragment>
