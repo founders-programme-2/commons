@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../../Button';
@@ -55,7 +56,7 @@ BannerFooter.propTypes = {
   text: PropTypes.string,
   select: PropTypes.bool,
   arrow: PropTypes.bool.isRequired,
-  history: PropTypes.isRequired,
+  history: ReactRouterPropTypes.history.isRequired,
 };
 
 BannerFooter.defaultProps = {
