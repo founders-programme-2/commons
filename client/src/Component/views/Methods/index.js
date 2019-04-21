@@ -7,7 +7,7 @@ const Methods = () => {
     <div>
       <Header headerImg={null} titleText="Select your methods" />
       <h1>Hello from Methods.js</h1>
-      <Footer />
+      <Footer backLink="/play" nextLink="/" reviewScenario={true} />
     </div>
   );
 };
