@@ -12,24 +12,13 @@ import {
 const Footer = ({ nextLink, backLink, reviewScenario }) => {
   // const { nextLink, backLink, reviewScenario } = props;
 
-  if (reviewScenario) {
-    return (
-      <React.Fragment>
-        <Line />
-        <Buttons>
-          <PreviousButton as={Link} to={backLink} type="button" />
-          <BackToScenario>Review Scenario</BackToScenario>
-          <NextButton as={Link} to={nextLink} type="button" />
-        </Buttons>
-      </React.Fragment>
-    );
-  }
   return (
     <React.Fragment>
       <Line />
       <Buttons>
         <PreviousButton as={Link} to={backLink} type="button" />
-        <NextButton as={Link} to={nextLink} type="button" />
+        {reviewScenario && <BackToScenario>Review Scenario</BackToScenario>}
+        { nextLink && <NextButton as={Link} to={nextLink} type="button" />}
       </Buttons>
     </React.Fragment>
   );
