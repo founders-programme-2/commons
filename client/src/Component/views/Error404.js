@@ -9,7 +9,7 @@ const Error404 = () => {
         title="404!"
         subtitle="Sorry, the page you are looking for is unavailable."
       />
-      <BannerFooter arrow text="" />
+      <BannerFooter arrow text="" select={null} />
     </div>
   );
 };
