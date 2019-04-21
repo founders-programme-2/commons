@@ -28,11 +28,12 @@ h2 {
 }
 
 :root {
+  --background-color: #fff;
   --heading-color: #000000;
   --paragraph-color: #000000;
   --button-background-color: #ffc729;
   --button-text-color: #5b5b68;
   --line-color: #faa634;
-  --border-color: white;
+  --border-color: #fff;
   --highlight-color: #e882a8;
 }
