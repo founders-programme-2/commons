@@ -6,7 +6,11 @@ const Home = () => {
   return (
     <div>
       <Banner title="Commons" subtitle={null} />
-      <BannerFooter />
+      <BannerFooter
+        arrow
+        text="A game to nurture and develop common places , and provide for
+        collaboration in communities and networks"
+      />
     </div>
   );
 };
