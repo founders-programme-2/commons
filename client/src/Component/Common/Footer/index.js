@@ -1,27 +1,49 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
   Buttons,
   NextButton,
   PreviousButton,
-  BackToScenerio,
+  BackToScenario,
   Line,
 } from './Footer.style';
 
-class Footer extends Component {
-  state = {};
+const Footer = ({ nextLink, backLink, reviewScenario }) => {
+  // const { nextLink, backLink, reviewScenario } = props;
 
-  render() {
+  if (reviewScenario) {
     return (
       <React.Fragment>
         <Line />
         <Buttons>
-          <NextButton type="button" />
-          <BackToScenerio>Review your scenario</BackToScenerio>
-          <PreviousButton type="button" />
+          <PreviousButton as={Link} to={backLink} type="button" />
+          <BackToScenario>Review Scenario</BackToScenario>
+          <NextButton as={Link} to={nextLink} type="button" />
         </Buttons>
       </React.Fragment>
     );
   }
-}
+  return (
+    <React.Fragment>
+      <Line />
+      <Buttons>
+        <PreviousButton as={Link} to={backLink} type="button" />
+        <NextButton as={Link} to={nextLink} type="button" />
+      </Buttons>
+    </React.Fragment>
+  );
+};
+
+Footer.propTypes = {
+  backLink: PropTypes.string.isRequired,
+  nextLink: PropTypes.string,
+  reviewScenario: PropTypes.bool,
+};
+
+Footer.defaultProps = {
+  nextLink: PropTypes.bool,
+  reviewScenario: PropTypes.bool,
+};
 
 export default Footer;
