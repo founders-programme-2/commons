@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
-import Menu from './Component/Common/Menu';
 import Error404 from './Component/views/Error404';
 import ErrorResources from './Component/views/ErrorResources';
 
@@ -23,7 +22,6 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route path="/menu" component={Menu} />
           <Route path="/about" component={About} />
           <Route path="/howTo" component={HowTo} />
           <Route path="/play" component={Play} />
@@ -33,6 +31,7 @@ class App extends Component {
           <Route path="/theory" component={Theory} />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
+          <Redirect to="/error404" />
         </Switch>
       </BrowserRouter>
     );
