@@ -85,3 +85,7 @@ export const BannerLogo = styled.img`
   display: block;
   margin: 4rem auto;
 `;
+
+export const BannerWrapper = styled.div`
+  height: 100%;
+`;
