@@ -5,13 +5,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BannerFooterWrapper, ArrowIcon, TitleText } from './index.style';
 
 const BannerFooter = props => {
+  const { arrow, text } = props;
+
+  if (arrow && text) {
+    return (
+      <BannerFooterWrapper>
+        <TitleText>{text}</TitleText>
+        <Link to="/about">
+          <ArrowIcon>
+            <FontAwesomeIcon icon="chevron-down" size="10x" />
+          </ArrowIcon>
+        </Link>
+      </BannerFooterWrapper>
+    );
+  }
+
   return (
     <BannerFooterWrapper>
-      <TitleText>
-        A game to nurture and develop common places , and provide for
-        collaboration in communities and networks
-      </TitleText>
-      <Link to="./about">
+      <Link to="/">
         <ArrowIcon>
           <FontAwesomeIcon icon="chevron-down" size="10x" />
         </ArrowIcon>
@@ -21,12 +32,12 @@ const BannerFooter = props => {
 };
 
 BannerFooter.propTypes = {
-  // headerImg: PropTypes.string,
-  // titleText: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  arrow: PropTypes.string.isRequired,
 };
 
 BannerFooter.defaultProps = {
-  // headerImg: PropTypes.bool,
+  text: PropTypes.bool,
 };
 
 export default BannerFooter;
