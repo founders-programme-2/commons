@@ -1,21 +1,55 @@
-import { React, Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { CardWrapper, Img, Info, MoreInfo } from './index.style';
+import {
+  CardWrapper,
+  Img,
+  Info,
+  MoreInfo,
+  DefaultImg,
+  ResourcePoints,
+  ResourceStars,
+  CardTitle,
+} from './index.style';
+import star from '../../../assets/star.svg';
 
 const CardComponent = props => {
   const { cardImg, cardTitle, resourcePoints } = props;
 
+  const stars = resourcePoints => {
+    const starsCount = [];
+    let counter = 0;
+    while (resourcePoints > counter) {
+      counter++;
+      starsCount.push(
+        <ResourceStars src={star} key={`resourceStars-${counter}`} />
+      );
+    }
+    return starsCount;
+  };
+
+  const starsRender = stars(resourcePoints);
+
   return (
-    <Fragment>
+    <React.Fragment>
       <CardWrapper>
-        <Img>{cardImg}</Img>
+        {cardImg ? (
+          <Img src={cardImg} alt="card logo" />
+        ) : (
+          <DefaultImg alt="default card image" />
+        )}
+
         <Info>
-          {cardTitle}
-          <MoreInfo>Flip for more info...</MoreInfo>
-          {resourcePoints}
+          <CardTitle>{cardTitle}</CardTitle>
+          <br />
+          <MoreInfo to="./about"> Click for more info...</MoreInfo>
+          <ResourcePoints>
+            {resourcePoints} resource points
+            <br />
+            {starsRender}
+          </ResourcePoints>
         </Info>
       </CardWrapper>
-    </Fragment>
+    </React.Fragment>
   );
 };
 
