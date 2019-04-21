@@ -22,3 +22,10 @@ export const TitleText = styled.h2`
   height: 6rem;
   text-align: center;
 `;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+`;
