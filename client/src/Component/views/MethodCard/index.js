@@ -20,6 +20,7 @@ const CardComponent = props => {
     const starsCount = [];
     let counter = 0;
     while (resourcePoints > counter) {
+      // eslint-disable-next-line no-plusplus
       counter++;
       starsCount.push(
         <ResourceStars src={star} key={`resourceStars-${counter}`} />
