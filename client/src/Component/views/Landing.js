@@ -10,6 +10,7 @@ const Home = () => {
         arrow
         text="A game to nurture and develop common places , and provide for
         collaboration in communities and networks"
+        select={null}
       />
     </div>
   );
