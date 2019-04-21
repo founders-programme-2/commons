@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
+import MethodCard from '../MethodCard';
 
 const Methods = () => {
   return (
     <div>
       <Header headerImg={null} titleText="Select your methods" />
-      <h1>Hello from Methods.js</h1>
+      <MethodCard cardTitle="Example Card" resourcePoints={2} cardImg={null} />
       <Footer />
     </div>
   );
