@@ -23,17 +23,23 @@ body {
   padding: 2rem;
 }
 
-h2 {
+h1 {
+  font-size: 3.6rem
+}
+
+p {
   font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
 }
 
 :root {
+  --background-color: #fff;
   --heading-color: #000000;
   --paragraph-color: #000000;
   --button-background-color: #ffc729;
   --button-text-color: #5b5b68;
   --line-color: #faa634;
-  --border-color: white;
+  --border-color: #fff;
   --highlight-color: #e882a8;
   --arrow-color: #FFBF3E;
 }
