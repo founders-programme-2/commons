@@ -32,7 +32,6 @@ class Methods extends Component {
     }
   };
 
-
   render() {
     const { resources } = this.state;
     const { checked } = this.state;
@@ -52,11 +51,10 @@ class Methods extends Component {
           Remaining resources: <span>&nbsp;</span>
           {resources}
         </RemainingResources>
-        <Footer backLink="/play" nextLink="/" reviewScenario />
+        <Footer backLink="/play" nextLink="/priorities" reviewScenario />
       </Fragment>
     );
   }
 }
-
 
 export default Methods;
