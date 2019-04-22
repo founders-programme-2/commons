@@ -20,7 +20,7 @@ const Play = props => {
           onClick={() => history.push('/')}
         />
       </ButtonWrapper>
-      <Footer backLink="/howto" nextLink={false} reviewScenario={null} />
+      <Footer backLink="/howto" nextLink={null} reviewScenario={null} />
     </div>
   );
 };
