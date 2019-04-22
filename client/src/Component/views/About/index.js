@@ -10,24 +10,20 @@ const About = () => {
       <Header headerImg={conversation} titleText="About us" />
       <ContentAbout>
         <p>
-          The Slipham social action centre is launching a Connected Commons
-          programme, aiming to help people explore its heritage, find local
-          opportunities and services, and support new projects for a better
-          Slipham in the future. It will do this by mapping people, projects and
-          groups to find what they can offer, what they need, and how they are
-          connected at present. The Commons won&apos;t be just one physical
-          space. It will be on-the-ground trails and gathering points, maps of
-          doing what, a website and other communication tools, with guides for
-          action. We&apos;ll have small grants to support projects, and help on
-          fundraising. The overall aim is to create an environment within which
-          connections and collaborations can take place - the Slipham Connected
-          Commons.
+          This game will help you create a Commons - a set of places online and
+          on the ground that provide an environment within which connections and
+          collaboration can take place. The game will do that in two ways. First
+          you can play as a “community connector” using online methods and other
+          activities to help people make connections, find opportunities in
+          their community or network, and develop new projects and
+          collaborations.
         </p>
         <br />
-        <p style={{ fontWeight: 'bold' }}>
-          Your goal is to select the tools that you would use to faciliate
-          creating this Connected Commons Program. You have a limited amount of
-          resources and must choose wisely.
+        <p>
+          Second, you can play as a team reviewing the support that community
+          connectors need, and consider how to develop a mapping, support and
+          communication system. We call that team the hub, and their new system
+          the community platform.
         </p>
       </ContentAbout>
       <Footer backLink="/" nextLink="/howTo" reviewScenario={false} />
