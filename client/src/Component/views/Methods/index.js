@@ -35,12 +35,14 @@ class Methods extends Component {
 
   render() {
     const { resources } = this.state;
+    const { checked } = this.state;
 
     return (
       <Fragment>
         <Header headerImg={null} titleText="Select your methods" />
         <MethodCard
           cardTitle="Example Card"
+          checked={checked}
           resourcePoints={2}
           cardImg={null}
           updateStateResources={this.updateStateResources}
