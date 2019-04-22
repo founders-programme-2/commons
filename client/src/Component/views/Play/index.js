@@ -14,10 +14,14 @@ const Play = props => {
         <Button
           buttonText="Play a random scenario"
           onClick={() => history.push('/')}
+          height="7.5rem"
+          width="20.4rem"
         />
         <Button
           buttonText="Play with your own context"
           onClick={() => history.push('/')}
+          height="7.5rem"
+          width="20.4rem"
         />
       </ButtonWrapper>
       <Footer />
