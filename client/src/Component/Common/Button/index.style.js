@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const PrimaryButton = styled.button`
   background: var(--button-background-color);
   height: ${props => props.height || '4.9rem'};
-  width: 12.5rem;
+  width: ${props => props.height || '12.5rem'};
   border: none;
   font-size: 1.5rem;
   font-weight: 1rem;
