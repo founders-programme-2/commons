@@ -5,10 +5,11 @@ import {
   faBars,
   faTimes,
   faChevronDown,
+  faLightbulb,
 } from '@fortawesome/free-solid-svg-icons';
 import App from './App';
 import './index.css';
 
-library.add(faBars, faTimes, faChevronDown);
+library.add(faBars, faTimes, faChevronDown, faLightbulb);
 
 ReactDOM.render(<App />, document.getElementById('root'));
