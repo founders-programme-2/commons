@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
+import { Content } from '../About/index.style';
 import houses from '../../../assets/houses.svg';
 
 const YourScenario = () => {
   return (
     <div>
       <Header headerImg={houses} titleText="Your scenario" />
-      <div>
+      <Content>
         <p>
           The Slipham social action centre is launching a Connected Commons
           programme, aiming to help people explore its heritage, find local
@@ -28,7 +29,7 @@ const YourScenario = () => {
           creating this Connected Commons Program. You have a limited amount of
           resources and must choose wisely.
         </p>
-      </div>
+      </Content>
       <Footer backLink="/play" nextLink="/" reviewScenario={false} />
     </div>
   );
