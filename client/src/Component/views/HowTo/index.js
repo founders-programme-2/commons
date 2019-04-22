@@ -12,7 +12,7 @@ const HowTo = () => {
       <h3>How to play</h3>
       <h3>How to play</h3>
       <h3>How to play</h3>
-      <Footer />
+      <Footer backLink="/about" nextLink="/play" reviewScenario={false} />
     </div>
   );
 };

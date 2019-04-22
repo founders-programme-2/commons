@@ -24,7 +24,7 @@ const Play = props => {
           width="20.4rem"
         />
       </ButtonWrapper>
-      <Footer />
+      <Footer backLink="/howto" nextLink={false} reviewScenario={null} />
     </div>
   );
 };

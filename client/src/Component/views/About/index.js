@@ -30,7 +30,7 @@ const About = () => {
           resources and must choose wisely.
         </p>
       </ContentAbout>
-      <Footer />
+      <Footer backLink="/" nextLink="/howTo" reviewScenario={false} />
     </div>
   );
 };
