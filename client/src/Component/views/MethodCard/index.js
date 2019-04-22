@@ -11,7 +11,6 @@ import {
   CardTitle,
   StarWrapper,
   UseResource,
-  InputStyle,
 } from './index.style';
 import star from '../../../assets/star.svg';
 
