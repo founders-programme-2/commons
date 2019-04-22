@@ -18,7 +18,7 @@ Button.propTypes = {
   height: PropTypes.string,
 };
 Button.defaultProps = {
-  height: PropTypes.bool,
+  height: PropTypes.checkPropTypes(),
 };
 
 export default Button;
