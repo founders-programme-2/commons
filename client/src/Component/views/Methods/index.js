@@ -14,13 +14,27 @@ class Methods extends Component {
   // Removes resource points from total 'resources' if checkbox is checked
   // Returns resources when checkbox is unchecked
 
-  updateStateResources = (resourcePoints, event) => {
+  updateStateResources = (points, event) => {
     let { resources } = this.state;
-    this.setState(prevState => {
-      resources = prevState.resources - resourcePoints;
-      return { resources };
-    });
+    const target = event.checked;
+
+    if (target) {
+      this.setState(resourcePoints => {
+        resources -= resourcePoints;
+        return { resources };
+      });
+    } else {
+      this.setState(resourcePoints => {
+        resources += resourcePoints;
+        return { resources };
+      });
+    }
   };
+
+  // prevState => {
+  //   resources = prevState.resources - resourcePoints;
+  //   return { resources };
+  // }
 
   render() {
     const { resources } = this.state;
@@ -28,7 +42,7 @@ class Methods extends Component {
       <Fragment>
         <Header headerImg={null} titleText="Select your methods" />
         <Carousel
-          enableKeyboardControls={true}
+          enableKeyboardControls
           renderCenterLeftControls={({ previousSlide }) => (
             <PrevBtn onClick={previousSlide}>.</PrevBtn>
           )}

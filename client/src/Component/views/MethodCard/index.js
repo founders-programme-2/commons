@@ -20,9 +20,10 @@ class CardComponent extends Component {
   };
 
   // toggles checkbox on click
-  toggleCheckbox = () => {
+  toggleCheckbox = (cb, resourcePoints, event) => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
+    cb(resourcePoints, event);
   };
 
   render() {
@@ -79,11 +80,9 @@ class CardComponent extends Component {
               type="checkbox"
               checked={checked}
               onChange={event => {
-                this.toggleCheckbox();
-                if (checked) {
-                  updateStateResources(resourcePoints, event);
-                }
-                return resourcePoints;
+                this.toggleCheckbox(
+                  updateStateResources(resourcePoints, event)
+                );
               }}
             />
           </label>
