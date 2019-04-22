@@ -61,10 +61,11 @@ const CardComponent = props => {
       </CardWrapper>
 
       <UseResource>
-        <label>
+        <label htmlFor="method-checkbox">
           Use this resource:
           <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <input
+            id="method-checkbox"
             type="checkbox"
             checked={checked}
             onChange={event => {
