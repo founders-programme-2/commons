@@ -11,6 +11,7 @@ import {
   CardTitle,
   StarWrapper,
   UseResource,
+  InputStyle,
 } from './index.style';
 import star from '../../../assets/star.svg';
 
@@ -63,6 +64,7 @@ const CardComponent = props => {
       <UseResource>
         <label>
           Use this resource:
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <input
             type="checkbox"
             checked={checked}
