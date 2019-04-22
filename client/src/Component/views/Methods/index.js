@@ -52,10 +52,11 @@ class Methods extends Component {
           Remaining resources: <span>&nbsp;</span>
           {resources}
         </RemainingResources>
-        <Footer />
+        <Footer backLink="/play" nextLink="/" reviewScenario />
       </Fragment>
     );
   }
 }
+
 
 export default Methods;

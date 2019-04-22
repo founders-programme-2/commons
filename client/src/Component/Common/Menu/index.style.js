@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { stack as Menu } from 'react-burger-menu';
 
-// eslint-disable-next-line import/prefer-default-export
-
 export const BurgerMenu = styled(Menu)`
   background: rgba(241, 231, 103, 1);
   background: -moz-linear-gradient(
@@ -61,7 +59,6 @@ export const BurgerIcon = styled.div`
   }
   margin: 2rem;
 `;
-
 
 export const MenuChild = styled(Link)`
   color: black;

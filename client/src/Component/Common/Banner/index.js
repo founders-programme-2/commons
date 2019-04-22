@@ -7,27 +7,28 @@ import {
   TitleTextSub,
   BannerLogo,
   SubtitleText,
+  BannerWrapper,
 } from './index.style';
 
 const BannerTitle = ({ title, subtitle }) => {
   if (subtitle) {
     return (
-      <div>
+      <BannerWrapper>
         <BannerLogo src={logo} />
         <BackgroundWrapper>
           <TitleTextSub>{title}</TitleTextSub>
           <SubtitleText>{subtitle}</SubtitleText>
         </BackgroundWrapper>
-      </div>
+      </BannerWrapper>
     );
   }
   return (
-    <div>
+    <BannerWrapper>
       <BannerLogo src={logo} />
       <BackgroundWrapper>
         <TitleText>{title}</TitleText>
       </BackgroundWrapper>
-    </div>
+    </BannerWrapper>
   );
 };
 
