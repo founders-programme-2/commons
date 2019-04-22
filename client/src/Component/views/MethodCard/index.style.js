@@ -50,8 +50,8 @@ export const ResourcePoints = styled.div`
 `;
 
 export const ResourceStars = styled.img`
-  height: 14px;
-  width: 14px;
+  height: 1.4rem;
+  width: 1.4rem;
 `;
 
 export const StarWrapper = styled.div`
