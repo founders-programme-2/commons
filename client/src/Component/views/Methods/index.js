@@ -3,7 +3,7 @@ import Carousel from 'nuka-carousel';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
-import { RemainingResources, Line } from './index.style';
+import { RemainingResources, Line, PrevBtn, NextBtn } from './index.style';
 
 class Methods extends Component {
   state = {
