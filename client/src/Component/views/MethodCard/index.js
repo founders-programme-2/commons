@@ -9,13 +9,13 @@ import {
   ResourcePoints,
   ResourceStars,
   CardTitle,
-  StarWrapper
+  StarWrapper,
+  UseResource,
 } from './index.style';
 import star from '../../../assets/star.svg';
 
 const CardComponent = props => {
-  const { cardImg, cardTitle, resourcePoints } = props;
-
+  const { cardImg, cardTitle, resourcePoints, toggleCheckbox } = props;
 
   // looks at number of resource points and pushes as many stars
   const stars = points => {
@@ -53,6 +53,19 @@ const CardComponent = props => {
           <StarWrapper>{starsRender}</StarWrapper>
         </Info>
       </CardWrapper>
+
+      <UseResource>
+        <label>
+          Use this resource:
+          <input
+            type="checkbox"
+            checked={false}
+            onChange={event => {
+              toggleCheckbox();
+            }}
+          />
+        </label>
+      </UseResource>
     </React.Fragment>
   );
 };
@@ -61,6 +74,7 @@ CardComponent.propTypes = {
   cardImg: PropTypes.string,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
+  toggleCheckbox: PropTypes.func.isRequired,
 };
 
 CardComponent.defaultProps = {

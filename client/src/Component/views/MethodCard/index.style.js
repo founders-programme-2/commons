@@ -58,3 +58,11 @@ export const StarWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const UseResource = styled.form`
+  font-size: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
