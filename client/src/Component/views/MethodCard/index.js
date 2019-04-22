@@ -15,13 +15,7 @@ import {
 import star from '../../../assets/star.svg';
 
 const CardComponent = props => {
-  const {
-    cardImg,
-    cardTitle,
-    resourcePoints,
-    updateStateResources,
-    checked,
-  } = props;
+  const { cardImg, cardTitle, resourcePoints, updateStateResources } = props;
 
   // looks at number of resource points and pushes as many stars to card
   const stars = points => {
@@ -67,7 +61,6 @@ const CardComponent = props => {
           <input
             id="method-checkbox"
             type="checkbox"
-            checked={checked}
             onChange={event => {
               updateStateResources(resourcePoints, event);
             }}
@@ -83,7 +76,6 @@ CardComponent.propTypes = {
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
   updateStateResources: PropTypes.func.isRequired,
-  checked: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
