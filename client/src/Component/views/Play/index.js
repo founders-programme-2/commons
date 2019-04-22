@@ -7,7 +7,7 @@ const Play = () => {
     <div>
       <Header headerImg={null} titleText="Choose your game play" />
       <h1>Choose your game play:</h1>
-      <Footer backLink="/howto" nextLink={false} reviewScenario={false} />
+      <Footer backLink="/howto" nextLink={false} reviewScenario={null} />
     </div>
   );
 };

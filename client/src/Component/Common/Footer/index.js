@@ -10,15 +10,13 @@ import {
 } from './Footer.style';
 
 const Footer = ({ nextLink, backLink, reviewScenario }) => {
-  // const { nextLink, backLink, reviewScenario } = props;
-
   return (
     <React.Fragment>
       <Line />
       <Buttons>
         <PreviousButton as={Link} to={backLink} type="button" />
         {reviewScenario && <BackToScenario>Review Scenario</BackToScenario>}
-        { nextLink && <NextButton as={Link} to={nextLink} type="button" />}
+        {nextLink && <NextButton as={Link} to={nextLink} type="button" />}
       </Buttons>
     </React.Fragment>
   );
