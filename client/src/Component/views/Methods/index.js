@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import Carousel from 'nuka-carousel';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
@@ -26,14 +27,28 @@ class Methods extends Component {
     return (
       <Fragment>
         <Header headerImg={null} titleText="Select your methods" />
+        <Carousel>
+          <MethodCard
+            cardTitle="Example Card 1"
+            resourcePoints={1}
+            cardImg={null}
+            updateStateResources={this.updateStateResources}
+          />
 
-        <MethodCard
-          cardTitle="Example Card"
-          resourcePoints={2}
-          cardImg={null}
-          updateStateResources={this.updateStateResources}
-        />
+          <MethodCard
+            cardTitle="Example Card 2"
+            resourcePoints={2}
+            cardImg={null}
+            updateStateResources={this.updateStateResources}
+          />
 
+          <MethodCard
+            cardTitle="Example Card 3"
+            resourcePoints={3}
+            cardImg={null}
+            updateStateResources={this.updateStateResources}
+          />
+        </Carousel>
         <Line />
 
         <RemainingResources>
