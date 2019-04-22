@@ -20,7 +20,7 @@ const HowTo = () => {
           </BodyWrapper>
         );
       })}
-      <Footer />
+      <Footer backLink="/about" nextLink="/play" reviewScenario={false} />
     </div>
   );
 };
