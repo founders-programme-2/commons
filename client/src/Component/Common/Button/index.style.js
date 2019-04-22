@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // eslint-disable-next-line import/prefer-default-export
 export const PrimaryButton = styled.button`
   background: var(--button-background-color);
-  height: 4.9rem;
+  height: ${props => props.height || '4.9rem'};
   width: 12.5rem;
   border: none;
   font-size: 1.5rem;
