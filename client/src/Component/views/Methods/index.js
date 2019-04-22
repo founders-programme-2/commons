@@ -27,7 +27,15 @@ class Methods extends Component {
     return (
       <Fragment>
         <Header headerImg={null} titleText="Select your methods" />
-        <Carousel>
+        <Carousel
+          enableKeyboardControls={true}
+          renderCenterLeftControls={({ previousSlide }) => (
+            <PrevBtn onClick={previousSlide}>.</PrevBtn>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <NextBtn onClick={nextSlide}>.</NextBtn>
+          )}
+        >
           <MethodCard
             cardTitle="Example Card 1"
             resourcePoints={1}
