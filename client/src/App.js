@@ -13,6 +13,7 @@ import Methods from './Component/views/Methods';
 import KeyTerms from './Component/views/KeyTerms';
 import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
+import YourScenario from './Component/views/YourScenario';
 
 class App extends Component {
   state = {};
@@ -29,6 +30,7 @@ class App extends Component {
           <Route path="/keyTerms" component={KeyTerms} />
           <Route path="/workshop" component={Workshop} />
           <Route path="/theory" component={Theory} />
+          <Route path="/yourScenario" component={YourScenario} />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
           <Redirect to="/error404" />
