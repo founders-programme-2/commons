@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import instruction from '../../../assets/instruction.svg';
-import { PulpIcon, BodyWrapper, Text } from './inedx.style';
+import { PulpIcon, BodyWrapper, Text } from './index.style';
 import instructionData from '../../../fakeData/instruction';
 
 const HowTo = () => {
