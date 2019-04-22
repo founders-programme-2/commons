@@ -16,10 +16,12 @@ import star from '../../../assets/star.svg';
 const CardComponent = props => {
   const { cardImg, cardTitle, resourcePoints } = props;
 
-  const stars = resourcePoints => {
+
+  // looks at number of resource points and pushes as many stars
+  const stars = points => {
     const starsCount = [];
     let counter = 0;
-    while (resourcePoints > counter) {
+    while (points > counter) {
       // eslint-disable-next-line no-plusplus
       counter++;
       starsCount.push(
