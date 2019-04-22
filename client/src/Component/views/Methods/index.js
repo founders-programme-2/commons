@@ -47,7 +47,8 @@ class Methods extends Component {
         />
         <Line />
         <RemainingResources>
-          Remaining resources: {resources};
+          Remaining resources: <span>&nbsp;</span>
+          {resources}
         </RemainingResources>
         <Footer />
       </Fragment>
