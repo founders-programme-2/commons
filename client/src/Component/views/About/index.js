@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
-import { ContentAbout } from './index.style';
+import { Content } from './index.style';
 import conversation from '../../../assets/conversation.svg';
 
 const About = () => {
   return (
     <div>
       <Header headerImg={conversation} titleText="About us" />
-      <ContentAbout>
+      <Content>
         <p>
           This game will help you create a Commons - a set of places online and
           on the ground that provide an environment within which connections and
@@ -25,7 +25,7 @@ const About = () => {
           communication system. We call that team the hub, and their new system
           the community platform.
         </p>
-      </ContentAbout>
+      </Content>
       <Footer backLink="/" nextLink="/howTo" reviewScenario={false} />
     </div>
   );
