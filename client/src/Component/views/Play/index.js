@@ -1,11 +1,11 @@
 import React from 'react';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import Button from '../../Common/Button';
 import { ButtonWrapper } from './index.style';
 
 const Play = props => {
-  // eslint-disable-next-line react/prop-types
   const { history } = props;
   return (
     <div>
@@ -23,5 +23,8 @@ const Play = props => {
       <Footer />
     </div>
   );
+};
+Play.propTypes = {
+  history: ReactRouterPropTypes.history.isRequired,
 };
 export default Play;
