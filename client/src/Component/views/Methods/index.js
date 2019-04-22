@@ -10,32 +10,28 @@ class Methods extends Component {
     checked: false,
   };
 
-  toggleCheckbox = () => {
+  // On click event, toggles 'checked' in state
+  // Removes resource points from total 'resources' if checkbox is checked
+  // Returns resources when checkbox is unchecked
+
+  updateStateResources = (resourcePoints, event) => {
     const { checked } = this.state;
+    let { resources } = this.state;
     this.setState({ checked: !checked });
-    console.log(checked)
+
+    if (checked === false) {
+      this.setState(prevState => {
+        resources = prevState.resources - resourcePoints;
+        return { resources };
+      });
+    } else {
+      this.setState(prevState => {
+        resources = prevState.resources + resourcePoints;
+        return { resources };
+      });
+    }
   };
 
-  // useResource = (event, points) => {
-  //   const { target } = event;
-  //   if (target.checked) {
-  //     this.setState(prevState => {
-  //       const resources = prevState.resources - points;
-  //       console.log(resources);
-  //       return { resources };
-  //     });
-  //     return prevState => prevState.resources;
-  //   }
-  // };
-
-  // updateStateResources = (event, points) => {
-  //   console.log(event.target);
-  //   this.setState(prevState => {
-  //     const resources = prevState.resources - points;
-  //     console.log(resources);
-  //     return { resources };
-  //   });
-  // };
 
   render() {
     const { resources } = this.state;
@@ -47,7 +43,7 @@ class Methods extends Component {
           cardTitle="Example Card"
           resourcePoints={2}
           cardImg={null}
-          toggleCheckbox={this.toggleCheckbox}
+          updateStateResources={this.updateStateResources}
         />
         <Line />
         <RemainingResources>
