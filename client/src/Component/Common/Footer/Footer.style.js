@@ -7,7 +7,7 @@ export const Buttons = styled.div`
   padding: 0.9rem;
 `;
 
-export const NextButton = styled.button`
+export const PreviousButton = styled.button`
   width: 5.2rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background: #faa634;
@@ -16,9 +16,10 @@ export const NextButton = styled.button`
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 4.9rem;
 `;
 
-export const PreviousButton = styled.button`
+export const NextButton = styled.button`
   width: 5.2rem;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background: #faa634;
@@ -27,9 +28,10 @@ export const PreviousButton = styled.button`
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 4.9rem;
 `;
 
-export const BackToScenerio = styled.button`
+export const BackToScenario = styled.button`
   background: #faa634;
   height: 4.9rem;
   width: 12.5rem;
@@ -44,7 +46,7 @@ export const BackToScenerio = styled.button`
 
 export const Line = styled.div`
   margin-bottom: -40rem;
-  border: 0.2rem solid #faa634;
+  border: 0.3rem solid #faa634;
   border-radius: 1rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 `;
