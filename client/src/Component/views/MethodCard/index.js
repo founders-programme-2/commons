@@ -19,20 +19,35 @@ class CardComponent extends Component {
     checked: false,
   };
 
-  // looks at number of resource points and pushes as many stars to card
-  stars = points => {
-    const starsCount = [];
-    const counter = 0;
-    while (points > counter) {
-      counter + 1;
-      starsCount.push(
-        <ResourceStars src={star} key={`resourceStars-${counter}`} />
-      );
-    }
-    return starsCount;
+  // toggles checkbox on click
+  toggleCheckbox = () => {
+    const { checked } = this.state;
+    this.setState({ checked: !checked });
   };
 
   render() {
+    const {
+      cardImg,
+      cardTitle,
+      resourcePoints,
+      updateStateResources,
+    } = this.props;
+    const { checked } = this.state;
+
+    // looks at number of resource points and pushes as many stars to card
+    const stars = points => {
+      const starsCount = [];
+      let counter = 0;
+      while (points > counter) {
+        // eslint-disable-next-line no-plusplus
+        counter++;
+        starsCount.push(
+          <ResourceStars src={star} key={`resourceStars-${counter}`} />
+        );
+      }
+      return starsCount;
+    };
+    // saves func output to variable for render
     const starsRender = stars(resourcePoints);
     return (
       <Fragment>
@@ -62,8 +77,13 @@ class CardComponent extends Component {
             <input
               id="method-checkbox"
               type="checkbox"
+              checked={checked}
               onChange={event => {
-                updateStateResources(resourcePoints, event);
+                this.toggleCheckbox();
+                if (checked) {
+                  updateStateResources(resourcePoints, event);
+                }
+                return resourcePoints;
               }}
             />
           </label>
@@ -129,15 +149,15 @@ class CardComponent extends Component {
 //   );
 // };
 
-// CardComponent.propTypes = {
-//   cardImg: PropTypes.string,
-//   cardTitle: PropTypes.string.isRequired,
-//   resourcePoints: PropTypes.number.isRequired,
-//   updateStateResources: PropTypes.func.isRequired,
-// };
+CardComponent.propTypes = {
+  cardImg: PropTypes.string,
+  cardTitle: PropTypes.string.isRequired,
+  resourcePoints: PropTypes.number.isRequired,
+  updateStateResources: PropTypes.func.isRequired,
+};
 
-// CardComponent.defaultProps = {
-//   cardImg: PropTypes.bool,
-// };
+CardComponent.defaultProps = {
+  cardImg: PropTypes.bool,
+};
 
 export default CardComponent;
