@@ -32,7 +32,6 @@ class Methods extends Component {
     }
   };
 
-
   render() {
     const { resources } = this.state;
     const { checked } = this.state;
@@ -40,6 +39,7 @@ class Methods extends Component {
     return (
       <Fragment>
         <Header headerImg={null} titleText="Select your methods" />
+
         <MethodCard
           cardTitle="Example Card"
           checked={checked}
@@ -47,16 +47,18 @@ class Methods extends Component {
           cardImg={null}
           updateStateResources={this.updateStateResources}
         />
+
         <Line />
+
         <RemainingResources>
           Remaining resources: <span>&nbsp;</span>
           {resources}
         </RemainingResources>
+
         <Footer backLink="/play" nextLink="/" reviewScenario />
       </Fragment>
     );
   }
 }
-
 
 export default Methods;
