@@ -20,11 +20,9 @@ class CardComponent extends Component {
   };
 
   // toggles checkbox on click
-  toggleCheckbox = (cb, resourcePoints, event) => {
+  toggleCheckbox = event => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
-    
-    cb(resourcePoints, event);
   };
 
   render() {
@@ -32,8 +30,10 @@ class CardComponent extends Component {
       cardImg,
       cardTitle,
       resourcePoints,
-      updateStateResources,
+      chooseMethod,
+      removeMethod,
     } = this.props;
+
     const { checked } = this.state;
 
     // looks at number of resource points and pushes as many stars to card
@@ -81,9 +81,12 @@ class CardComponent extends Component {
               type="checkbox"
               checked={checked}
               onChange={event => {
-                this.toggleCheckbox(
-                  updateStateResources(resourcePoints, event)
-                );
+                this.toggleCheckbox(event);
+                if (checked === false) {
+                  removeMethod(resourcePoints, event);
+                } else if (checked === true) {
+                  chooseMethod(resourcePoints, event);
+                }
               }}
             />
           </label>
@@ -153,7 +156,8 @@ CardComponent.propTypes = {
   cardImg: PropTypes.string,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
-  updateStateResources: PropTypes.func.isRequired,
+  chooseMethod: PropTypes.func.isRequired,
+  removeMethod: PropTypes.func.isRequired,
 };
 
 CardComponent.defaultProps = {

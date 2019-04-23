@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Redirect } from 'react-router-dom';
 import Carousel from 'nuka-carousel';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
@@ -10,32 +11,23 @@ class Methods extends Component {
     resources: 15,
   };
 
-  // On click event, toggles 'checked' in state
   // Removes resource points from total 'resources' if checkbox is checked
-  // Returns resources when checkbox is unchecked
-
-  updateStateResources = (points, event) => {
-    let { resources } = this.state;
-    const target = event.checked;
-    const { resourcePoints } = this.props;
-
-    if (target) {
-      this.setState(resourcePoints => {
-        resources -= resourcePoints;
-        return { resources };
-      });
-    } else {
-      this.setState(resourcePoints => {
-        resources += resourcePoints;
-        return { resources };
-      });
-    }
+  removeMethod = (points, event) => {
+    this.setState(state => {
+      const resources = state.resources - points;
+      return { resources };
+    });
   };
 
-  // prevState => {
-  //   resources = prevState.resources - resourcePoints;
-  //   return { resources };
-  // }
+  // Returns resources when checkbox is unchecked
+  chooseMethod = (points, event) => {
+    let { resources } = this.state;
+    this.setState(nextState => {
+      resources = nextState.resources + points;
+      return { resources };
+    });
+
+  };
 
   render() {
     const { resources } = this.state;
@@ -55,21 +47,24 @@ class Methods extends Component {
             cardTitle="Example Card 1"
             resourcePoints={1}
             cardImg={null}
-            updateStateResources={this.updateStateResources}
+            chooseMethod={this.chooseMethod}
+            removeMethod={this.removeMethod}
           />
 
           <MethodCard
             cardTitle="Example Card 2"
             resourcePoints={2}
             cardImg={null}
-            updateStateResources={this.updateStateResources}
+            chooseMethod={this.chooseMethod}
+            removeMethod={this.removeMethod}
           />
 
           <MethodCard
             cardTitle="Example Card 3"
             resourcePoints={3}
             cardImg={null}
-            updateStateResources={this.updateStateResources}
+            chooseMethod={this.chooseMethod}
+            removeMethod={this.removeMethod}
           />
         </Carousel>
         <Line />
