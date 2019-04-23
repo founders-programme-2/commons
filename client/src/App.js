@@ -15,6 +15,7 @@ import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
 import Persona from './Component/views/Persona';
 import YourScenario from './Component/views/YourScenario';
+import Priorities from './Component/views/Priorities';
 
 class App extends Component {
   state = {};
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path="/theory" component={Theory} />
           <Route path="/yourScenario" component={YourScenario} />
           <Route path="/persona" component={Persona} />
+          <Route path="/priorities" component={Priorities} />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
           <Redirect to="/error404" />

@@ -28,8 +28,7 @@ const CardComponent = props => {
     const starsCount = [];
     let counter = 0;
     while (points > counter) {
-      // eslint-disable-next-line no-plusplus
-      counter++;
+      counter += 1;
       starsCount.push(
         <ResourceStars src={star} key={`resourceStars-${counter}`} />
       );
@@ -61,10 +60,11 @@ const CardComponent = props => {
       </CardWrapper>
 
       <UseResource>
-        <label>
+        <label htmlFor="id">
           Use this resource:
           <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <input
+            id="id"
             type="checkbox"
             checked={checked}
             onChange={event => {
