@@ -32,7 +32,7 @@ class CardComponent extends Component {
       resourcePoints,
       chooseMethod,
       removeMethod,
-      resources,
+      checkRemainingResources,
     } = this.props;
 
     const { checked } = this.state;
@@ -85,8 +85,10 @@ class CardComponent extends Component {
                 this.toggleCheckbox(event);
                 if (checked === false) {
                   removeMethod(resourcePoints, event);
+                  checkRemainingResources();
                 } else if (checked === true) {
                   chooseMethod(resourcePoints, event);
+                  checkRemainingResources();
                 }
               }}
             />
@@ -97,14 +99,13 @@ class CardComponent extends Component {
   }
 }
 
-
 CardComponent.propTypes = {
   cardImg: PropTypes.string,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
   chooseMethod: PropTypes.func.isRequired,
   removeMethod: PropTypes.func.isRequired,
-  resources: PropTypes.number.isRequired,
+  checkRemainingResources: PropTypes.func.isRequired,
 };
 
 CardComponent.defaultProps = {

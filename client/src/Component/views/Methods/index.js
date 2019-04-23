@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Redirect } from 'react-router-dom';
 import Carousel from 'nuka-carousel';
+import { Redirect } from 'react-router-dom';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
@@ -9,6 +9,7 @@ import { RemainingResources, Line, PrevBtn, NextBtn } from './index.style';
 class Methods extends Component {
   state = {
     resources: 15,
+    redirect: false,
   };
 
   // Removes resource points from total 'resources' if checkbox is checked
@@ -28,10 +29,30 @@ class Methods extends Component {
     });
   };
 
+  // checks remaining resources and triggers redirect to error page
+  checkRemainingResources = () => {
+    const { resources } = this.state;
+    if (resources > 0) {
+      this.setState({
+        redirect: true,
+      });
+    }
+  };
+
+  // renders redirect if there are no resources left
+  renderRedirect = () => {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to="/errorNoMoreResources" />;
+    }
+    return null;
+  };
+
   render() {
     const { resources } = this.state;
     return (
       <Fragment>
+        {this.renderRedirect()}
         <Header headerImg={null} titleText="Select your methods" />
         <Carousel
           enableKeyboardControls
@@ -48,7 +69,7 @@ class Methods extends Component {
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
-            resources={this.resources}
+            checkRemainingResources={this.checkRemainingResources}
           />
 
           <MethodCard
@@ -57,7 +78,7 @@ class Methods extends Component {
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
-            resources={this.resources}
+            checkRemainingResources={this.checkRemainingResources}
           />
 
           <MethodCard
@@ -66,7 +87,7 @@ class Methods extends Component {
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
-            resources={this.resources}
+            checkRemainingResources={this.checkRemainingResources}
           />
         </Carousel>
         <Line />
