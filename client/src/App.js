@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
-import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+import React, { Component } from "react";
+import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
 
-import Error404 from './Component/views/Error404';
-import ErrorResources from './Component/views/ErrorResources';
+import Error404 from "./Component/views/Error404";
+import ErrorResources from "./Component/views/ErrorResources";
 
 // burger menu components
-import Landing from './Component/views/Landing';
-import About from './Component/views/About';
-import HowTo from './Component/views/HowTo';
-import Play from './Component/views/Play';
-import Methods from './Component/views/Methods';
-import KeyTerms from './Component/views/KeyTerms';
-import Workshop from './Component/views/Workshop';
-import Theory from './Component/views/Theory';
-import Priorities from './Component/views/Priorities';
+import Landing from "./Component/views/Landing";
+import About from "./Component/views/About";
+import HowTo from "./Component/views/HowTo";
+import Play from "./Component/views/Play";
+import Methods from "./Component/views/Methods";
+import KeyTerms from "./Component/views/KeyTerms";
+import Workshop from "./Component/views/Workshop";
+import Theory from "./Component/views/Theory";
+import Priorities from "./Component/views/Priorities";
+import Summary from "./Component/views/Summary";
 
 class App extends Component {
   state = {};
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path="/workshop" component={Workshop} />
           <Route path="/theory" component={Theory} />
           <Route path="/priorities" component={Priorities} />
+          <Route path="/summary" component={Summary} />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
           <Redirect to="/error404" />
