@@ -10,6 +10,7 @@ class Methods extends Component {
   state = {
     resources: 15,
     redirect: false,
+    // redirectMoreResources: false,
   };
 
   // Removes resource points from total 'resources' if checkbox is checked
@@ -29,15 +30,26 @@ class Methods extends Component {
     });
   };
 
-  // checks remaining resources and triggers redirect to error page
+  // checks remaining resources and triggers redirect to error page if you've over spent
   errorOverSpend = () => {
     const { resources } = this.state;
-    if (resources > 0) {
+    if (resources < 0) {
       this.setState({
         redirect: true,
       });
     }
   };
+
+  // // checks remaining resources and triggers redirect to error page if you still have resources
+  // // left and you press next btn in footer
+  // errorRemainingResources = () => {
+  //   const { resources } = this.state;
+  //   if (resources > 0) {
+  //     this.setState({
+  //       redirectMoreResources: true,
+  //     });
+  //   }
+  // };
 
   // renders redirect if there are no resources left
   renderRedirect = () => {
@@ -97,7 +109,7 @@ class Methods extends Component {
           {resources}
         </RemainingResources>
 
-        <Footer backLink="/play" nextLink="/" reviewScenario methodBtn />
+        <Footer backLink="/play" nextLink="/" reviewScenario />
       </Fragment>
     );
   }

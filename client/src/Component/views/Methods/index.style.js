@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const RemainingResources = styled.div`
   margin: 2rem;
   font-size: 2rem;
@@ -30,4 +29,3 @@ export const PrevBtn = styled.div`
 export const NextBtn = styled(PrevBtn)`
   transform: rotate(90deg);
 `;
-
