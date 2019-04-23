@@ -32,6 +32,7 @@ class CardComponent extends Component {
       resourcePoints,
       chooseMethod,
       removeMethod,
+      resources,
     } = this.props;
 
     const { checked } = this.state;
@@ -95,62 +96,7 @@ class CardComponent extends Component {
     );
   }
 }
-// const CardComponent = props => {
-//   const { cardImg, cardTitle, resourcePoints, updateStateResources } = props;
 
-//   // looks at number of resource points and pushes as many stars to card
-//   const stars = points => {
-//     const starsCount = [];
-//     let counter = 0;
-//     while (points > counter) {
-//       // eslint-disable-next-line no-plusplus
-//       counter++;
-//       starsCount.push(
-//         <ResourceStars src={star} key={`resourceStars-${counter}`} />
-//       );
-//     }
-//     return starsCount;
-//   };
-
-//   const starsRender = stars(resourcePoints);
-
-//   return (
-//     <Fragment>
-//       <CardWrapper>
-//         {cardImg ? (
-//           <Img src={cardImg} alt="card logo" />
-//         ) : (
-//           <DefaultImg alt="default card image" />
-//         )}
-
-//         <Info>
-//           <CardTitle>{cardTitle}</CardTitle>
-//           <br />
-//           <MoreInfo to="./about"> Click for more info...</MoreInfo>
-//           <ResourcePoints>
-//             {resourcePoints} resource points
-//             <br />
-//           </ResourcePoints>
-//           <StarWrapper>{starsRender}</StarWrapper>
-//         </Info>
-//       </CardWrapper>
-
-//       <UseResource>
-//         <label htmlFor="method-checkbox">
-//           Use this resource:
-//           <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-//           <input
-//             id="method-checkbox"
-//             type="checkbox"
-//             onChange={event => {
-//               updateStateResources(resourcePoints, event);
-//             }}
-//           />
-//         </label>
-//       </UseResource>
-//     </Fragment>
-//   );
-// };
 
 CardComponent.propTypes = {
   cardImg: PropTypes.string,
@@ -158,6 +104,7 @@ CardComponent.propTypes = {
   resourcePoints: PropTypes.number.isRequired,
   chooseMethod: PropTypes.func.isRequired,
   removeMethod: PropTypes.func.isRequired,
+  resources: PropTypes.number.isRequired,
 };
 
 CardComponent.defaultProps = {

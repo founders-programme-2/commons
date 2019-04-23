@@ -26,7 +26,6 @@ class Methods extends Component {
       resources = nextState.resources + points;
       return { resources };
     });
-
   };
 
   render() {
@@ -45,10 +44,11 @@ class Methods extends Component {
         >
           <MethodCard
             cardTitle="Example Card 1"
-            resourcePoints={1}
+            resourcePoints={16}
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
+            resources={this.resources}
           />
 
           <MethodCard
@@ -57,6 +57,7 @@ class Methods extends Component {
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
+            resources={this.resources}
           />
 
           <MethodCard
@@ -65,6 +66,7 @@ class Methods extends Component {
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
+            resources={this.resources}
           />
         </Carousel>
         <Line />
