@@ -1,15 +1,14 @@
-import React from "react";
-import Header from "../../Common/Header";
-import Footer from "../../Common/Footer";
+import React from 'react';
+import Header from '../../Common/Header';
+import Timeline from '../../Timeline';
 import {
   ContentAbout,
   Description,
   Line,
-  TimelinePlaceholder,
   Subtitle,
   MethodResourceList,
-  MethodResource
-} from "./index.style";
+  MethodResource,
+} from './index.style';
 
 const Summary = props => {
   return (
@@ -34,8 +33,7 @@ const Summary = props => {
       </ContentAbout>
       <Line />
       <Subtitle>Your Action Plan</Subtitle>
-      <TimelinePlaceholder>I am the timeline</TimelinePlaceholder>
-      <Line />
+      <Timeline />
       <Subtitle>Resources</Subtitle>
       <MethodResourceList>
         <MethodResource>
