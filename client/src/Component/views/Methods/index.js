@@ -17,6 +17,7 @@ class Methods extends Component {
   updateStateResources = (points, event) => {
     let { resources } = this.state;
     const target = event.checked;
+    const { resourcePoints } = this.props;
 
     if (target) {
       this.setState(resourcePoints => {

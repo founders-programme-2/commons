@@ -23,6 +23,7 @@ class CardComponent extends Component {
   toggleCheckbox = (cb, resourcePoints, event) => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
+    
     cb(resourcePoints, event);
   };
 
