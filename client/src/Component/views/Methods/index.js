@@ -30,7 +30,7 @@ class Methods extends Component {
   };
 
   // checks remaining resources and triggers redirect to error page
-  checkRemainingResources = () => {
+  errorOverSpend = () => {
     const { resources } = this.state;
     if (resources > 0) {
       this.setState({
@@ -65,11 +65,11 @@ class Methods extends Component {
         >
           <MethodCard
             cardTitle="Example Card 1"
-            resourcePoints={16}
+            resourcePoints={1}
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
-            checkRemainingResources={this.checkRemainingResources}
+            errorOverSpend={this.errorOverSpend}
           />
 
           <MethodCard
@@ -78,7 +78,7 @@ class Methods extends Component {
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
-            checkRemainingResources={this.checkRemainingResources}
+            errorOverSpend={this.errorOverSpend}
           />
 
           <MethodCard
@@ -87,7 +87,7 @@ class Methods extends Component {
             cardImg={null}
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
-            checkRemainingResources={this.checkRemainingResources}
+            errorOverSpend={this.errorOverSpend}
           />
         </Carousel>
         <Line />
@@ -97,7 +97,7 @@ class Methods extends Component {
           {resources}
         </RemainingResources>
 
-        <Footer backLink="/play" nextLink="/" reviewScenario />
+        <Footer backLink="/play" nextLink="/" reviewScenario methodBtn />
       </Fragment>
     );
   }
