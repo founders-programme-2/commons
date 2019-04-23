@@ -6,7 +6,6 @@ const Persona = () => {
   return (
     <div>
       <Header headerImg={null} titleText="Selection your persona" />
-
       <Footer />
     </div>
   );
