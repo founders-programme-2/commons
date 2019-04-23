@@ -1,10 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import Carousel from 'nuka-carousel';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import Header from '../../Common/Header';
-import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
-import { RemainingResources, Line, PrevBtn, NextBtn } from './index.style';
+import {
+  RemainingResources,
+  Line,
+  PrevBtn,
+  NextBtn,
+  Footer,
+  FooterPrevious,
+  FooterNext,
+  BackToScenario,
+} from './index.style';
 
 class Methods extends Component {
   state = {
@@ -108,6 +116,13 @@ class Methods extends Component {
           Remaining resources: <span>&nbsp;</span>
           {resources}
         </RemainingResources>
+
+        <Line />
+        <Footer>
+          <FooterPrevious as={Link} to="./play" type="button" />
+          <BackToScenario>Review Scenario</BackToScenario>
+          <FooterNext as={Link} to="./" type="button" />
+        </Footer>
 
         <Footer backLink="/play" nextLink="/" reviewScenario />
       </Fragment>
