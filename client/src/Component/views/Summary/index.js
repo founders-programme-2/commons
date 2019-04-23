@@ -11,7 +11,7 @@ import {
   MethodResource
 } from "./index.style";
 
-const Summary = () => {
+const Summary = props => {
   return (
     <div>
       <Header headerImg={null} titleText="Selection Summary" />
@@ -21,11 +21,11 @@ const Summary = () => {
           selection.
         </Description>
         <Description>
-          A timeline representing from short- to long-term runs top to bottom.{" "}
+          A timeline representing from short- to long-term runs top to bottom.
         </Description>
         <Description>
           Your lowest prioritised tools are on the left of the graph while your
-          highest priorities are illustrated on the right.{" "}
+          highest priorities are illustrated on the right.
         </Description>
         <Description>
           Does your plan include methodologies from short-term to long-term?
