@@ -28,7 +28,7 @@ export const Info = styled.section`
   padding: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 5px 5px;
-  width: 22rem;
+  width: ${props => props.widthInfoCard || '22rem'}; 
   height: 13.5rem;
 `;
 
