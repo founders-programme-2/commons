@@ -7,6 +7,8 @@ export const TimelineTable = styled.table`
   text-align: center;
 `;
 
+export const CardContainer = styled.td``;
+
 export const ShortTerm = styled.tr`
   background-color: rgba(255, 199, 41, 0.25);
   height: 15rem;

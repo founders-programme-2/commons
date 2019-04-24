@@ -1,10 +1,11 @@
 import React from 'react';
 import { SmallCard, CardText } from './index.style';
 
-const TimelineCards = () => {
+const TimelineCards = props => {
+  const { name } = props;
   return (
     <SmallCard>
-      <CardText>Test</CardText>
+      <CardText>{name}</CardText>
     </SmallCard>
   );
 };
