@@ -123,8 +123,6 @@ class Methods extends Component {
           <BackToScenario>Review Scenario</BackToScenario>
           <FooterNext as={Link} to="./" type="button" />
         </Footer>
-
-        <Footer backLink="/play" nextLink="/" reviewScenario />
       </Fragment>
     );
   }
