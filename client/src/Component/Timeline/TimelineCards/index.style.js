@@ -12,8 +12,7 @@ export const SmallCard = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 2rem auto;
-
+  margin: 1rem;
 `;
 
 export const CardText = styled.p`

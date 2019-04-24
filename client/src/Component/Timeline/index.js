@@ -1,16 +1,25 @@
 import React from 'react';
 import arrowPath from '../../assets/arrow.svg';
 import {
-  ShortTerm,
-  MediumTerm,
-  LongTerm,
-  TimelineTable,
   Arrow,
-  CardContainer
+  ShortTermDiv,
+  MediumTermDiv,
+  LongTermDiv,
+  CardContainerDiv,
 } from './index.style';
 import TimelineCard from './TimelineCards';
 
 const exampleData = [
+  {
+    cardTitle: '1p1t',
+    priority: 1,
+    time: 1,
+  },
+  {
+    cardTitle: '1p1t',
+    priority: 1,
+    time: 1,
+  },
   {
     cardTitle: '1p1t',
     priority: 1,
@@ -40,25 +49,21 @@ const Timeline = props => {
   return (
     <div>
       <Arrow src={arrowPath} />
-      <TimelineTable>
-        <tbody>
-          <ShortTerm>
-            <CardContainer>{renderElements(1, 1)}</CardContainer>
-            <CardContainer>{renderElements(2, 1)}</CardContainer>
-            <CardContainer>{renderElements(3, 1)}</CardContainer>
-          </ShortTerm>
-          <MediumTerm>
-            <CardContainer>{renderElements(1, 2)}</CardContainer>
-            <CardContainer>{renderElements(2, 2)}</CardContainer>
-            <CardContainer>{renderElements(3, 2)}</CardContainer>
-          </MediumTerm>
-          <LongTerm>
-            <CardContainer>{renderElements(1, 3)}</CardContainer>
-            <CardContainer>{renderElements(2, 3)}</CardContainer>
-            <CardContainer>{renderElements(3, 3)}</CardContainer>
-          </LongTerm>
-        </tbody>
-      </TimelineTable>
+      <ShortTermDiv>
+        <CardContainerDiv>{renderElements(1, 1)}</CardContainerDiv>
+        <CardContainerDiv>{renderElements(2, 1)}</CardContainerDiv>
+        <CardContainerDiv>{renderElements(3, 1)}</CardContainerDiv>
+      </ShortTermDiv>
+      <MediumTermDiv>
+        <CardContainerDiv>{renderElements(1, 2)}</CardContainerDiv>
+        <CardContainerDiv>{renderElements(2, 2)}</CardContainerDiv>
+        <CardContainerDiv>{renderElements(3, 2)}</CardContainerDiv>
+      </MediumTermDiv>
+      <LongTermDiv>
+        <CardContainerDiv>{renderElements(1, 3)}</CardContainerDiv>
+        <CardContainerDiv>{renderElements(2, 3)}</CardContainerDiv>
+        <CardContainerDiv>{renderElements(3, 3)}</CardContainerDiv>
+      </LongTermDiv>
     </div>
   );
 };
