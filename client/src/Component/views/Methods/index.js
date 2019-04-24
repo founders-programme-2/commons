@@ -90,6 +90,7 @@ class Methods extends Component {
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
             errorOverSpend={this.errorOverSpend}
+            tools={false}
           />
 
           <MethodCard
@@ -99,6 +100,7 @@ class Methods extends Component {
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
             errorOverSpend={this.errorOverSpend}
+            tools={false}
           />
 
           <MethodCard
@@ -108,6 +110,7 @@ class Methods extends Component {
             chooseMethod={this.chooseMethod}
             removeMethod={this.removeMethod}
             errorOverSpend={this.errorOverSpend}
+            tools={false}
           />
         </Carousel>
         <Line />
