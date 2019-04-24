@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
@@ -11,14 +11,14 @@ import {
 
 const Footer = ({ nextLink, backLink, reviewScenario }) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <Line />
       <Buttons>
         <PreviousButton as={Link} to={backLink} type="button" />
         {reviewScenario && <BackToScenario>Review Scenario</BackToScenario>}
         {nextLink && <NextButton as={Link} to={nextLink} type="button" />}
       </Buttons>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
