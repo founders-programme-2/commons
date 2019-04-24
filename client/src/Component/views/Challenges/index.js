@@ -6,7 +6,9 @@ import challenges from '../../../fakeData/challenges';
 import { PulpIcon, BodyWrapper, Text } from '../HowTo/index.style';
 import challenge from '../../../assets/challenge.svg';
 
-const Challenges = () => {
+const Challenges = props => {
+  // eslint-disable-next-line no-unused-vars
+  const { fontSize } = props;
   return (
     <div>
       <Header headerImg={challenge} titleText=" Your challenge" />
@@ -16,7 +18,7 @@ const Challenges = () => {
             <PulpIcon>
               <FontAwesomeIcon icon="lightbulb" size="5x" />
             </PulpIcon>
-            <Text>{element.text}</Text>
+            <Text fontSize="1.8rem">{element.text}</Text>
           </BodyWrapper>
         );
       })}
