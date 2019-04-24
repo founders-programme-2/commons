@@ -4,7 +4,6 @@ import Footer from '../../Common/Footer';
 import { CardWrapper } from '../MethodCard/index.style';
 
 const Persona = () => {
-  // const { cardImg } = props
   return (
     <div>
       <Header headerImg={null} titleText="Selection your persona" />
