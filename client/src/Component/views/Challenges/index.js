@@ -7,7 +7,6 @@ import { PulpIcon, BodyWrapper, Text } from '../HowTo/index.style';
 import challenge from '../../../assets/challenge.svg';
 
 const Challenges = props => {
-  // eslint-disable-next-line no-unused-vars
   const { fontSize } = props;
   return (
     <div>
