@@ -32,9 +32,10 @@ class Methods extends Component {
           cardTitle={card.cardTitle}
           description={card.description}
           resourcePoints={card.resourcePoints}
-          cardImg={card.cardImage}
+          cardImg={card.cardImg}
           difficulty={card.difficulty}
           category={card.category}
+          requiredCards={card.requires}
           use={card.use}
           chooseMethod={this.chooseMethod}
           removeMethod={this.removeMethod}
