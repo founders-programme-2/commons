@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable jsx-a11y/label-has-for */
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
 import Header from '../../Common/Header';
