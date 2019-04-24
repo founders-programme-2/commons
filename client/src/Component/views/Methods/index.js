@@ -3,6 +3,7 @@ import Carousel from 'nuka-carousel';
 import { Redirect, Link } from 'react-router-dom';
 import Header from '../../Common/Header';
 import MethodCard from '../MethodCard';
+import methodCardData from '../../../fakeData/methodCardData';
 import {
   RemainingResources,
   Line,
@@ -18,7 +19,29 @@ class Methods extends Component {
   state = {
     resources: 15,
     redirect: false,
+    // selectedMethodCards: [],
     // redirectMoreResources: false,
+  };
+
+  // Renders method cards dynamically
+  renderMethodCards = () => {
+    return methodCardData.map(card => {
+      return (
+        <MethodCard
+          key={card.id}
+          cardTitle={card.cardTitle}
+          description={card.description}
+          resourcePoints={card.resourcePoints}
+          cardImg={card.cardImage}
+          difficulty={card.difficulty}
+          category={card.category}
+          use={card.use}
+          chooseMethod={this.chooseMethod}
+          removeMethod={this.removeMethod}
+          errorOverSpend={this.errorOverSpend}
+        />
+      );
+    });
   };
 
   // Removes resource points from total 'resources' if checkbox is checked
@@ -48,17 +71,6 @@ class Methods extends Component {
     }
   };
 
-  // // checks remaining resources and triggers redirect to error page if you still have resources
-  // // left and you press next btn in footer
-  // errorRemainingResources = () => {
-  //   const { resources } = this.state;
-  //   if (resources > 0) {
-  //     this.setState({
-  //       redirectMoreResources: true,
-  //     });
-  //   }
-  // };
-
   // renders redirect if there are no resources left
   renderRedirect = () => {
     const { redirect } = this.state;
@@ -83,32 +95,7 @@ class Methods extends Component {
             <NextBtn onClick={nextSlide}>.</NextBtn>
           )}
         >
-          <MethodCard
-            cardTitle="Example Card 1"
-            resourcePoints={1}
-            cardImg={null}
-            chooseMethod={this.chooseMethod}
-            removeMethod={this.removeMethod}
-            errorOverSpend={this.errorOverSpend}
-          />
-
-          <MethodCard
-            cardTitle="Example Card 2"
-            resourcePoints={2}
-            cardImg={null}
-            chooseMethod={this.chooseMethod}
-            removeMethod={this.removeMethod}
-            errorOverSpend={this.errorOverSpend}
-          />
-
-          <MethodCard
-            cardTitle="Example Card 3"
-            resourcePoints={3}
-            cardImg={null}
-            chooseMethod={this.chooseMethod}
-            removeMethod={this.removeMethod}
-            errorOverSpend={this.errorOverSpend}
-          />
+          {this.renderMethodCards()}
         </Carousel>
         <Line />
 
