@@ -8,7 +8,6 @@ import { Description } from './index.style';
 import { CardWrapper, Img, CardTitle, Info } from '../MethodCard/index.style';
 import Button from '../../Common/Button';
 import PersonaData from '../../../fakeData/persona';
-import PropTypes from 'prop-types';
 
 class Persona extends Component {
   state = {
@@ -26,21 +25,12 @@ class Persona extends Component {
   };
 
   render() {
-    const {
-      heightCard,
-      heightImg,
-      textAlign,
-      heightInfoCard,
-      widthtCard,
-      buttonText,
-    } = this.props;
-  
     return (
       <div>
         <Header headerImg={null} titleText="Selection your persona" />
         <div>
           <Carousel
-            slideIndex={this.state.slideIndex}
+            slideIndex={this.slideIndex}
             afterSlide={this.afterSlide}
             enableKeyboardControls
             renderCenterLeftControls={({ previousSlide }) => (
