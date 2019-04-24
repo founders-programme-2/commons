@@ -14,21 +14,23 @@ const Timeline = props => {
     <div>
       <Arrow src={arrowPath} />
       <TimelineTable>
-        <ShortTerm>
-          <td />
-          <td />
-          <td />
-        </ShortTerm>
-        <MediumTerm>
-          <td />
-          <td />
-          <td />
-        </MediumTerm>
-        <LongTerm>
-          <td />
-          <td />
-          <td />
-        </LongTerm>
+        <tbody>
+          <ShortTerm>
+            <td />
+            <td />
+            <td />
+          </ShortTerm>
+          <MediumTerm>
+            <td />
+            <td />
+            <td />
+          </MediumTerm>
+          <LongTerm>
+            <td />
+            <td />
+            <td />
+          </LongTerm>
+        </tbody>
       </TimelineTable>
     </div>
   );
