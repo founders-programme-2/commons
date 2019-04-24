@@ -18,7 +18,9 @@ import Theory from './Component/views/Theory';
 import Priorities from './Component/views/Priorities';
 
 class App extends Component {
-  state = {};
+  state = {
+    selectedMethods: []
+  };
 
   render() {
     return (
