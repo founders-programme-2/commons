@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const CardWrapper = styled.section`
   background: var(--background-color);
   border-radius: 5px 5px 5px 5px;
-  height: 27rem;
+  height: ${props => props.height || '27rem'};
   width: 22rem;
   display: flex;
   flex-direction: column;
