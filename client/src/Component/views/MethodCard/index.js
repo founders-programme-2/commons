@@ -11,6 +11,15 @@ import {
   CardTitle,
   StarWrapper,
   UseResource,
+  Line,
+  Title,
+  FormWrap,
+  RadioWrap,
+  Input,
+  TimelineWrap,
+  Label,
+  Span,
+  LightSpan,
 } from './index.style';
 import star from '../../../assets/star.svg';
 
@@ -34,6 +43,7 @@ class CardComponent extends Component {
       removeMethod,
       errorOverSpend,
       tools,
+      priority,
     } = this.props;
 
     const { checked } = this.state;
@@ -74,7 +84,7 @@ class CardComponent extends Component {
           </Info>
         </CardWrapper>
 
-        {!tools ? (
+        {!tools && !priority ? (
           <UseResource>
             <label htmlFor="method-checkbox">
               Use this resource:
@@ -97,6 +107,59 @@ class CardComponent extends Component {
             </label>
           </UseResource>
         ) : null}
+        {tools && priority ? (
+          <Fragment>
+            <div>
+              <Title>Prioritize:</Title>
+              <Line />
+              <FormWrap>
+                <RadioWrap>
+                  <Label htmlFor="low">
+                    <Input type="radio" id="low" name="choose" />
+                    Low
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="medium">
+                    <Input type="radio" id="medium" name="choose" />
+                    Medium
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="high">
+                    <Input type="radio" id="high" name="choose" />
+                    High
+                  </Label>
+                </RadioWrap>
+              </FormWrap>
+            </div>
+            <Line />
+            <TimelineWrap>
+              <Title>Timeline of implementation:</Title>
+              <Line />
+              <FormWrap>
+                <RadioWrap>
+                  <Label htmlFor="short">
+                    <Input type="radio" id="short" name="time-choose" />
+                    <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="mid">
+                    <Input type="radio" id="mid" name="time-choose" />
+                    <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="long">
+                    <Input type="radio" id="long" name="time-choose" />
+                    <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
+                  </Label>
+                </RadioWrap>
+              </FormWrap>
+            </TimelineWrap>
+          </Fragment>
+        ) : null}
       </Fragment>
     );
   }
@@ -110,6 +173,7 @@ CardComponent.propTypes = {
   removeMethod: PropTypes.func,
   errorOverSpend: PropTypes.func,
   tools: PropTypes.bool.isRequired,
+  priority: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
