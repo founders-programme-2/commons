@@ -1,6 +1,6 @@
 /* Fonts */
 
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900|Open+Sans");
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900|Open+Sans');
 
 *,
 *::after,
@@ -17,18 +17,18 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   box-sizing: border-box;
   padding: 2rem;
 }
 
 h1 {
-  font-size: 3.6rem
+  font-size: 3.6rem;
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
 }
 
@@ -36,10 +36,10 @@ p {
   --background-color: #fff;
   --heading-color: #000000;
   --paragraph-color: #000000;
-  --button-background-color: #ffc729;
+  --button-background-color: #faa634;
   --button-text-color: #5b5b68;
   --line-color: #faa634;
   --border-color: #fff;
   --highlight-color: #e882a8;
-  --arrow-color: #FFBF3E;
+  --arrow-color: #ffbf3e;
 }
