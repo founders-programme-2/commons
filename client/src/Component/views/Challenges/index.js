@@ -1,13 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import challenges from '../../../fakeData/challenges';
 import { PulpIcon, BodyWrapper, Text } from '../HowTo/index.style';
 import challenge from '../../../assets/challenge.svg';
 
-const Challenges = props => {
-  const { fontSize } = props;
+const Challenges = () => {
+  // const { fontSize } = props;
   return (
     <div>
       <Header headerImg={challenge} titleText=" Your challenge" />
@@ -24,6 +25,9 @@ const Challenges = props => {
       <Footer backLink="/" nextLink="/" reviewScenario={false} />
     </div>
   );
+};
+Text.propTypes = {
+  fontSize: PropTypes.string,
 };
 
 export default Challenges;
