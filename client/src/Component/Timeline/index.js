@@ -2,12 +2,12 @@ import React from 'react';
 import arrowPath from '../../assets/arrow.svg';
 import {
   ShortTerm,
-  test,
   MediumTerm,
   LongTerm,
   TimelineTable,
   Arrow,
 } from './index.style';
+import TimelineCard from './TimelineCards';
 
 const Timeline = props => {
   return (
@@ -16,7 +16,10 @@ const Timeline = props => {
       <TimelineTable>
         <tbody>
           <ShortTerm>
-            <td />
+            <td>
+              {' '}
+              <TimelineCard />
+            </td>
             <td />
             <td />
           </ShortTerm>
