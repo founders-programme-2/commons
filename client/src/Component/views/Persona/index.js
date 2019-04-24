@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
+import { PrevBtn, NextBtn } from '../Methods/index.style';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import { Description } from './index.style';
@@ -12,12 +13,20 @@ const Persona = props => {
   return (
     <div>
       <Header headerImg={null} titleText="Selection your persona" />
-      <Carousel>
+      <Carousel
+        enableKeyboardControls
+        renderCenterLeftControls={({ previousSlide }) => (
+          <PrevBtn onClick={previousSlide}>.</PrevBtn>
+        )}
+        renderCenterRightControls={({ nextSlide }) => (
+          <NextBtn onClick={nextSlide}>.</NextBtn>
+        )}
+      >
         {PersonaData.map(element => {
           return (
             <CardWrapper
               heightCard="45.5rem"
-              widthtCard="25rem"
+              widthtCard="20rem"
               key={element.id}
             >
               <Img heightImg="19.6rem" src={element.img} alt="PersonImg" />
@@ -27,7 +36,7 @@ const Persona = props => {
               </Info>
             </CardWrapper>
           );
-      })}
+        })}
       </Carousel>
       <Button buttonText="Choose" />
       <Footer backLink="/yourScenario" nextLink="/" reviewScenario={false} />
