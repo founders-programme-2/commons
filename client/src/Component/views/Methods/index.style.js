@@ -53,7 +53,7 @@ export const FooterNext = styled(FooterPrevious)`
 `;
 
 export const BackToScenario = styled.button`
-  background: #faa634;
+  background: var(--button-background-color);
   height: 4.9rem;
   width: 12.5rem;
   border: none;
