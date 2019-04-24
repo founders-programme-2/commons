@@ -33,6 +33,7 @@ class CardComponent extends Component {
       chooseMethod,
       removeMethod,
       errorOverSpend,
+      tools,
     } = this.props;
 
     const { checked } = this.state;
@@ -73,27 +74,29 @@ class CardComponent extends Component {
           </Info>
         </CardWrapper>
 
-        <UseResource>
-          <label htmlFor="method-checkbox">
-            Use this resource:
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <input
-              id="method-checkbox"
-              type="checkbox"
-              checked={checked}
-              onChange={event => {
-                this.toggleCheckbox(event);
-                if (checked === false) {
-                  removeMethod(resourcePoints, event);
-                  errorOverSpend();
-                } else if (checked === true) {
-                  chooseMethod(resourcePoints, event);
-                  errorOverSpend();
-                }
-              }}
-            />
-          </label>
-        </UseResource>
+        {!tools ? (
+          <UseResource>
+            <label htmlFor="method-checkbox">
+              Use this resource:
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <input
+                id="method-checkbox"
+                type="checkbox"
+                checked={checked}
+                onChange={event => {
+                  this.toggleCheckbox(event);
+                  if (checked === false) {
+                    removeMethod(resourcePoints, event);
+                    errorOverSpend();
+                  } else if (checked === true) {
+                    chooseMethod(resourcePoints, event);
+                    errorOverSpend();
+                  }
+                }}
+              />
+            </label>
+          </UseResource>
+        ) : null}
       </Fragment>
     );
   }
@@ -103,13 +106,17 @@ CardComponent.propTypes = {
   cardImg: PropTypes.string,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
-  chooseMethod: PropTypes.func.isRequired,
-  removeMethod: PropTypes.func.isRequired,
-  errorOverSpend: PropTypes.func.isRequired,
+  chooseMethod: PropTypes.func,
+  removeMethod: PropTypes.func,
+  errorOverSpend: PropTypes.func,
+  tools: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
   cardImg: PropTypes.bool,
+  chooseMethod: PropTypes.bool,
+  removeMethod: PropTypes.bool,
+  errorOverSpend: PropTypes.bool,
 };
 
 export default CardComponent;
