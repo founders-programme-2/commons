@@ -51,20 +51,20 @@ class PrioritiesTools extends Component {
             <Line />
             <FormWrap>
               <RadioWrap>
-                <Label htmlFor="Low">
-                  <Input type="radio" id="Low" name="choose" />
+                <Label htmlFor="low">
+                  <Input type="radio" id="low" name="choose" />
                   Low
                 </Label>
               </RadioWrap>
               <RadioWrap>
-                <Label htmlFor="Medium">
-                  <Input type="radio" id="Medium" name="choose" />
+                <Label htmlFor="medium">
+                  <Input type="radio" id="medium" name="choose" />
                   Medium
                 </Label>
               </RadioWrap>
               <RadioWrap>
-                <Label htmlFor="High">
-                  <Input type="radio" id="High" name="choose" />
+                <Label htmlFor="high">
+                  <Input type="radio" id="high" name="choose" />
                   High
                 </Label>
               </RadioWrap>
@@ -76,20 +76,20 @@ class PrioritiesTools extends Component {
             <Line />
             <FormWrap>
               <RadioWrap>
-                <Label htmlFor="Low">
-                  <Input type="radio" id="Low" name="choose" />
+                <Label htmlFor="short">
+                  <Input type="radio" id="short" name="time-choose" />
                   <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
                 </Label>
               </RadioWrap>
               <RadioWrap>
-                <Label htmlFor="Medium">
-                  <Input type="radio" id="Medium" name="choose" />
+                <Label htmlFor="mid">
+                  <Input type="radio" id="mid" name="time-choose" />
                   <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
                 </Label>
               </RadioWrap>
               <RadioWrap>
-                <Label htmlFor="High">
-                  <Input type="radio" id="High" name="choose" />
+                <Label htmlFor="long">
+                  <Input type="radio" id="long" name="time-choose" />
                   <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
                 </Label>
               </RadioWrap>
