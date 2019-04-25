@@ -42,8 +42,8 @@ class Persona extends Component {
             {PersonaData.map(element => {
               return (
                 <CardWrapper
-                  heightCard="60.5rem"
-                  widthtCard="20rem"
+                  heightCard="50.5rem"
+                  widthtCard="22rem"
                   key={element.id}
                 >
                   <Img heightImg="19.6rem" src={element.img} alt="PersonImg" />
