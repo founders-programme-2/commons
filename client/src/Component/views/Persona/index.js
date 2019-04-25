@@ -6,7 +6,6 @@ import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import { Description } from './index.style';
 import { CardWrapper, Img, CardTitle, Info } from '../MethodCard/index.style';
-import Button from '../../Common/Button';
 import PersonaData from '../../../fakeData/persona';
 
 class Persona extends Component {
@@ -52,7 +51,6 @@ class Persona extends Component {
                     <CardTitle textAlign="center">{element.title}</CardTitle>
                     <Description>{element.text}</Description>
                   </Info>
-                  <Button buttonText="Choose" onClick={this.handelIndexSlide} />
                 </CardWrapper>
               );
             })}
