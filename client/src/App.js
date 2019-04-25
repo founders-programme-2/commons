@@ -77,7 +77,18 @@ class App extends Component {
           <Route path="/workshop" component={Workshop} />
           <Route path="/theory" component={Theory} />
           <Route path="/priorities" component={Priorities} />
-          <Route path="/priority-tools" component={PrioritiesTools} />
+          <Route
+            path="/priority-tools"
+            render={props => (
+              <PrioritiesTools
+                toggleCheckbox={this.toggleCheckbox}
+                handleSelectedPriority={this.handleSelectedPriority}
+                handleSelectedTime={this.handleSelectedTime}
+                {...props}
+                {...this.state}
+              />
+            )}
+          />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
           <Route
