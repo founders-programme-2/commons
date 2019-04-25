@@ -26,12 +26,36 @@ import star from '../../../assets/star.svg';
 class CardComponent extends Component {
   state = {
     checked: false,
+    selectedPriority: 'low',
+    selectedTime: 'short',
   };
 
   // toggles checkbox on click
   toggleCheckbox = event => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
+  };
+
+  handleSelectedPriority = event => {
+    this.setState(
+      {
+        selectedPriority: event.target.value,
+      },
+      () => {
+        console.log(this.state.selectedPriority, 111111111);
+      }
+    );
+  };
+
+  handleSelectedTime = event => {
+    this.setState(
+      {
+        selectedTime: event.target.value,
+      },
+      () => {
+        console.log(this.state.selectedTime), 2222222222;
+      }
+    );
   };
 
   render() {
@@ -51,7 +75,7 @@ class CardComponent extends Component {
       priority,
     } = this.props;
 
-    const { checked } = this.state;
+    const { checked, selectedPriority, selectedTime } = this.state;
 
     // looks at number of resource points and pushes as many stars to card
     const stars = points => {
@@ -127,19 +151,40 @@ class CardComponent extends Component {
               <FormWrap>
                 <RadioWrap>
                   <Label htmlFor="low">
-                    <Input type="radio" id="low" name="choose" />
+                    <Input
+                      type="radio"
+                      id="low"
+                      name="choose"
+                      value="low"
+                      checked={selectedPriority === 'low'}
+                      onChange={this.handleSelectedPriority}
+                    />
                     Low
                   </Label>
                 </RadioWrap>
                 <RadioWrap>
                   <Label htmlFor="medium">
-                    <Input type="radio" id="medium" name="choose" />
+                    <Input
+                      type="radio"
+                      id="medium"
+                      name="choose"
+                      value="medium"
+                      checked={selectedPriority === 'medium'}
+                      onChange={this.handleSelectedPriority}
+                    />
                     Medium
                   </Label>
                 </RadioWrap>
                 <RadioWrap>
                   <Label htmlFor="high">
-                    <Input type="radio" id="high" name="choose" />
+                    <Input
+                      type="radio"
+                      id="high"
+                      name="choose"
+                      value="high"
+                      checked={selectedPriority === 'high'}
+                      onChange={this.handleSelectedPriority}
+                    />
                     High
                   </Label>
                 </RadioWrap>
@@ -152,19 +197,40 @@ class CardComponent extends Component {
               <FormWrap>
                 <RadioWrap>
                   <Label htmlFor="short">
-                    <Input type="radio" id="short" name="time-choose" />
+                    <Input
+                      type="radio"
+                      id="short"
+                      name="time-choose"
+                      value="short"
+                      checked={selectedTime === 'short'}
+                      onChange={this.handleSelectedTime}
+                    />
                     <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
                   </Label>
                 </RadioWrap>
                 <RadioWrap>
                   <Label htmlFor="mid">
-                    <Input type="radio" id="mid" name="time-choose" />
+                    <Input
+                      type="radio"
+                      id="mid"
+                      name="time-choose"
+                      value="mid"
+                      checked={selectedTime === 'mid'}
+                      onChange={this.handleSelectedTime}
+                    />
                     <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
                   </Label>
                 </RadioWrap>
                 <RadioWrap>
                   <Label htmlFor="long">
-                    <Input type="radio" id="long" name="time-choose" />
+                    <Input
+                      type="radio"
+                      id="long"
+                      name="time-choose"
+                      value="long"
+                      checked={selectedTime === 'long'}
+                      onChange={this.handleSelectedTime}
+                    />
                     <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
                   </Label>
                 </RadioWrap>
