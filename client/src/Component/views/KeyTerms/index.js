@@ -2,22 +2,25 @@ import React from 'react';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import key from '../../../assets/key.svg';
-import logo from '../../../assets/logo.svg';
-import { WrapperTitlte, Img, Paragraph } from './index.style';
+import { WrapperTitlte, Img, Paragraph, Title } from './index.style';
+import keyTerms from '../../../fakeData/keyTerms';
+
 
 const KeyTerms = () => {
   return (
     <div>
       <Header headerImg={key} titleText="Key Terms" />
-      <WrapperTitlte>
-        <Img src={logo} alt="keyhub" />
-        <h1>Hub</h1>
-      </WrapperTitlte>
-      <Paragraph>
-        An organising group that may have access to a physical space that
-        fosters communication and collaboration.An example might be a community
-        center or a charity with an office
-      </Paragraph>
+      {keyTerms.map(elements => {
+        return (
+          <div>
+            <WrapperTitlte>
+              <Img src={elements.img} alt="keyhub" key={elements.id} />
+              <Title>{elements.title}</Title>
+            </WrapperTitlte>
+            <Paragraph>{elements.content}</Paragraph>
+          </div>
+        );
+      })}
       <Footer />
     </div>
   );
