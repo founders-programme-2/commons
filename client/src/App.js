@@ -19,6 +19,7 @@ import Persona from './Component/views/Persona';
 import YourScenario from './Component/views/YourScenario';
 import Priorities from './Component/views/Priorities';
 import Challenges from './Component/views/Challenges';
+import PrioritiesTools from './Component/views/PrioritiesTools';
 
 class App extends Component {
   state = {};
@@ -39,6 +40,7 @@ class App extends Component {
           <Route path="/persona" component={Persona} />
           <Route path="/priorities" component={Priorities} />
           <Route path="/challenges" component={Challenges} />
+          <Route path="/priority-tools" component={PrioritiesTools} />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
           <Route
