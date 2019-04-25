@@ -12,3 +12,8 @@ export const Img = styled.img`
   margin-right: 1rem;
 `;
 
+export const Paragraph = styled.p`
+  font-size: 1.5rem;
+  font-family: 'Open Sans';
+  text-align: center;
+`;
