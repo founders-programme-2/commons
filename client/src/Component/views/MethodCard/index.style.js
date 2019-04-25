@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 export const CardWrapper = styled.section`
   background: var(--background-color);
   border-radius: 5px 5px 5px 5px;
-  height: 27rem;
   width: 22rem;
   display: flex;
   flex-direction: column;
-  margin: 3rem auto;
+  margin: 2rem auto;
+  padding: 2rem 0;
+`;
+
+export const InfoText = styled.p`
+  display: inline;
 `;
 
 export const Img = styled.img`
@@ -29,7 +33,7 @@ export const Info = styled.section`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 5px 5px;
   width: 22rem;
-  height: 13.5rem;
+  height: auto;
 `;
 
 export const CardTitle = styled.h2`
@@ -65,4 +69,53 @@ export const UseResource = styled.form`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+`;
+
+export const Line = styled.div`
+  display: block;
+  border: 0.3rem solid #faa634;
+  border-radius: 1rem;
+`;
+
+export const Title = styled.h1`
+  font-size: 2.5rem;
+  padding: 0.5rem;
+`;
+
+export const FormWrap = styled.form`
+  font-size: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+
+export const RadioWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Input = styled.input`
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+`;
+
+export const TimelineWrap = styled.div`
+  margin-top: 1rem;
+`;
+
+export const Label = styled.label`
+  font-family: 'Open Sans';
+  font-size: 2rem;
+`;
+
+export const Span = styled.span`
+  display: block;
+`;
+
+export const LightSpan = styled.span`
+  font-size: 1.7rem;
+  font-weight: 400;
 `;
