@@ -24,39 +24,7 @@ import {
 import star from '../../../assets/star.svg';
 
 class CardComponent extends Component {
-  state = {
-    checked: false,
-    selectedPriority: 'low',
-    selectedTime: 'short',
-  };
-
-  // toggles checkbox on click
-  toggleCheckbox = event => {
-    const { checked } = this.state;
-    this.setState({ checked: !checked });
-  };
-
-  handleSelectedPriority = event => {
-    this.setState(
-      {
-        selectedPriority: event.target.value,
-      },
-      () => {
-        console.log(this.state.selectedPriority, 111111111);
-      }
-    );
-  };
-
-  handleSelectedTime = event => {
-    this.setState(
-      {
-        selectedTime: event.target.value,
-      },
-      () => {
-        console.log(this.state.selectedTime), 2222222222;
-      }
-    );
-  };
+  state = {};
 
   render() {
     const {
@@ -73,9 +41,15 @@ class CardComponent extends Component {
       difficulty,
       tools,
       priority,
+      toggleCheckbox,
+      handleSelectedPriority,
+      handleSelectedTime,
+      selectedPriority,
+      selectedTime,
+      checked,
     } = this.props;
 
-    const { checked, selectedPriority, selectedTime } = this.state;
+    // const { checked, selectedPriority, selectedTime } = this.state;
 
     // looks at number of resource points and pushes as many stars to card
     const stars = points => {
@@ -130,7 +104,7 @@ class CardComponent extends Component {
                 type="checkbox"
                 checked={checked}
                 onChange={event => {
-                  this.toggleCheckbox(event);
+                  toggleCheckbox(event);
                   if (checked === false) {
                     removeMethod(resourcePoints, event);
                     errorOverSpend();
@@ -157,7 +131,7 @@ class CardComponent extends Component {
                       name="choose"
                       value="low"
                       checked={selectedPriority === 'low'}
-                      onChange={this.handleSelectedPriority}
+                      onChange={() => handleSelectedPriority}
                     />
                     Low
                   </Label>
@@ -170,7 +144,7 @@ class CardComponent extends Component {
                       name="choose"
                       value="medium"
                       checked={selectedPriority === 'medium'}
-                      onChange={this.handleSelectedPriority}
+                      onChange={() => handleSelectedPriority}
                     />
                     Medium
                   </Label>
@@ -183,7 +157,7 @@ class CardComponent extends Component {
                       name="choose"
                       value="high"
                       checked={selectedPriority === 'high'}
-                      onChange={this.handleSelectedPriority}
+                      onChange={() => handleSelectedPriority}
                     />
                     High
                   </Label>
@@ -203,7 +177,7 @@ class CardComponent extends Component {
                       name="time-choose"
                       value="short"
                       checked={selectedTime === 'short'}
-                      onChange={this.handleSelectedTime}
+                      onChange={() => handleSelectedTime}
                     />
                     <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
                   </Label>
@@ -216,7 +190,7 @@ class CardComponent extends Component {
                       name="time-choose"
                       value="mid"
                       checked={selectedTime === 'mid'}
-                      onChange={this.handleSelectedTime}
+                      onChange={() => handleSelectedTime}
                     />
                     <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
                   </Label>
@@ -229,7 +203,7 @@ class CardComponent extends Component {
                       name="time-choose"
                       value="long"
                       checked={selectedTime === 'long'}
-                      onChange={this.handleSelectedTime}
+                      onChange={() => handleSelectedTime}
                     />
                     <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
                   </Label>
