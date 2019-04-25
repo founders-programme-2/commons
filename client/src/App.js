@@ -16,6 +16,7 @@ import KeyTerms from './Component/views/KeyTerms';
 import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
 import Priorities from './Component/views/Priorities';
+import PrioritiesTools from './Component/views/PrioritiesTools';
 
 class App extends Component {
   state = {};
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path="/workshop" component={Workshop} />
           <Route path="/theory" component={Theory} />
           <Route path="/priorities" component={Priorities} />
+          <Route path="/priority-tools" component={PrioritiesTools} />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
           <Route
