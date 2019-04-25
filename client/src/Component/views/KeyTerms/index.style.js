@@ -6,4 +6,9 @@ export const WrapperTitlte = styled.div`
   justify-content: center;
   flex-direction: row;
 `;
+export const Img = styled.img`
+  height: 4rem;
+  width: 4rem;
+  margin-right: 1rem;
+`;
 
