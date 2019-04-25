@@ -10,6 +10,14 @@ class PrioritiesTools extends Component {
   state = {};
 
   render() {
+    const {
+      toggleCheckbox,
+      selectedPriority,
+      selectedTime,
+      handleSelectedPriority,
+      handleSelectedTime,
+      checked,
+    } = this.props;
     return (
       <div>
         <Header headerImg={null} titleText="Prioritize your tools" />
@@ -40,6 +48,12 @@ class PrioritiesTools extends Component {
                   errorOverSpend={null}
                   tools
                   priority
+                  toggleCheckbox={toggleCheckbox}
+                  handleSelectedPriority={handleSelectedPriority}
+                  handleSelectedTime={handleSelectedTime}
+                  selectedPriority={selectedPriority}
+                  selectedTime={selectedTime}
+                  checked={checked}
                 />
               );
             })}
