@@ -12,7 +12,11 @@ const Priorities = () => {
         These are some notes on priorities and timelining & instructions for the
         next step.
       </Text>
-      <Footer backLink="/methods" nextLink="/" reviewScenario={null} />
+      <Footer
+        backLink="/methods"
+        nextLink="/priority-tools"
+        reviewScenario={null}
+      />
     </div>
   );
 };
