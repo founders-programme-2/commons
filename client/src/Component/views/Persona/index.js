@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
-import Swal from 'sweetalert2';
 import { PrevBtn, NextBtn } from '../Methods/index.style';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
@@ -15,12 +14,6 @@ class Persona extends Component {
 
   afterSlide = slideIndex => {
     this.setState({ slideIndex });
-  };
-
-  handelIndexSlide = () => {
-    const { slideIndex } = this.state;
-    this.setState({ slideIndex: !slideIndex });
-    Swal.fire('you select this persona');
   };
 
   render() {
