@@ -19,11 +19,18 @@ class Methods extends Component {
   state = {
     resources: 15,
     redirect: false,
-    // redirectMoreResources: false,
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
+    const {
+      toggleCheckbox,
+      selectedPriority,
+      selectedTime,
+      handleSelectedPriority,
+      handleSelectedTime,
+      checked,
+    } = this.props;
     return methodCardData.map(card => {
       return (
         <MethodCard
@@ -41,6 +48,12 @@ class Methods extends Component {
           errorOverSpend={this.errorOverSpend}
           tools={false}
           priority={false}
+          toggleCheckbox={toggleCheckbox}
+          handleSelectedPriority={handleSelectedPriority}
+          handleSelectedTime={handleSelectedTime}
+          selectedPriority={selectedPriority}
+          selectedTime={selectedTime}
+          checked={checked}
         />
       );
     });
@@ -84,6 +97,7 @@ class Methods extends Component {
 
   render() {
     const { resources } = this.state;
+    console.log(this.props);
     return (
       <Fragment>
         {this.renderRedirect()}
