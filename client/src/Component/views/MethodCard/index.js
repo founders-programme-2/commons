@@ -131,7 +131,7 @@ class CardComponent extends Component {
                       name="choose"
                       value="low"
                       checked={selectedPriority === 'low'}
-                      onChange={() => handleSelectedPriority}
+                      onChange={event => handleSelectedPriority(event)}
                     />
                     Low
                   </Label>
@@ -144,7 +144,7 @@ class CardComponent extends Component {
                       name="choose"
                       value="medium"
                       checked={selectedPriority === 'medium'}
-                      onChange={() => handleSelectedPriority}
+                      onChange={event => handleSelectedPriority(event)}
                     />
                     Medium
                   </Label>
@@ -157,7 +157,7 @@ class CardComponent extends Component {
                       name="choose"
                       value="high"
                       checked={selectedPriority === 'high'}
-                      onChange={() => handleSelectedPriority}
+                      onChange={event => handleSelectedPriority(event)}
                     />
                     High
                   </Label>
@@ -177,7 +177,7 @@ class CardComponent extends Component {
                       name="time-choose"
                       value="short"
                       checked={selectedTime === 'short'}
-                      onChange={() => handleSelectedTime}
+                      onChange={event => handleSelectedTime(event)}
                     />
                     <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
                   </Label>
@@ -190,7 +190,7 @@ class CardComponent extends Component {
                       name="time-choose"
                       value="mid"
                       checked={selectedTime === 'mid'}
-                      onChange={() => handleSelectedTime}
+                      onChange={event => handleSelectedTime(event)}
                     />
                     <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
                   </Label>
@@ -203,7 +203,7 @@ class CardComponent extends Component {
                       name="time-choose"
                       value="long"
                       checked={selectedTime === 'long'}
-                      onChange={() => handleSelectedTime}
+                      onChange={event => handleSelectedTime(event)}
                     />
                     <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
                   </Label>
