@@ -19,7 +19,39 @@ import Priorities from './Component/views/Priorities';
 import PrioritiesTools from './Component/views/PrioritiesTools';
 
 class App extends Component {
-  state = {};
+  state = {
+    checked: false,
+    selectedPriority: 'low',
+    selectedTime: 'short',
+  };
+
+  // toggles checkbox on click
+  toggleCheckbox = event => {
+    const { checked } = this.state;
+    this.setState({ checked: !checked });
+  };
+
+  handleSelectedPriority = event => {
+    this.setState(
+      {
+        selectedPriority: event.target.value,
+      },
+      () => {
+        // console.log(this.state.selectedPriority, 111111111);
+      }
+    );
+  };
+
+  handleSelectedTime = event => {
+    this.setState(
+      {
+        selectedTime: event.target.value,
+      },
+      () => {
+        // console.log(this.state.selectedTime), 2222222222;
+      }
+    );
+  };
 
   render() {
     return (
@@ -29,7 +61,18 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route path="/howTo" component={HowTo} />
           <Route path="/play" component={Play} />
-          <Route path="/methods" component={Methods} />
+          <Route
+            path="/methods"
+            render={props => (
+              <Methods
+                toggleCheckbox={this.toggleCheckbox}
+                handleSelectedPriority={this.handleSelectedPriority}
+                handleSelectedTime={this.handleSelectedTime}
+                {...props}
+                {...this.state}
+              />
+            )}
+          />
           <Route path="/keyTerms" component={KeyTerms} />
           <Route path="/workshop" component={Workshop} />
           <Route path="/theory" component={Theory} />
