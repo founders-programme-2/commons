@@ -43,7 +43,7 @@ class Persona extends Component {
             {PersonaData.map(element => {
               return (
                 <CardWrapper
-                  heightCard="45.5rem"
+                  heightCard="60.5rem"
                   widthtCard="20rem"
                   key={element.id}
                 >
