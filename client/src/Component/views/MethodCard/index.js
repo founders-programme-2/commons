@@ -4,13 +4,13 @@ import {
   CardWrapper,
   Img,
   Info,
-  MoreInfo,
   DefaultImg,
   ResourcePoints,
   ResourceStars,
   CardTitle,
   StarWrapper,
   UseResource,
+  InfoText,
   Line,
   Title,
   FormWrap,
@@ -42,6 +42,11 @@ class CardComponent extends Component {
       chooseMethod,
       removeMethod,
       errorOverSpend,
+      description,
+      requiredCards,
+      use,
+      category,
+      difficulty,
       tools,
       priority,
     } = this.props;
@@ -66,16 +71,24 @@ class CardComponent extends Component {
     return (
       <Fragment>
         <CardWrapper>
-          {cardImg ? (
+          {cardImg === null ? (
             <Img src={cardImg} alt="card logo" />
           ) : (
             <DefaultImg alt="default card image" />
           )}
-
           <Info>
             <CardTitle>{cardTitle}</CardTitle>
             <br />
-            <MoreInfo to="./about"> Click for more info...</MoreInfo>
+            <InfoText>{description}</InfoText>
+            <br />
+            <br />
+            Requires: <InfoText>{requiredCards}</InfoText>
+            <br />
+            Difficulty: <InfoText>{difficulty}</InfoText>
+            <br />
+            Used by: <InfoText>{use}</InfoText>
+            <br />
+            Category: <InfoText>{category}</InfoText>
             <ResourcePoints>
               {resourcePoints} resource points
               <br />
@@ -166,18 +179,28 @@ class CardComponent extends Component {
 }
 
 CardComponent.propTypes = {
-  cardImg: PropTypes.string,
+  cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
   chooseMethod: PropTypes.func,
   removeMethod: PropTypes.func,
   errorOverSpend: PropTypes.func,
+  key: PropTypes.number,
+  description: PropTypes.string.isRequired,
+  difficulty: PropTypes.string,
+  requiredCards: PropTypes.string,
+  use: PropTypes.string,
+  category: PropTypes.string.isRequired,
   tools: PropTypes.bool.isRequired,
   priority: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
   cardImg: PropTypes.bool,
+  key: PropTypes.bool,
+  difficulty: PropTypes.bool,
+  requiredCards: PropTypes.bool,
+  use: PropTypes.bool,
   chooseMethod: PropTypes.bool,
   removeMethod: PropTypes.bool,
   errorOverSpend: PropTypes.bool,
