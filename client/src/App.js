@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
+// error pages
 import Error404 from './Component/views/Error404';
 import ErrorResources from './Component/views/ErrorResources';
+import ErrorNoMoreResources from './Component/views/ErrorNoMoreResources';
 
 // burger menu components
 import Landing from './Component/views/Landing';
@@ -15,6 +17,7 @@ import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
 import Persona from './Component/views/Persona';
 import YourScenario from './Component/views/YourScenario';
+import Priorities from './Component/views/Priorities';
 
 class App extends Component {
   state = {};
@@ -33,8 +36,13 @@ class App extends Component {
           <Route path="/theory" component={Theory} />
           <Route path="/yourScenario" component={YourScenario} />
           <Route path="/persona" component={Persona} />
+          <Route path="/priorities" component={Priorities} />
           <Route path="/error404" component={Error404} />
           <Route path="/errorResources" component={ErrorResources} />
+          <Route
+            path="/errorNoMoreResources"
+            component={ErrorNoMoreResources}
+          />
           <Redirect to="/error404" />
         </Switch>
       </BrowserRouter>
