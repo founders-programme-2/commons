@@ -42,14 +42,6 @@ export const CardContainerDiv = styled.div`
   flex-wrap: wrap;
 `;
 
-export const CardContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-`;
-
 export const Subtitle = styled.h3`
   font-family: Poppins;
   font-weight: 800;

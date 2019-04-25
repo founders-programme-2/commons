@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // eslint-disable-next-line import/prefer-default-export
 export const ContentAbout = styled.div`
@@ -31,7 +31,7 @@ export const Subtitle = styled.h2`
   font-size: 3rem;
   font-weight: 800;
   color: #000000;
-  margin: 2rem;
+  margin: 5rem 2rem 2rem 2rem;
 `;
 
 export const MethodResourceList = styled.ul`

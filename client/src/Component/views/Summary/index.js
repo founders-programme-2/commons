@@ -37,7 +37,7 @@ const Summary = props => {
       <Subtitle>Resources</Subtitle>
       <MethodResourceList>
         <MethodResource>
-          <a href="" target="blank">
+          <a href="http://google.com" target="blank">
             Network Map
           </a>
         </MethodResource>
@@ -45,5 +45,5 @@ const Summary = props => {
     </div>
   );
 };
-
+// Method resources to be implemented once methods are passed down from state.
 export default Summary;
