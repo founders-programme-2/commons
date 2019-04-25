@@ -4,6 +4,7 @@ import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
 import { PrevBtn, NextBtn } from './index.style';
+import methodCardData from '../../../fakeData/methodCardData';
 
 class PrioritiesTools extends Component {
   state = {};
@@ -22,16 +23,26 @@ class PrioritiesTools extends Component {
               <NextBtn onClick={nextSlide}>.</NextBtn>
             )}
           >
-            <MethodCard
-              cardTitle="Example Card 1"
-              resourcePoints={1}
-              cardImg={null}
-              chooseMethod={null}
-              removeMethod={null}
-              errorOverSpend={null}
-              tools
-              priority
-            />
+            {methodCardData.map(card => {
+              return (
+                <MethodCard
+                  key={card.id}
+                  cardTitle={card.cardTitle}
+                  description={card.description}
+                  resourcePoints={card.resourcePoints}
+                  cardImg={card.cardImg}
+                  difficulty={card.difficulty}
+                  category={card.category}
+                  requiredCards={card.requires}
+                  use={card.use}
+                  chooseMethod={null}
+                  removeMethod={null}
+                  errorOverSpend={null}
+                  tools
+                  priority
+                />
+              );
+            })}
           </Carousel>
         </div>
         <Footer
