@@ -58,8 +58,7 @@ class CardComponent extends Component {
       const starsCount = [];
       let counter = 0;
       while (points > counter) {
-        // eslint-disable-next-line no-plusplus
-        counter++;
+        counter += 1;
         starsCount.push(
           <ResourceStars src={star} key={`resourceStars-${counter}`} />
         );
@@ -185,19 +184,17 @@ CardComponent.propTypes = {
   chooseMethod: PropTypes.func,
   removeMethod: PropTypes.func,
   errorOverSpend: PropTypes.func,
-  key: PropTypes.number,
   description: PropTypes.string.isRequired,
   difficulty: PropTypes.string,
   requiredCards: PropTypes.string,
   use: PropTypes.string,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.arrayOf(PropTypes.string).isRequired,
   tools: PropTypes.bool.isRequired,
   priority: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
   cardImg: PropTypes.bool,
-  key: PropTypes.bool,
   difficulty: PropTypes.bool,
   requiredCards: PropTypes.bool,
   use: PropTypes.bool,
