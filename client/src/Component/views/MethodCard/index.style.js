@@ -70,3 +70,52 @@ export const UseResource = styled.form`
   flex-direction: row;
   justify-content: space-evenly;
 `;
+
+export const Line = styled.div`
+  display: block;
+  border: 0.3rem solid #faa634;
+  border-radius: 1rem;
+`;
+
+export const Title = styled.h1`
+  font-size: 2.5rem;
+  padding: 0.5rem;
+`;
+
+export const FormWrap = styled.form`
+  font-size: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+
+export const RadioWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Input = styled.input`
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+`;
+
+export const TimelineWrap = styled.div`
+  margin-top: 1rem;
+`;
+
+export const Label = styled.label`
+  font-family: 'Open Sans';
+  font-size: 2rem;
+`;
+
+export const Span = styled.span`
+  display: block;
+`;
+
+export const LightSpan = styled.span`
+  font-size: 1.7rem;
+  font-weight: 400;
+`;

@@ -19,7 +19,6 @@ class Methods extends Component {
   state = {
     resources: 15,
     redirect: false,
-    // selectedMethodCards: [],
     // redirectMoreResources: false,
   };
 

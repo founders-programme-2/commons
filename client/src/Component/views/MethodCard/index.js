@@ -11,6 +11,15 @@ import {
   StarWrapper,
   UseResource,
   InfoText,
+  Line,
+  Title,
+  FormWrap,
+  RadioWrap,
+  Input,
+  TimelineWrap,
+  Label,
+  Span,
+  LightSpan,
 } from './index.style';
 import star from '../../../assets/star.svg';
 
@@ -38,6 +47,8 @@ class CardComponent extends Component {
       use,
       category,
       difficulty,
+      tools,
+      priority,
     } = this.props;
 
     const { checked } = this.state;
@@ -86,27 +97,82 @@ class CardComponent extends Component {
           </Info>
         </CardWrapper>
 
-        <UseResource>
-          <label htmlFor="method-checkbox">
-            Use this resource:
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <input
-              id="method-checkbox"
-              type="checkbox"
-              checked={checked}
-              onChange={event => {
-                this.toggleCheckbox(event);
-                if (checked === false) {
-                  removeMethod(resourcePoints, event);
-                  errorOverSpend();
-                } else if (checked === true) {
-                  chooseMethod(resourcePoints, event);
-                  errorOverSpend();
-                }
-              }}
-            />
-          </label>
-        </UseResource>
+        {!tools && !priority ? (
+          <UseResource>
+            <label htmlFor="method-checkbox">
+              Use this resource:
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <input
+                id="method-checkbox"
+                type="checkbox"
+                checked={checked}
+                onChange={event => {
+                  this.toggleCheckbox(event);
+                  if (checked === false) {
+                    removeMethod(resourcePoints, event);
+                    errorOverSpend();
+                  } else if (checked === true) {
+                    chooseMethod(resourcePoints, event);
+                    errorOverSpend();
+                  }
+                }}
+              />
+            </label>
+          </UseResource>
+        ) : null}
+        {tools && priority ? (
+          <Fragment>
+            <div>
+              <Title>Prioritize:</Title>
+              <Line />
+              <FormWrap>
+                <RadioWrap>
+                  <Label htmlFor="low">
+                    <Input type="radio" id="low" name="choose" />
+                    Low
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="medium">
+                    <Input type="radio" id="medium" name="choose" />
+                    Medium
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="high">
+                    <Input type="radio" id="high" name="choose" />
+                    High
+                  </Label>
+                </RadioWrap>
+              </FormWrap>
+            </div>
+            <Line />
+            <TimelineWrap>
+              <Title>Timeline of implementation:</Title>
+              <Line />
+              <FormWrap>
+                <RadioWrap>
+                  <Label htmlFor="short">
+                    <Input type="radio" id="short" name="time-choose" />
+                    <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="mid">
+                    <Input type="radio" id="mid" name="time-choose" />
+                    <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="long">
+                    <Input type="radio" id="long" name="time-choose" />
+                    <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
+                  </Label>
+                </RadioWrap>
+              </FormWrap>
+            </TimelineWrap>
+          </Fragment>
+        ) : null}
       </Fragment>
     );
   }
@@ -116,15 +182,17 @@ CardComponent.propTypes = {
   cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
-  chooseMethod: PropTypes.func.isRequired,
-  removeMethod: PropTypes.func.isRequired,
-  errorOverSpend: PropTypes.func.isRequired,
+  chooseMethod: PropTypes.func,
+  removeMethod: PropTypes.func,
+  errorOverSpend: PropTypes.func,
   key: PropTypes.number,
   description: PropTypes.string.isRequired,
   difficulty: PropTypes.string,
   requiredCards: PropTypes.string,
   use: PropTypes.string,
   category: PropTypes.string.isRequired,
+  tools: PropTypes.bool.isRequired,
+  priority: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
@@ -133,6 +201,9 @@ CardComponent.defaultProps = {
   difficulty: PropTypes.bool,
   requiredCards: PropTypes.bool,
   use: PropTypes.bool,
+  chooseMethod: PropTypes.bool,
+  removeMethod: PropTypes.bool,
+  errorOverSpend: PropTypes.bool,
 };
 
 export default CardComponent;
