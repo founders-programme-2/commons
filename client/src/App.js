@@ -37,7 +37,7 @@ class App extends Component {
         selectedPriority: event.target.value,
       },
       () => {
-        // console.log(this.state.selectedPriority, 111111111);
+        console.log(this.state.selectedPriority, 111111111);
       }
     );
   };
@@ -48,7 +48,7 @@ class App extends Component {
         selectedTime: event.target.value,
       },
       () => {
-        // console.log(this.state.selectedTime), 2222222222;
+        console.log(this.state.selectedTime,2222222222);
       }
     );
   };
