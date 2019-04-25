@@ -30,7 +30,7 @@ const YourScenario = () => {
           resources and must choose wisely.
         </p>
       </Content>
-      <Footer backLink="/play" nextLink="/" reviewScenario={false} />
+      <Footer backLink="/play" nextLink="/persona" reviewScenario={false} />
     </div>
   );
 };
