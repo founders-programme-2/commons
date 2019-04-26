@@ -62,6 +62,7 @@ class CardComponent extends Component {
       use,
       category,
       difficulty,
+      id,
       // tools,
       // priority,
     } = this.props;
@@ -102,6 +103,7 @@ class CardComponent extends Component {
         <UseResource>
           <MyContext.Consumer>
             {context => {
+              const {logging} = context;
               return (
                 <label htmlFor="method-checkbox">
                   Use this resource:
@@ -115,10 +117,10 @@ class CardComponent extends Component {
                       if (checked === false) {
                         removeMethod(resourcePoints, event);
                         errorOverSpend();
+                        logging(id, cardTitle);
                       } else if (checked === true) {
                         chooseMethod(resourcePoints, event);
                         errorOverSpend();
-                        context.selectFunc('hi');
                       }
                     }}
                   />
