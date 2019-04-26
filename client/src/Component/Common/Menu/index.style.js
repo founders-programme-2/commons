@@ -79,6 +79,8 @@ export const TopLink = styled(MenuChild)`
 `;
 
 export const MenuText = styled.p`
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
   display: inline;
   color: var(--paragraph-color);
   font-size: 2rem;
