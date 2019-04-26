@@ -19,12 +19,13 @@ class Methods extends Component {
   state = {
     resources: 15,
     redirect: false,
+    data: methodCardData,
     // redirectMoreResources: false,
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    return methodCardData.map(card => {
+    return this.state.data.map(card => {
       return (
         <MethodCard
           key={card.id}
@@ -39,6 +40,7 @@ class Methods extends Component {
           chooseMethod={this.chooseMethod}
           removeMethod={this.removeMethod}
           errorOverSpend={this.errorOverSpend}
+          id={card.id}
         />
       );
     });
