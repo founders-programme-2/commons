@@ -87,6 +87,7 @@ class Methods extends Component {
         {this.renderRedirect()}
         <Header headerImg={null} titleText="Select your methods" />
         <Carousel
+          wrapAround
           enableKeyboardControls
           renderCenterLeftControls={({ previousSlide }) => (
             <PrevBtn onClick={previousSlide}>.</PrevBtn>

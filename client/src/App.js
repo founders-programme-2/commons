@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 // context
-import MyProvider from './Context/ContextComponent';
+import { MyProvider } from './Context/ContextComponent';
 
 // error pages
 import Error404 from './Component/views/Error404';
@@ -26,8 +26,8 @@ class App extends Component {
 
   render() {
     return (
-      <MyProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <MyProvider>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route path="/about" component={About} />
@@ -47,8 +47,8 @@ class App extends Component {
             />
             <Redirect to="/error404" />
           </Switch>
-        </BrowserRouter>
-      </MyProvider>
+        </MyProvider>
+      </BrowserRouter>
     );
   }
 }
