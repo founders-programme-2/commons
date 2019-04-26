@@ -7,6 +7,17 @@ export class MyProvider extends Component {
     selectedCards: [],
   };
 
+  logging = (id, name) => {
+    console.log(`id =>> ${id}, name =>> ${name}`);
+    this.setState(state => {
+      state.selectedCards.push({
+        id,
+        name,
+      });
+    });
+    console.log(this.state.selectedCards, 'selectedCards');
+  };
+
   render() {
     const { children } = this.props;
     const { selectedCards } = this.state;
@@ -14,10 +25,7 @@ export class MyProvider extends Component {
       <MyContext.Provider
         value={{
           state: this.state,
-          selectFunc: card =>
-            this.setState({
-              selectedCards: () => selectedCards.concat(card),
-            }),
+          logging: this.logging,
         }}
       >
         {children}
