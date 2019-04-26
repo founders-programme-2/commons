@@ -25,10 +25,3 @@ export class MyProvider extends Component {
     );
   }
 }
-
-// {
-//     selectFunc: card =>
-//       this.setState({
-//         selectedCards: this.state.selectedCards.concat(card),
-//       }),
-//   }
