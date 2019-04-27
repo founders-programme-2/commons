@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export const MyContext = React.createContext();
 
@@ -7,20 +8,19 @@ export class MyProvider extends Component {
     selectedCards: [],
   };
 
+  // add selected card ID to state
   addSelectedCard = id => {
-    console.log(`id =>> ${id}`);
     this.setState(state => {
       state.selectedCards.push({ id });
-      console.log(state.selectedCards);
     });
   };
 
+  // remove ID from state when uncheck Card
   removeSelectedCard = id => {
-    const selectedCards = this.state.selectedCards.filter(
-      card => id !== card.id
-    );
-    this.setState({ selectedCards });
-    console.log('selectedCardsremoved:', selectedCards);
+    this.setState(state => {
+      const selectedCards = state.selectedCards.filter(card => id !== card.id);
+      return { selectedCards };
+    });
   };
 
   render() {
@@ -29,6 +29,7 @@ export class MyProvider extends Component {
     return (
       <MyContext.Provider
         value={{
+          selectedCards,
           state: this.state,
           addSelectedCard: this.addSelectedCard,
           removeSelectedCard: this.removeSelectedCard,
@@ -39,3 +40,7 @@ export class MyProvider extends Component {
     );
   }
 }
+
+MyProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
