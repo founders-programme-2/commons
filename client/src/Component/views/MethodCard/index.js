@@ -103,7 +103,7 @@ class CardComponent extends Component {
         <UseResource>
           <MyContext.Consumer>
             {context => {
-              const {logging} = context;
+              const { addSelectedCard, removeSelectedCard } = context;
               return (
                 <label htmlFor="method-checkbox">
                   Use this resource:
@@ -116,10 +116,12 @@ class CardComponent extends Component {
                       this.toggleCheckbox(event);
                       if (checked === false) {
                         removeMethod(resourcePoints, event);
+                        addSelectedCard(id);
                         errorOverSpend();
-                        logging(id, cardTitle);
                       } else if (checked === true) {
                         chooseMethod(resourcePoints, event);
+                        console.log("unchecked id =>>", id)
+                        removeSelectedCard(id);
                         errorOverSpend();
                       }
                     }}
