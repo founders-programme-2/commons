@@ -20,12 +20,12 @@ class Methods extends Component {
     resources: 15,
     redirect: false,
     data: methodCardData,
-    // redirectMoreResources: false,
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    return this.state.data.map(card => {
+    const { data } = this.state;
+    return data.map(card => {
       return (
         <MethodCard
           key={card.id}
