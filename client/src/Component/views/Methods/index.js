@@ -41,6 +41,8 @@ class Methods extends Component {
           removeMethod={this.removeMethod}
           errorOverSpend={this.errorOverSpend}
           id={card.id}
+          tools={false}
+          priority={false}
         />
       );
     });
