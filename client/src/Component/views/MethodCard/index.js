@@ -12,15 +12,15 @@ import {
   StarWrapper,
   UseResource,
   InfoText,
-  // Line,
-  // Title,
-  // FormWrap,
-  // RadioWrap,
-  // Input,
-  // TimelineWrap,
-  // Label,
-  // Span,
-  // LightSpan,
+  Line,
+  Title,
+  FormWrap,
+  RadioWrap,
+  Input,
+  TimelineWrap,
+  Label,
+  Span,
+  LightSpan,
 } from './index.style';
 import star from '../../../assets/star.svg';
 
@@ -30,6 +30,7 @@ class CardComponent extends Component {
   };
 
   // toggles checkbox on click
+  // eslint-disable-next-line no-unused-vars
   toggleCheckbox = event => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
@@ -40,8 +41,7 @@ class CardComponent extends Component {
     const starsCount = [];
     let counter = 0;
     while (points > counter) {
-      // eslint-disable-next-line no-plusplus
-      counter++;
+      counter += 1;
       starsCount.push(
         <ResourceStars src={star} key={`resourceStars-${counter}`} />
       );
@@ -63,8 +63,8 @@ class CardComponent extends Component {
       category,
       difficulty,
       id,
-      // tools,
-      // priority,
+      tools,
+      priority,
     } = this.props;
 
     const { checked } = this.state;
@@ -100,43 +100,99 @@ class CardComponent extends Component {
           </Info>
         </CardWrapper>
 
-        <UseResource>
-          <MyContext.Consumer>
-            {context => {
-              const { addSelectedCard, removeSelectedCard } = context;
-              return (
-                <label htmlFor="method-checkbox">
-                  Use this resource:
-                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                  <input
-                    id="method-checkbox"
-                    type="checkbox"
-                    checked={checked}
-                    onChange={event => {
-                      this.toggleCheckbox(event);
-                      if (checked === false) {
-                        removeMethod(resourcePoints, event);
-                        addSelectedCard(id);
-                        errorOverSpend();
-                      } else if (checked === true) {
-                        chooseMethod(resourcePoints, event);
-                        console.log("unchecked id =>>", id)
-                        removeSelectedCard(id);
-                        errorOverSpend();
-                      }
-                    }}
-                  />
-                </label>
-              );
-            }}
-          </MyContext.Consumer>
-        </UseResource>
+        {!tools && !priority ? (
+          <UseResource>
+            <MyContext.Consumer>
+              {context => {
+                const { addSelectedCard, removeSelectedCard } = context;
+                return (
+                  <label htmlFor="method-checkbox">
+                    Use this resource:
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input
+                      id="method-checkbox"
+                      type="checkbox"
+                      checked={checked}
+                      onChange={event => {
+                        this.toggleCheckbox(event);
+                        if (checked === false) {
+                          removeMethod(resourcePoints, event);
+                          addSelectedCard(id);
+                          errorOverSpend();
+                        } else if (checked === true) {
+                          chooseMethod(resourcePoints, event);
+                          removeSelectedCard(id);
+                          errorOverSpend();
+                        }
+                      }}
+                    />
+                  </label>
+                );
+              }}
+            </MyContext.Consumer>
+          </UseResource>
+        ) : null}
+
+        {tools && priority ? (
+          <Fragment>
+            <div>
+              <Title>Prioritize:</Title>
+              <Line />
+              <FormWrap>
+                <RadioWrap>
+                  <Label htmlFor="low">
+                    <Input type="radio" id="low" name="choose" />
+                    Low
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="medium">
+                    <Input type="radio" id="medium" name="choose" />
+                    Medium
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="high">
+                    <Input type="radio" id="high" name="choose" />
+                    High
+                  </Label>
+                </RadioWrap>
+              </FormWrap>
+            </div>
+            <Line />
+            <TimelineWrap>
+              <Title>Timeline of implementation:</Title>
+              <Line />
+              <FormWrap>
+                <RadioWrap>
+                  <Label htmlFor="short">
+                    <Input type="radio" id="short" name="time-choose" />
+                    <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="mid">
+                    <Input type="radio" id="mid" name="time-choose" />
+                    <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
+                  </Label>
+                </RadioWrap>
+                <RadioWrap>
+                  <Label htmlFor="long">
+                    <Input type="radio" id="long" name="time-choose" />
+                    <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
+                  </Label>
+                </RadioWrap>
+              </FormWrap>
+            </TimelineWrap>
+          </Fragment>
+        ) : null}
       </Fragment>
     );
   }
 }
 
 CardComponent.propTypes = {
+  id: PropTypes.number.isRequired,
   cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
@@ -147,9 +203,9 @@ CardComponent.propTypes = {
   difficulty: PropTypes.string,
   requiredCards: PropTypes.string,
   use: PropTypes.string,
-  category: PropTypes.string.isRequired,
-  // tools: PropTypes.bool.isRequired,
-  // priority: PropTypes.bool.isRequired,
+  category: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tools: PropTypes.bool.isRequired,
+  priority: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
@@ -163,57 +219,3 @@ CardComponent.defaultProps = {
 };
 
 export default CardComponent;
-
-// {tools && priority ? (
-//   <Fragment>
-//     <div>
-//       <Title>Prioritize:</Title>
-//       <Line />
-//       <FormWrap>
-//         <RadioWrap>
-//           <Label htmlFor="low">
-//             <Input type="radio" id="low" name="choose" />
-//             Low
-//           </Label>
-//         </RadioWrap>
-//         <RadioWrap>
-//           <Label htmlFor="medium">
-//             <Input type="radio" id="medium" name="choose" />
-//             Medium
-//           </Label>
-//         </RadioWrap>
-//         <RadioWrap>
-//           <Label htmlFor="high">
-//             <Input type="radio" id="high" name="choose" />
-//             High
-//           </Label>
-//         </RadioWrap>
-//       </FormWrap>
-//     </div>
-//     <Line />
-//     <TimelineWrap>
-//       <Title>Timeline of implementation:</Title>
-//       <Line />
-//       <FormWrap>
-//         <RadioWrap>
-//           <Label htmlFor="short">
-//             <Input type="radio" id="short" name="time-choose" />
-//             <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
-//           </Label>
-//         </RadioWrap>
-//         <RadioWrap>
-//           <Label htmlFor="mid">
-//             <Input type="radio" id="mid" name="time-choose" />
-//             <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
-//           </Label>
-//         </RadioWrap>
-//         <RadioWrap>
-//           <Label htmlFor="long">
-//             <Input type="radio" id="long" name="time-choose" />
-//             <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
-//           </Label>
-//         </RadioWrap>
-//       </FormWrap>
-//     </TimelineWrap>
-//   </Fragment>
-// ) : null}
