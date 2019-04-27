@@ -7,15 +7,20 @@ export class MyProvider extends Component {
     selectedCards: [],
   };
 
-  logging = (id, name) => {
-    console.log(`id =>> ${id}, name =>> ${name}`);
+  addSelectedCard = id => {
+    console.log(`id =>> ${id}`);
     this.setState(state => {
-      state.selectedCards.push({
-        id,
-        name,
-      });
+      state.selectedCards.push({ id });
+      console.log(state.selectedCards);
     });
-    console.log(this.state.selectedCards, 'selectedCards');
+  };
+
+  removeSelectedCard = id => {
+    const selectedCards = this.state.selectedCards.filter(
+      card => id !== card.id
+    );
+    this.setState({ selectedCards });
+    console.log('selectedCardsremoved:', selectedCards);
   };
 
   render() {
@@ -25,7 +30,8 @@ export class MyProvider extends Component {
       <MyContext.Provider
         value={{
           state: this.state,
-          logging: this.logging,
+          addSelectedCard: this.addSelectedCard,
+          removeSelectedCard: this.removeSelectedCard,
         }}
       >
         {children}
