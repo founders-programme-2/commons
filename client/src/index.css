@@ -43,3 +43,16 @@ p {
   --highlight-color: #e882a8;
   --arrow-color: #ffbf3e;
 }
+
+@media only screen and (min-width: 992px) {
+  
+  html {
+    background-color: rgb(247, 241, 241);
+  }
+  
+  body {
+    width: 60%;
+    margin: 0 auto; 
+    background-color: white;
+  }
+} 
