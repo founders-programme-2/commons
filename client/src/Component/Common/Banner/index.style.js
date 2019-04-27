@@ -43,6 +43,12 @@ export const BackgroundWrapper = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (min-width: 992px) {
+    transform: skewY(-9deg);
+    height: 15rem;
+    width: 60vw;
+  }
 `;
 
 export const TitleText = styled.h1`
@@ -55,6 +61,10 @@ export const TitleText = styled.h1`
   font-size: 6rem;
   font-weight: 700;
   color: #000000;
+  @media only screen and (min-width: 992px) {
+    transform: skewY(9deg);
+    font-size: 5rem;
+  }
 `;
 
 export const TitleTextSub = styled.h1`
@@ -84,6 +94,11 @@ export const SubtitleText = styled.h2`
 export const BannerLogo = styled.img`
   display: block;
   margin: 4rem auto;
+  @media only screen and (min-width: 992px) {
+    height: 12rem;
+    width: auto;
+    margin-top: 1rem;
+  }
 `;
 
 export const BannerWrapper = styled.div`
