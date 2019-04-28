@@ -19,12 +19,13 @@ class Methods extends Component {
   state = {
     resources: 15,
     redirect: false,
-    // redirectMoreResources: false,
+    data: methodCardData,
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    return methodCardData.map(card => {
+    const { data } = this.state;
+    return data.map(card => {
       return (
         <MethodCard
           key={card.id}
@@ -39,6 +40,9 @@ class Methods extends Component {
           chooseMethod={this.chooseMethod}
           removeMethod={this.removeMethod}
           errorOverSpend={this.errorOverSpend}
+          id={card.id}
+          tools={false}
+          priority={false}
         />
       );
     });
@@ -87,6 +91,7 @@ class Methods extends Component {
         {this.renderRedirect()}
         <Header headerImg={null} titleText="Select your methods" />
         <Carousel
+          wrapAround
           enableKeyboardControls
           renderCenterLeftControls={({ previousSlide }) => (
             <PrevBtn onClick={previousSlide}>.</PrevBtn>
