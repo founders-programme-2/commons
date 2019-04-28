@@ -27,8 +27,8 @@ import star from '../../../assets/star.svg';
 class CardComponent extends Component {
   state = {
     checked: false,
-    defaultPriority: 'low',
-    defaultTime: 'short',
+    defaultPriority: '',
+    defaultTime: '',
   };
 
   selectedPriority = event => {
@@ -37,6 +37,15 @@ class CardComponent extends Component {
       const { defaultPriority } = this.state;
       const { selectedPriorityStore } = this.context;
       selectedPriorityStore(defaultPriority, id);
+    });
+  };
+
+  selectedTime = event => {
+    const { id } = event.target.dataset;
+    this.setState({ defaultTime: event.target.value }, () => {
+      const { defaultTime } = this.state;
+      const { selectedTimeStore } = this.context;
+      selectedTimeStore(defaultTime, id);
     });
   };
 
@@ -195,12 +204,13 @@ class CardComponent extends Component {
                 <RadioWrap>
                   <Label htmlFor="short">
                     <Input
+                      data-id={id}
                       type="radio"
                       id="short"
                       name="time-choose"
                       value="short"
-                      // checked={selectedTime === 'short'}
-                      // onChange={event => handleSelectedTime(event)}
+                      checked={defaultTime === 'short'}
+                      onChange={this.selectedTime}
                     />
                     <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
                   </Label>
@@ -208,12 +218,13 @@ class CardComponent extends Component {
                 <RadioWrap>
                   <Label htmlFor="mid">
                     <Input
+                      data-id={id}
                       type="radio"
                       id="mid"
                       name="time-choose"
                       value="mid"
-                      // checked={selectedTime === 'mid'}
-                      // onChange={event => handleSelectedTime(event)}
+                      checked={defaultTime === 'mid'}
+                      onChange={this.selectedTime}
                     />
                     <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
                   </Label>
@@ -221,12 +232,13 @@ class CardComponent extends Component {
                 <RadioWrap>
                   <Label htmlFor="long">
                     <Input
+                      data-id={id}
                       type="radio"
                       id="long"
                       name="time-choose"
                       value="long"
-                      // checked={selectedTime === 'long'}
-                      // onChange={event => handleSelectedTime(event)}
+                      checked={defaultTime === 'long'}
+                      onChange={this.selectedTime}
                     />
                     <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
                   </Label>
