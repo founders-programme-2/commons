@@ -3,6 +3,7 @@ import Carousel from 'nuka-carousel';
 import { Redirect, Link } from 'react-router-dom';
 import Header from '../../Common/Header';
 import MethodCard from '../MethodCard';
+import methodCardData from '../../../fakeData/methodCardData';
 import {
   RemainingResources,
   Line,
@@ -18,7 +19,33 @@ class Methods extends Component {
   state = {
     resources: 15,
     redirect: false,
-    // redirectMoreResources: false,
+    data: methodCardData,
+  };
+
+  // Renders method cards dynamically
+  renderMethodCards = () => {
+    const { data } = this.state;
+    return data.map(card => {
+      return (
+        <MethodCard
+          key={card.id}
+          cardTitle={card.cardTitle}
+          description={card.description}
+          resourcePoints={card.resourcePoints}
+          cardImg={card.cardImg}
+          difficulty={card.difficulty}
+          category={card.category}
+          requiredCards={card.requires}
+          use={card.use}
+          chooseMethod={this.chooseMethod}
+          removeMethod={this.removeMethod}
+          errorOverSpend={this.errorOverSpend}
+          id={card.id}
+          tools={false}
+          priority={false}
+        />
+      );
+    });
   };
 
   // Removes resource points from total 'resources' if checkbox is checked
@@ -48,17 +75,6 @@ class Methods extends Component {
     }
   };
 
-  // // checks remaining resources and triggers redirect to error page if you still have resources
-  // // left and you press next btn in footer
-  // errorRemainingResources = () => {
-  //   const { resources } = this.state;
-  //   if (resources > 0) {
-  //     this.setState({
-  //       redirectMoreResources: true,
-  //     });
-  //   }
-  // };
-
   // renders redirect if there are no resources left
   renderRedirect = () => {
     const { redirect } = this.state;
@@ -75,6 +91,7 @@ class Methods extends Component {
         {this.renderRedirect()}
         <Header headerImg={null} titleText="Select your methods" />
         <Carousel
+          wrapAround
           enableKeyboardControls
           renderCenterLeftControls={({ previousSlide }) => (
             <PrevBtn onClick={previousSlide}>.</PrevBtn>
@@ -83,38 +100,7 @@ class Methods extends Component {
             <NextBtn onClick={nextSlide}>.</NextBtn>
           )}
         >
-          <MethodCard
-            cardTitle="Example Card 1"
-            resourcePoints={1}
-            cardImg={null}
-            chooseMethod={this.chooseMethod}
-            removeMethod={this.removeMethod}
-            errorOverSpend={this.errorOverSpend}
-            tools={false}
-            priority={false}
-          />
-
-          <MethodCard
-            cardTitle="Example Card 2"
-            resourcePoints={2}
-            cardImg={null}
-            chooseMethod={this.chooseMethod}
-            removeMethod={this.removeMethod}
-            errorOverSpend={this.errorOverSpend}
-            tools={false}
-            priority={false}
-          />
-
-          <MethodCard
-            cardTitle="Example Card 3"
-            resourcePoints={3}
-            cardImg={null}
-            chooseMethod={this.chooseMethod}
-            removeMethod={this.removeMethod}
-            errorOverSpend={this.errorOverSpend}
-            tools={false}
-            priority={false}
-          />
+          {this.renderMethodCards()}
         </Carousel>
         <Line />
 

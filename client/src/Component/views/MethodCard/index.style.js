@@ -8,7 +8,12 @@ export const CardWrapper = styled.section`
   width: ${props => props.widthtCard || '22rem'};
   display: flex;
   flex-direction: column;
-  margin: 3rem auto;
+  margin: 2rem auto;
+  padding: 2rem 0;
+`;
+
+export const InfoText = styled.p`
+  display: inline;
 `;
 
 export const Img = styled.img`
@@ -28,8 +33,9 @@ export const Info = styled.section`
   padding: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 5px 5px;
-  /* width: ${props => props.widthInfoCard || '22rem'}; */
-  height: ${props => props.heightInfoCard || '13.5rem'};
+  height: ${props => props.heightInfoCard || 'auto'};
+  width: 22rem;
+  height: auto;
 `;
 
 export const CardTitle = styled.h2`
