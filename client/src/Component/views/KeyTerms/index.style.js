@@ -7,8 +7,9 @@ export const WrapperTitlte = styled.div`
   flex-direction: row;
 `;
 export const Img = styled.img`
-  height: 3.4rem;
-  width: 3.6rem;
+  margin-bottom: 2.3rem;
+  height: 3rem;
+  width: 3rem;
 `;
 
 export const Paragraph = styled.p`
@@ -16,7 +17,7 @@ export const Paragraph = styled.p`
   font-family: 'Open Sans';
   text-align: center;
   font-weight: normal;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 `;
 
 export const Title = styled.h1`

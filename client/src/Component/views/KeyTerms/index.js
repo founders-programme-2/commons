@@ -5,23 +5,22 @@ import key from '../../../assets/key.svg';
 import { WrapperTitlte, Img, Paragraph, Title } from './index.style';
 import keyTerms from '../../../fakeData/keyTerms';
 
-
 const KeyTerms = () => {
   return (
     <div>
       <Header headerImg={key} titleText="Key Terms" />
       {keyTerms.map(elements => {
         return (
-          <div>
+          <div key={elements.id}>
             <WrapperTitlte>
-              <Img src={elements.img} alt="keyhub" key={elements.id} />
+              <Img src={elements.img} alt="keyhub" />
               <Title>{elements.title}</Title>
             </WrapperTitlte>
             <Paragraph>{elements.content}</Paragraph>
           </div>
         );
       })}
-      <Footer />
+      <Footer backLink="/" nextLink="/howTo" reviewScenario={false} />
     </div>
   );
 };
