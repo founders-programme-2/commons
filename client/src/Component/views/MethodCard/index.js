@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
+import { MyContext } from '../../../Context/ContextComponent';
 import {
   CardWrapper,
   Img,
@@ -29,9 +30,23 @@ class CardComponent extends Component {
   };
 
   // toggles checkbox on click
+  // eslint-disable-next-line no-unused-vars
   toggleCheckbox = event => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
+  };
+
+  // looks at number of resource points and pushes as many stars to card
+  stars = points => {
+    const starsCount = [];
+    let counter = 0;
+    while (points > counter) {
+      counter += 1;
+      starsCount.push(
+        <ResourceStars src={star} key={`resourceStars-${counter}`} />
+      );
+    }
+    return starsCount;
   };
 
   render() {
@@ -47,27 +62,15 @@ class CardComponent extends Component {
       use,
       category,
       difficulty,
+      id,
       tools,
       priority,
     } = this.props;
 
     const { checked } = this.state;
 
-    // looks at number of resource points and pushes as many stars to card
-    const stars = points => {
-      const starsCount = [];
-      let counter = 0;
-      while (points > counter) {
-        // eslint-disable-next-line no-plusplus
-        counter++;
-        starsCount.push(
-          <ResourceStars src={star} key={`resourceStars-${counter}`} />
-        );
-      }
-      return starsCount;
-    };
     // saves func output to variable for render
-    const starsRender = stars(resourcePoints);
+    const starsRender = this.stars(resourcePoints);
     return (
       <Fragment>
         <CardWrapper>
@@ -99,27 +102,37 @@ class CardComponent extends Component {
 
         {!tools && !priority ? (
           <UseResource>
-            <label htmlFor="method-checkbox">
-              Use this resource:
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <input
-                id="method-checkbox"
-                type="checkbox"
-                checked={checked}
-                onChange={event => {
-                  this.toggleCheckbox(event);
-                  if (checked === false) {
-                    removeMethod(resourcePoints, event);
-                    errorOverSpend();
-                  } else if (checked === true) {
-                    chooseMethod(resourcePoints, event);
-                    errorOverSpend();
-                  }
-                }}
-              />
-            </label>
+            <MyContext.Consumer>
+              {context => {
+                const { addSelectedCard, removeSelectedCard } = context;
+                return (
+                  <label htmlFor="method-checkbox">
+                    Use this resource:
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input
+                      id="method-checkbox"
+                      type="checkbox"
+                      checked={checked}
+                      onChange={event => {
+                        this.toggleCheckbox(event);
+                        if (checked === false) {
+                          removeMethod(resourcePoints, event);
+                          addSelectedCard(id);
+                          errorOverSpend();
+                        } else if (checked === true) {
+                          chooseMethod(resourcePoints, event);
+                          removeSelectedCard(id);
+                          errorOverSpend();
+                        }
+                      }}
+                    />
+                  </label>
+                );
+              }}
+            </MyContext.Consumer>
           </UseResource>
         ) : null}
+
         {tools && priority ? (
           <Fragment>
             <div>
@@ -179,25 +192,24 @@ class CardComponent extends Component {
 }
 
 CardComponent.propTypes = {
+  id: PropTypes.number.isRequired,
   cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
   chooseMethod: PropTypes.func,
   removeMethod: PropTypes.func,
   errorOverSpend: PropTypes.func,
-  key: PropTypes.number,
   description: PropTypes.string.isRequired,
   difficulty: PropTypes.string,
   requiredCards: PropTypes.string,
   use: PropTypes.string,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.arrayOf(PropTypes.string).isRequired,
   tools: PropTypes.bool.isRequired,
   priority: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
   cardImg: PropTypes.bool,
-  key: PropTypes.bool,
   difficulty: PropTypes.bool,
   requiredCards: PropTypes.bool,
   use: PropTypes.bool,
