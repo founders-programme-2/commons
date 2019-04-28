@@ -6,3 +6,6 @@ export const Description = styled.p`
   font-weight: normal;
 `;
 
+export const HeadLine = styled.p`
+  margin-top: 20px;
+`;
