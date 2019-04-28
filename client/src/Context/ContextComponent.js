@@ -6,12 +6,13 @@ export const MyContext = React.createContext();
 export class MyProvider extends Component {
   state = {
     selectedCards: [],
+    selectedPriority: [],
   };
 
   // add selected card ID to state
   addSelectedCard = id => {
     this.setState(state => {
-      state.selectedCards.push({ id });
+      return state.selectedCards.push({ id });
     });
   };
 
@@ -23,16 +24,32 @@ export class MyProvider extends Component {
     });
   };
 
+  selectedPriorityStore = (priority, id) => {
+    this.setState(state => {
+      if (state.selectedPriority.length === 0) {
+        return state.selectedPriority.push({ id, priority });
+      }
+      return state.selectedPriority.map((ele, index) => {
+        if (ele.id === id) {
+          state.selectedPriority.splice(index);
+        }
+        return state.selectedPriority.push({ id, priority });
+      });
+    });
+  };
+
   render() {
     const { children } = this.props;
-    const { selectedCards } = this.state;
+    const { selectedCards, selectedPriority } = this.state;
     return (
       <MyContext.Provider
         value={{
           selectedCards,
+          selectedPriority,
           state: this.state,
           addSelectedCard: this.addSelectedCard,
           removeSelectedCard: this.removeSelectedCard,
+          selectedPriorityStore: this.selectedPriorityStore,
         }}
       >
         {children}
