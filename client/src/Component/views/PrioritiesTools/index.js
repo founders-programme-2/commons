@@ -5,19 +5,12 @@ import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
 import { PrevBtn, NextBtn } from './index.style';
 import methodCardData from '../../../fakeData/methodCardData';
+import { MyContext } from '../../../Context/ContextComponent';
 
 class PrioritiesTools extends Component {
   state = {};
 
   render() {
-    const {
-      toggleCheckbox,
-      selectedPriority,
-      selectedTime,
-      handleSelectedPriority,
-      handleSelectedTime,
-      checked,
-    } = this.props;
     return (
       <div>
         <Header headerImg={null} titleText="Prioritize your tools" />
@@ -31,7 +24,18 @@ class PrioritiesTools extends Component {
               <NextBtn onClick={nextSlide}>.</NextBtn>
             )}
           >
-            {methodCardData.map(card => {
+            <MyContext.Consumer>
+              {context => {
+                const { selectedCards } = context;
+                const idArray = selectedCards.map(ele => ele.id);
+                const filteredCards = methodCardData.filter(card =>
+                  idArray.includes(card.id)
+                );
+                console.log(filteredCards, 'filteredCards');
+              }}
+            </MyContext.Consumer>
+
+            {/* {methodCardData.map(card => {
               return (
                 <MethodCard
                   key={card.id}
@@ -56,7 +60,7 @@ class PrioritiesTools extends Component {
                   checked={checked}
                 />
               );
-            })}
+            })} */}
           </Carousel>
         </div>
         <Footer
