@@ -22,7 +22,7 @@ const Challenges = () => {
           </BodyWrapper>
         );
       })}
-      <Footer backLink="/" nextLink="/" reviewScenario={false} />
+      <Footer backLink="/" nextLink="/methods" reviewScenario={false} />
     </div>
   );
 };
