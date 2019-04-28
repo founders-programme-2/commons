@@ -45,6 +45,7 @@ class App extends Component {
             <Route path="/error404" component={Error404} />
             <Route path="/errorResources" component={ErrorResources} />
             <Route path="/yourScenario" component={YourScenario} />
+            <Route path="/persona" component={Persona} />
             <Route
               path="/errorNoMoreResources"
               component={ErrorNoMoreResources}
