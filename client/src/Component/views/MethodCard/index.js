@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
+import { MyContext } from '../../../Context/ContextComponent';
 import {
   CardWrapper,
   Img,
@@ -24,7 +25,29 @@ import {
 import star from '../../../assets/star.svg';
 
 class CardComponent extends Component {
-  state = {};
+  state = {
+    checked: false,
+  };
+
+  // toggles checkbox on click
+  // eslint-disable-next-line no-unused-vars
+  toggleCheckbox = event => {
+    const { checked } = this.state;
+    this.setState({ checked: !checked });
+  };
+
+  // looks at number of resource points and pushes as many stars to card
+  stars = points => {
+    const starsCount = [];
+    let counter = 0;
+    while (points > counter) {
+      counter += 1;
+      starsCount.push(
+        <ResourceStars src={star} key={`resourceStars-${counter}`} />
+      );
+    }
+    return starsCount;
+  };
 
   render() {
     const {
@@ -39,32 +62,19 @@ class CardComponent extends Component {
       use,
       category,
       difficulty,
+      id,
       tools,
       priority,
-      toggleCheckbox,
-      handleSelectedPriority,
-      handleSelectedTime,
-      selectedPriority,
-      selectedTime,
-      checked,
     } = this.props;
 
-    // const { checked, selectedPriority, selectedTime } = this.state;
+    const {
+      checked,
+      // selectedPriority,
+      // selectedTime,
+    } = this.state;
 
-    // looks at number of resource points and pushes as many stars to card
-    const stars = points => {
-      const starsCount = [];
-      let counter = 0;
-      while (points > counter) {
-        counter += 1;
-        starsCount.push(
-          <ResourceStars src={star} key={`resourceStars-${counter}`} />
-        );
-      }
-      return starsCount;
-    };
     // saves func output to variable for render
-    const starsRender = stars(resourcePoints);
+    const starsRender = this.stars(resourcePoints);
     return (
       <Fragment>
         <CardWrapper>
@@ -96,27 +106,37 @@ class CardComponent extends Component {
 
         {!tools && !priority ? (
           <UseResource>
-            <label htmlFor="method-checkbox">
-              Use this resource:
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <input
-                id="method-checkbox"
-                type="checkbox"
-                checked={checked}
-                onChange={event => {
-                  toggleCheckbox(event);
-                  if (checked === false) {
-                    removeMethod(resourcePoints, event);
-                    errorOverSpend();
-                  } else if (checked === true) {
-                    chooseMethod(resourcePoints, event);
-                    errorOverSpend();
-                  }
-                }}
-              />
-            </label>
+            <MyContext.Consumer>
+              {context => {
+                const { addSelectedCard, removeSelectedCard } = context;
+                return (
+                  <label htmlFor="method-checkbox">
+                    Use this resource:
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input
+                      id="method-checkbox"
+                      type="checkbox"
+                      checked={checked}
+                      onChange={event => {
+                        this.toggleCheckbox(event);
+                        if (checked === false) {
+                          removeMethod(resourcePoints, event);
+                          addSelectedCard(id);
+                          errorOverSpend();
+                        } else if (checked === true) {
+                          chooseMethod(resourcePoints, event);
+                          removeSelectedCard(id);
+                          errorOverSpend();
+                        }
+                      }}
+                    />
+                  </label>
+                );
+              }}
+            </MyContext.Consumer>
           </UseResource>
         ) : null}
+
         {tools && priority ? (
           <Fragment>
             <div>
@@ -130,8 +150,8 @@ class CardComponent extends Component {
                       id="low"
                       name="choose"
                       value="low"
-                      checked={selectedPriority === 'low'}
-                      onChange={event => handleSelectedPriority(event)}
+                      // checked={selectedPriority === 'low'}
+                      // onChange={event => handleSelectedPriority(event)}
                     />
                     Low
                   </Label>
@@ -143,8 +163,8 @@ class CardComponent extends Component {
                       id="medium"
                       name="choose"
                       value="medium"
-                      checked={selectedPriority === 'medium'}
-                      onChange={event => handleSelectedPriority(event)}
+                      // checked={selectedPriority === 'medium'}
+                      // onChange={event => handleSelectedPriority(event)}
                     />
                     Medium
                   </Label>
@@ -156,8 +176,8 @@ class CardComponent extends Component {
                       id="high"
                       name="choose"
                       value="high"
-                      checked={selectedPriority === 'high'}
-                      onChange={event => handleSelectedPriority(event)}
+                      // checked={selectedPriority === 'high'}
+                      // onChange={event => handleSelectedPriority(event)}
                     />
                     High
                   </Label>
@@ -176,8 +196,8 @@ class CardComponent extends Component {
                       id="short"
                       name="time-choose"
                       value="short"
-                      checked={selectedTime === 'short'}
-                      onChange={event => handleSelectedTime(event)}
+                      // checked={selectedTime === 'short'}
+                      // onChange={event => handleSelectedTime(event)}
                     />
                     <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
                   </Label>
@@ -189,8 +209,8 @@ class CardComponent extends Component {
                       id="mid"
                       name="time-choose"
                       value="mid"
-                      checked={selectedTime === 'mid'}
-                      onChange={event => handleSelectedTime(event)}
+                      // checked={selectedTime === 'mid'}
+                      // onChange={event => handleSelectedTime(event)}
                     />
                     <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
                   </Label>
@@ -202,8 +222,8 @@ class CardComponent extends Component {
                       id="long"
                       name="time-choose"
                       value="long"
-                      checked={selectedTime === 'long'}
-                      onChange={event => handleSelectedTime(event)}
+                      // checked={selectedTime === 'long'}
+                      // onChange={event => handleSelectedTime(event)}
                     />
                     <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
                   </Label>
@@ -218,6 +238,7 @@ class CardComponent extends Component {
 }
 
 CardComponent.propTypes = {
+  id: PropTypes.number.isRequired,
   cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
