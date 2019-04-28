@@ -3,7 +3,7 @@ import Carousel from 'nuka-carousel';
 import { PrevBtn, NextBtn } from '../Methods/index.style';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
-import { Description } from './index.style';
+import { Description, HeadLine } from './index.style';
 import { CardWrapper, Img, CardTitle, Info } from '../MethodCard/index.style';
 import PersonaData from '../../../fakeData/persona';
 
@@ -20,6 +20,10 @@ class Persona extends Component {
     return (
       <div>
         <Header headerImg={null} titleText="Selection your persona" />
+        <HeadLine>
+          Here are some potential user personas that you can keep in mind while
+          you choose your methods
+        </HeadLine>
         <div>
           <Carousel
             slideIndex={this.slideIndex}
@@ -49,7 +53,11 @@ class Persona extends Component {
             })}
           </Carousel>
         </div>
-        <Footer backLink="/yourScenario" nextLink="/" reviewScenario={false} />
+        <Footer
+          backLink="/yourScenario"
+          nextLink="/challenges"
+          reviewScenario={false}
+        />
       </div>
     );
   }
