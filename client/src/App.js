@@ -22,39 +22,7 @@ import Priorities from './Component/views/Priorities';
 import PrioritiesTools from './Component/views/PrioritiesTools';
 
 class App extends Component {
-  state = {
-    // checked: false,
-    // selectedPriority: 'low',
-    // selectedTime: 'short',
-  };
-
-  // // toggles checkbox on click
-  // toggleCheckbox = event => {
-  //   const { checked } = this.state;
-  //   this.setState({ checked: !checked });
-  // };
-
-  // handleSelectedPriority = event => {
-  //   this.setState(
-  //     {
-  //       selectedPriority: event.target.value,
-  //     },
-  //     () => {
-  //       console.log(this.state.selectedPriority, 111111111);
-  //     }
-  //   );
-  // };
-
-  // handleSelectedTime = event => {
-  //   this.setState(
-  //     {
-  //       selectedTime: event.target.value,
-  //     },
-  //     () => {
-  //       console.log(this.state.selectedTime,2222222222);
-  //     }
-  //   );
-  // };
+  state = {};
 
   render() {
     return (
