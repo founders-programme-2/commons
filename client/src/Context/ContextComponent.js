@@ -7,6 +7,7 @@ export class MyProvider extends Component {
   state = {
     selectedCards: [],
     selectedPriority: [],
+    selectedTime: [],
   };
 
   // add selected card ID to state
@@ -38,18 +39,37 @@ export class MyProvider extends Component {
     });
   };
 
+  selectedTimeStore = (time, id) => {
+    this.setState(state => {
+      if (state.selectedTime.length === 0) {
+        return state.selectedTime.push({ id, time });
+      }
+      return state.selectedTime.map((ele, index) => {
+        if (ele.id === id) {
+          state.selectedTime.splice(index);
+        }
+        return state.selectedTime.push({ id, time });
+      });
+    });
+  };
+
   render() {
     const { children } = this.props;
-    const { selectedCards, selectedPriority } = this.state;
+    const { selectedCards, selectedPriority, selectedTime } = this.state;
+    // console.log('selectedTime:', selectedTime);
+    // console.log('selectedPriority:', selectedPriority);
+    // console.log('selectedCards:', selectedCards);
     return (
       <MyContext.Provider
         value={{
           selectedCards,
           selectedPriority,
+          selectedTime,
           state: this.state,
           addSelectedCard: this.addSelectedCard,
           removeSelectedCard: this.removeSelectedCard,
           selectedPriorityStore: this.selectedPriorityStore,
+          selectedTimeStore: this.selectedTimeStore,
         }}
       >
         {children}
