@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 export const CardWrapper = styled.section`
   background: var(--background-color);
   border-radius: 5px 5px 5px 5px;
-  height: ${props => props.heightCard || '27rem'};
-  width: ${props => props.widthtCard || '22rem'};
+  width: 22rem;
   display: flex;
   flex-direction: column;
   margin: 2rem auto;
@@ -19,7 +18,7 @@ export const InfoText = styled.p`
 export const Img = styled.img`
   border-radius: 5px 5px 0px 0px;
   width: 22rem;
-  height: ${props => props.heightImg || '13.5rem'};
+  height: 13.5rem;
 `;
 
 export const DefaultImg = styled.div`
@@ -33,7 +32,6 @@ export const Info = styled.section`
   padding: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 5px 5px;
-  height: ${props => props.heightInfoCard || 'auto'};
   width: 22rem;
   height: auto;
 `;
@@ -42,7 +40,6 @@ export const CardTitle = styled.h2`
   font-size: 1.8rem;
   font-family: Poppins;
   margin: 0 0 -2rem 0;
-  text-align: ${props => props.textAlign || 'left'};
 `;
 
 export const MoreInfo = styled(Link)`
