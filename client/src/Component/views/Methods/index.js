@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Carousel from 'nuka-carousel';
 import { Redirect, Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import Header from '../../Common/Header';
 import MethodCard from '../MethodCard';
 import methodCardData from '../../../fakeData/methodCardData';
@@ -39,7 +40,6 @@ class Methods extends Component {
           use={card.use}
           chooseMethod={this.chooseMethod}
           removeMethod={this.removeMethod}
-          errorOverSpend={this.errorOverSpend}
           id={card.id}
           tools={false}
           priority={false}
@@ -65,23 +65,19 @@ class Methods extends Component {
     });
   };
 
-  // checks remaining resources and triggers redirect to error page if you've over spent
-  errorOverSpend = () => {
-    const { resources } = this.state;
-    if (resources < 0) {
-      this.setState({
-        redirect: true,
+  noSelectedCardsError = () => {
+    const { selectedCards } = this.context;
+    if (selectedCards.length === 0) {
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'You must select your methods first!',
+        confirmButtonText: 'OK',
+      }).then(() => {
+        const { history } = this.props;
+        history.push('/methods');
       });
     }
-  };
-
-  // renders redirect if there are no resources left
-  renderRedirect = () => {
-    const { redirect } = this.state;
-    if (redirect) {
-      return <Redirect to="/errorNoMoreResources" />;
-    }
-    return null;
   };
 
   render() {
@@ -116,7 +112,7 @@ class Methods extends Component {
             Review <br />
             Scenario
           </BackToScenario>
-          <FooterNext as={Link} to="/priorities" type="button" />
+          <FooterNext as={Link} to="/priorities" type="button" onClick={this./>
         </Footer>
       </Fragment>
     );

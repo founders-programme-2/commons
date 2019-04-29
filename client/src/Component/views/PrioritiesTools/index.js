@@ -64,7 +64,6 @@ class PrioritiesTools extends Component {
                         use={card.use}
                         chooseMethod={null}
                         removeMethod={null}
-                        errorOverSpend={null}
                         id={card.id}
                         tools
                         priority
