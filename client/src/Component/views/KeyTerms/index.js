@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import key from '../../../assets/key.svg';
-import { WrapperTitlte, Img, Paragraph, Title } from './index.style';
+import { WrapperTitle, Img, Paragraph, Title } from './index.style';
 import keyTerms from '../../../fakeData/keyTerms';
 
 const KeyTerms = () => {
@@ -12,10 +12,10 @@ const KeyTerms = () => {
       {keyTerms.map(elements => {
         return (
           <div key={elements.id}>
-            <WrapperTitlte>
+            <WrapperTitle>
               <Img src={elements.img} alt="keyhub" />
               <Title>{elements.title}</Title>
-            </WrapperTitlte>
+            </WrapperTitle>
             <Paragraph>{elements.content}</Paragraph>
           </div>
         );
