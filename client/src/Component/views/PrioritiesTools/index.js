@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
+import Swal from 'sweetalert2';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
@@ -10,9 +12,25 @@ import { MyContext } from '../../../Context/ContextComponent';
 class PrioritiesTools extends Component {
   state = {};
 
+  noSelectedCardsError = () => {
+    const { selectedCards } = this.context;
+    if (selectedCards.length === 0) {
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'You must select your methods first!',
+        confirmButtonText: 'OK',
+      }).then(() => {
+        const { history } = this.props;
+        history.push('/methods');
+      });
+    }
+  };
+
   render() {
     return (
       <div>
+        {this.noSelectedCardsError()}
         <Header headerImg={null} titleText="Prioritize your tools" />
         <div>
           <MyContext.Consumer>
@@ -67,5 +85,11 @@ class PrioritiesTools extends Component {
     );
   }
 }
+
+PrioritiesTools.propTypes = {
+  history: ReactRouterPropTypes.history.isRequired,
+};
+
+PrioritiesTools.contextType = MyContext;
 
 export default PrioritiesTools;
