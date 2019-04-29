@@ -36,7 +36,7 @@ export const BackgroundWrapper = styled.header`
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#ffc729', GradientType=1 );
   transform: skewY(-12deg);
   height: 21rem;
-  width: 100vw;
+  width: 100%;
   padding: 0;
   margin: -2rem;
   display: flex;
