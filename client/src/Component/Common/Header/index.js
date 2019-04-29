@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import MenuBar from '../Menu';
 import logo from '../../../assets/logo.svg';
@@ -17,7 +18,9 @@ const Header = props => {
   return (
     <div>
       <HeaderWrapper>
-        <Logo src={logo} alt="logo" />
+        <Link to="/">
+          <Logo src={logo} alt="logo" />
+        </Link>
         <MenuBar />
       </HeaderWrapper>
       <Line />
