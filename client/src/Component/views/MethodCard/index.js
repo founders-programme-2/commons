@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
+import { MyContext } from '../../../Context/ContextComponent';
 import {
   CardWrapper,
   Img,
@@ -26,12 +27,46 @@ import star from '../../../assets/star.svg';
 class CardComponent extends Component {
   state = {
     checked: false,
+    defaultPriority: '',
+    defaultTime: '',
+  };
+
+  selectedPriority = event => {
+    const { id } = event.target.dataset;
+    this.setState({ defaultPriority: event.target.value }, () => {
+      const { defaultPriority } = this.state;
+      const { selectedPriorityStore } = this.context;
+      selectedPriorityStore(defaultPriority, id);
+    });
+  };
+
+  selectedTime = event => {
+    const { id } = event.target.dataset;
+    this.setState({ defaultTime: event.target.value }, () => {
+      const { defaultTime } = this.state;
+      const { selectedTimeStore } = this.context;
+      selectedTimeStore(defaultTime, id);
+    });
   };
 
   // toggles checkbox on click
+  // eslint-disable-next-line no-unused-vars
   toggleCheckbox = event => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
+  };
+
+  // looks at number of resource points and pushes as many stars to card
+  stars = points => {
+    const starsCount = [];
+    let counter = 0;
+    while (points > counter) {
+      counter += 1;
+      starsCount.push(
+        <ResourceStars src={star} key={`resourceStars-${counter}`} />
+      );
+    }
+    return starsCount;
   };
 
   render() {
@@ -47,27 +82,15 @@ class CardComponent extends Component {
       use,
       category,
       difficulty,
+      id,
       tools,
       priority,
     } = this.props;
 
-    const { checked } = this.state;
-
-    // looks at number of resource points and pushes as many stars to card
-    const stars = points => {
-      const starsCount = [];
-      let counter = 0;
-      while (points > counter) {
-        // eslint-disable-next-line no-plusplus
-        counter++;
-        starsCount.push(
-          <ResourceStars src={star} key={`resourceStars-${counter}`} />
-        );
-      }
-      return starsCount;
-    };
+    const { checked, defaultPriority, defaultTime } = this.state;
+    const { addSelectedCard, removeSelectedCard } = this.context;
     // saves func output to variable for render
-    const starsRender = stars(resourcePoints);
+    const starsRender = this.stars(resourcePoints);
     return (
       <Fragment>
         <CardWrapper>
@@ -110,9 +133,11 @@ class CardComponent extends Component {
                   this.toggleCheckbox(event);
                   if (checked === false) {
                     removeMethod(resourcePoints, event);
+                    addSelectedCard(id);
                     errorOverSpend();
                   } else if (checked === true) {
                     chooseMethod(resourcePoints, event);
+                    removeSelectedCard(id);
                     errorOverSpend();
                   }
                 }}
@@ -120,6 +145,7 @@ class CardComponent extends Component {
             </label>
           </UseResource>
         ) : null}
+
         {tools && priority ? (
           <Fragment>
             <div>
@@ -128,19 +154,43 @@ class CardComponent extends Component {
               <FormWrap>
                 <RadioWrap>
                   <Label htmlFor="low">
-                    <Input type="radio" id="low" name="choose" />
+                    <Input
+                      data-id={id}
+                      type="radio"
+                      id="low"
+                      name="choose"
+                      value="low"
+                      checked={defaultPriority === 'low'}
+                      onChange={this.selectedPriority}
+                    />
                     Low
                   </Label>
                 </RadioWrap>
                 <RadioWrap>
                   <Label htmlFor="medium">
-                    <Input type="radio" id="medium" name="choose" />
+                    <Input
+                      data-id={id}
+                      type="radio"
+                      id="medium"
+                      name="choose"
+                      value="medium"
+                      checked={defaultPriority === 'medium'}
+                      onChange={this.selectedPriority}
+                    />
                     Medium
                   </Label>
                 </RadioWrap>
                 <RadioWrap>
                   <Label htmlFor="high">
-                    <Input type="radio" id="high" name="choose" />
+                    <Input
+                      data-id={id}
+                      type="radio"
+                      id="high"
+                      name="choose"
+                      value="high"
+                      checked={defaultPriority === 'high'}
+                      onChange={this.selectedPriority}
+                    />
                     High
                   </Label>
                 </RadioWrap>
@@ -153,19 +203,43 @@ class CardComponent extends Component {
               <FormWrap>
                 <RadioWrap>
                   <Label htmlFor="short">
-                    <Input type="radio" id="short" name="time-choose" />
+                    <Input
+                      data-id={id}
+                      type="radio"
+                      id="short"
+                      name="time-choose"
+                      value="short"
+                      checked={defaultTime === 'short'}
+                      onChange={this.selectedTime}
+                    />
                     <Span>short-term:</Span> <LightSpan>30 days</LightSpan>
                   </Label>
                 </RadioWrap>
                 <RadioWrap>
                   <Label htmlFor="mid">
-                    <Input type="radio" id="mid" name="time-choose" />
+                    <Input
+                      data-id={id}
+                      type="radio"
+                      id="mid"
+                      name="time-choose"
+                      value="mid"
+                      checked={defaultTime === 'mid'}
+                      onChange={this.selectedTime}
+                    />
                     <Span>mid-term:</Span> <LightSpan>6 months</LightSpan>
                   </Label>
                 </RadioWrap>
                 <RadioWrap>
                   <Label htmlFor="long">
-                    <Input type="radio" id="long" name="time-choose" />
+                    <Input
+                      data-id={id}
+                      type="radio"
+                      id="long"
+                      name="time-choose"
+                      value="long"
+                      checked={defaultTime === 'long'}
+                      onChange={this.selectedTime}
+                    />
                     <Span>long-term:</Span> <LightSpan>+6 months</LightSpan>
                   </Label>
                 </RadioWrap>
@@ -179,25 +253,24 @@ class CardComponent extends Component {
 }
 
 CardComponent.propTypes = {
+  id: PropTypes.number.isRequired,
   cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
   chooseMethod: PropTypes.func,
   removeMethod: PropTypes.func,
   errorOverSpend: PropTypes.func,
-  key: PropTypes.number,
   description: PropTypes.string.isRequired,
   difficulty: PropTypes.string,
   requiredCards: PropTypes.string,
   use: PropTypes.string,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.arrayOf(PropTypes.string).isRequired,
   tools: PropTypes.bool.isRequired,
   priority: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
   cardImg: PropTypes.bool,
-  key: PropTypes.bool,
   difficulty: PropTypes.bool,
   requiredCards: PropTypes.bool,
   use: PropTypes.bool,
@@ -205,5 +278,7 @@ CardComponent.defaultProps = {
   removeMethod: PropTypes.bool,
   errorOverSpend: PropTypes.bool,
 };
+
+CardComponent.contextType = MyContext;
 
 export default CardComponent;
