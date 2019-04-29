@@ -11,7 +11,7 @@ module.exports = [
     title: 'Platform',
     img: 'https://i.imgur.com/rPJyipK.png',
     content:
-      'A set of tools to help people work together - i.e. what we are trying to help people build by creating this web app.A hub may want to develop a platform, to increase communication in their community.',
+      'A set of tools to help people work together - i.e. what we are trying to help people build by creating this web app. A hub may want to develop a platform, to increase communication in their community.',
   },
   {
     id: '3',
@@ -24,6 +24,6 @@ module.exports = [
     title: 'Networks   ',
     img: 'https://i.imgur.com/rPJyipK.png',
     content:
-      'Groups of various organisations that work together for common causes. Often requires a membership.Network mapping makes these relationships visible and trackable.',
+      'Groups of various organisations that work together for common causes. Often requires a membership. Network mapping makes these relationships visible and trackable.',
   },
 ];
