@@ -55,6 +55,12 @@ export const TitleText = styled.h1`
   font-size: 6rem;
   font-weight: 700;
   color: #000000;
+
+  @media screen and (max-width: 360px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
 `;
 
 export const TitleTextSub = styled.h1`
