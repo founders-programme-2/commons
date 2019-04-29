@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
 import Swal from 'sweetalert2';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
@@ -84,6 +85,10 @@ class PrioritiesTools extends Component {
     );
   }
 }
+
+PrioritiesTools.propTypes = {
+  history: ReactRouterPropTypes.history.isRequired,
+};
 
 PrioritiesTools.contextType = MyContext;
 
