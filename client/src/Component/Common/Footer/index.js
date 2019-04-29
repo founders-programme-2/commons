@@ -7,6 +7,8 @@ import {
   PreviousButton,
   BackToScenario,
   Line,
+  PrevBtnShadow,
+  NextBtnShadow,
 } from './Footer.style';
 
 const Footer = ({ nextLink, backLink, reviewScenario }) => {
@@ -15,7 +17,12 @@ const Footer = ({ nextLink, backLink, reviewScenario }) => {
       <Line />
       <Buttons>
         <PreviousButton as={Link} to={backLink} type="button" />
-        {reviewScenario && <BackToScenario>Review Scenario</BackToScenario>}
+        {reviewScenario && (
+          <BackToScenario>
+            Review <br />
+            Scenario
+          </BackToScenario>
+        )}
         {nextLink && <NextButton as={Link} to={nextLink} type="button" />}
       </Buttons>
     </Fragment>
