@@ -7,8 +7,6 @@ import {
   PreviousButton,
   BackToScenario,
   Line,
-  PrevBtnShadow,
-  NextBtnShadow,
 } from './Footer.style';
 
 const Footer = ({ nextLink, backLink, reviewScenario }) => {
