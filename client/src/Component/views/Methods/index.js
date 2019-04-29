@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import Header from '../../Common/Header';
 import MethodCard from '../MethodCard';
-import methodCardData from '../../../fakeData/methodCardData';
+import methodCardData from '../../../data/methodCardData';
 import { MyContext } from '../../../Context/ContextComponent';
 import {
   RemainingResources,

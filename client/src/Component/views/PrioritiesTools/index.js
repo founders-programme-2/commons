@@ -6,7 +6,7 @@ import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
 import { PrevBtn, NextBtn } from './index.style';
-import methodCardData from '../../../fakeData/methodCardData';
+import methodCardData from '../../../data/methodCardData';
 import { MyContext } from '../../../Context/ContextComponent';
 
 class PrioritiesTools extends Component {
