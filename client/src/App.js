@@ -6,8 +6,6 @@ import { MyProvider } from './Context/ContextComponent';
 
 // error pages
 import Error404 from './Component/views/Error404';
-import ErrorResources from './Component/views/ErrorResources';
-import ErrorNoMoreResources from './Component/views/ErrorNoMoreResources';
 
 // burger menu components
 import Landing from './Component/views/Landing';
@@ -40,11 +38,6 @@ class App extends Component {
             <Route path="/priorities" component={Priorities} />
             <Route path="/priority-tools" component={PrioritiesTools} />
             <Route path="/error404" component={Error404} />
-            <Route path="/errorResources" component={ErrorResources} />
-            <Route
-              path="/errorNoMoreResources"
-              component={ErrorNoMoreResources}
-            />
             <Redirect to="/error404" />
           </Switch>
         </MyProvider>
