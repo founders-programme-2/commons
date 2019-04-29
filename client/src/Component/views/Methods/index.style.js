@@ -34,6 +34,7 @@ export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 2rem 0 1rem;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 `;
 
 export const FooterPrevious = styled.button`
@@ -57,10 +58,11 @@ export const BackToScenario = styled.button`
   height: 4.9rem;
   width: 12.5rem;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 1rem;
+  line-height: 1.3rem;
   border-radius: 0.5rem;
   color: black;
   font-weight: bold;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: 'Poppins';
 `;

@@ -23,7 +23,7 @@
     "react-router-prop-types": "^1.0.4",
     "react-scripts": "2.1.8",
     "styled-components": "^4.2.0",
-    "sweetalert2": "^8.8.7"
+    "sweetalert2": "^8.9.0"
   },
   "scripts": {
     "start": "react-scripts start",

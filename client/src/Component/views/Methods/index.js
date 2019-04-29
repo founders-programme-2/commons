@@ -112,7 +112,10 @@ class Methods extends Component {
         <Line />
         <Footer>
           <FooterPrevious as={Link} to="./play" type="button" />
-          <BackToScenario>Review Scenario</BackToScenario>
+          <BackToScenario>
+            Review <br />
+            Scenario
+          </BackToScenario>
           <FooterNext as={Link} to="/priorities" type="button" />
         </Footer>
       </Fragment>

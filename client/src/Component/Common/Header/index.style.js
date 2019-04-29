@@ -27,13 +27,13 @@ export const HeaderTitle = styled.div`
 `;
 
 export const HeaderImg = styled.img`
-  width: 10rem;
+  width: 6rem;
   height: auto;
   margin-right: 2rem;
 `;
 
 export const Title = styled.h1`
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   color: #000000;
 `;
