@@ -60,9 +60,34 @@ class Methods extends Component {
   // Returns resources when checkbox is unchecked
   chooseMethod = (points, event) => {
     let { resources } = this.state;
-    this.setState(nextState => {
-      resources = nextState.resources + points;
-      return { resources };
+
+    if (resources - points >= 0) {
+      this.setState(nextState => {
+        resources = nextState.resources + points;
+        return { resources };
+      });
+    } else if (resources - points < 0) {
+      this.noMoreResources();
+    }
+  };
+
+  // Triggers if you try and overspend your resources
+  noMoreResources = () => {
+    Swal.fire({
+      type: 'error',
+      title: 'Oops!',
+      text: "You don't have enough resources!",
+      confirmButtonText: 'Go back and edit your selection.',
+      confirmButtonColor: '#faa634',
+      showCancelButton: true,
+      cancelButtonText: "Let's move on.",
+    }).then(value => {
+      const { history } = this.props;
+      if (value.dismiss === 'cancel') {
+        history.push('/priorities');
+      } else if (value.value === true) {
+        history.push('/methods');
+      }
     });
   };
 
