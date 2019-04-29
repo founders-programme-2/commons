@@ -18,8 +18,6 @@ import Methods from './Component/views/Methods';
 import KeyTerms from './Component/views/KeyTerms';
 import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
-import Persona from './Component/views/Persona';
-import YourScenario from './Component/views/YourScenario';
 import Priorities from './Component/views/Priorities';
 import PrioritiesTools from './Component/views/PrioritiesTools';
 
