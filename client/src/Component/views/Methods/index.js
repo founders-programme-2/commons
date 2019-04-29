@@ -26,7 +26,7 @@ class Methods extends Component {
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    const { data } = this.state;
+    const { resources, data } = this.state;
     return data.map(card => {
       return (
         <MethodCard
@@ -41,6 +41,8 @@ class Methods extends Component {
           use={card.use}
           chooseMethod={this.chooseMethod}
           removeMethod={this.removeMethod}
+          noMoreResources={this.noMoreResources}
+          resources={resources}
           id={card.id}
           tools={false}
           priority={false}
@@ -49,26 +51,22 @@ class Methods extends Component {
     });
   };
 
-  // Removes resource points from total 'resources' if checkbox is checked
-  removeMethod = (points, event) => {
+  // Returns resources when checkbox is unchecked
+  chooseMethod = (points, event) => {
+    let { resources } = this.state;
     this.setState(state => {
-      const resources = state.resources - points;
+      resources = state.resources - points;
       return { resources };
     });
   };
 
-  // Returns resources when checkbox is unchecked
-  chooseMethod = (points, event) => {
+  // Removes resource points from total 'resources' if checkbox is checked
+  removeMethod = (points, event) => {
     let { resources } = this.state;
-
-    if (resources - points >= 0) {
-      this.setState(nextState => {
-        resources = nextState.resources + points;
-        return { resources };
-      });
-    } else if (resources - points < 0) {
-      this.noMoreResources();
-    }
+    this.setState(nextState => {
+      resources = nextState.resources + points;
+      return { resources };
+    });
   };
 
   // Triggers if you try and overspend your resources

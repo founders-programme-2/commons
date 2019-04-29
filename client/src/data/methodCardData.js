@@ -8,7 +8,7 @@ module.exports = [
     category: ['Finding'],
     requires: 'Database',
     use: 'TBA',
-    resourcePoints: 14,
+    resourcePoints: 2,
   },
   {
     id: 2,

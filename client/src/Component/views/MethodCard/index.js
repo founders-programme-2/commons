@@ -76,6 +76,7 @@ class CardComponent extends Component {
       resourcePoints,
       chooseMethod,
       removeMethod,
+      noMoreResources,
       description,
       requiredCards,
       use,
@@ -84,6 +85,7 @@ class CardComponent extends Component {
       id,
       tools,
       priority,
+      resources,
     } = this.props;
 
     const { checked, defaultPriority, defaultTime } = this.state;
@@ -129,13 +131,23 @@ class CardComponent extends Component {
                 type="checkbox"
                 checked={checked}
                 onChange={event => {
-                  this.toggleCheckbox(event);
-                  if (checked === false) {
-                    removeMethod(resourcePoints, event);
-                    addSelectedCard(id);
-                  } else if (checked === true) {
-                    chooseMethod(resourcePoints, event);
-                    removeSelectedCard(id);
+                  if (resources - resourcePoints >= 0) {
+                    this.toggleCheckbox(event);
+                    if (checked === false && resources - resourcePoints >= 0) {
+                      chooseMethod(resourcePoints, event);
+                      addSelectedCard(id);
+                    } else if (checked === true) {
+                      removeMethod(resourcePoints, event);
+                      removeSelectedCard(id);
+                    }
+                  } else if (resources - resourcePoints < 0) {
+                    if (checked === false) {
+                      noMoreResources();
+                    } else if (checked === true) {
+                      this.toggleCheckbox(event);
+                      removeMethod(resourcePoints, event);
+                      removeSelectedCard(id);
+                    }
                   }
                 }}
               />
