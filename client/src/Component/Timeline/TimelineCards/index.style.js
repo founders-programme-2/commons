@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SmallCard = styled.div`
-  height: 5rem;
+  min-height: 5rem;
   width: 8rem;
   background-color: #e882a8;
   border-radius: 5px;
