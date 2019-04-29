@@ -11,75 +11,90 @@ import {
   SubtitleTime,
 } from './index.style';
 import TimelineCard from './TimelineCards';
+import methodCardData from '../../fakeData/methodCardData';
+import { MyContext } from '../../Context/ContextComponent';
 
-const exampleData = [
-  // These are just for testing so that you can see the cards appear on the page.
-  // I thought that it would be best to leave them until we can implement the actual cards
-  // so that everyone can understand how they are implemented and what they are looking for
-  {
-    cardTitle: 'Email Group',
-    priority: 1,
-    time: 1,
-  },
-  {
-    cardTitle: 'Network Map',
-    priority: 2,
-    time: 2,
-  },
-  {
-    cardTitle: 'Example',
-    priority: 3,
-    time: 1,
-  },
-];
-
-// Render function: Takes in the priority and time as arguments, and only renders the matching methods
-// Will take selected methods as props once they are passed through the state
-const Timeline = props => {
-  const renderElements = (priorityArg, timeArg) => {
-    return exampleData.map((ele, index) => {
-      if (ele.priority === priorityArg && ele.time === timeArg) {
-        return <TimelineCard name={ele.cardTitle} key={index} />;
-      }
-      return null;
-    });
-  };
-
-  // Maybe not the most elegant but it works for now! Each section is its own div that the methods get rendered too
-  // Most divs are display: flex so the whole timeline is responsive
+const Timeline = () => {
+  // Each section is its own div that the methods get rendered to
+  // Most divs are ```display: flex``` so the whole timeline is responsive
   // renderElements() is called in each div
   return (
-    <div>
-      <SubtitleTimeline>Timeline</SubtitleTimeline>
-      <Arrow src={arrowPath} />
+    <MyContext.Consumer>
+      {context => {
+        // get card ids and priority/time from context
+        const { selectedCards, selectedPriority, selectedTime } = context;
+        const idArray = selectedCards.map(ele => ele.id);
+        // create array of selected card data
+        const prioritizedCards = methodCardData.filter(card =>
+          idArray.includes(card.id)
+        );
+        // add priority and time keys into selected card objects
+        const finalCardInfo = prioritizedCards.map((ele, ind) => {
+          const newObj = ele;
+          newObj.priority = selectedPriority[ind].priority;
+          newObj.time = selectedTime[ind].time;
+          return newObj;
+        });
 
-      <ShortTermDiv>
-        <SubtitleTime>Short-Term</SubtitleTime>
-        <CardContainerDiv>
-          <SubtitlePriority>Low priority</SubtitlePriority>
-          {renderElements(1, 1)}
-        </CardContainerDiv>
-        <CardContainerDiv>{renderElements(2, 1)}</CardContainerDiv>
-        <CardContainerDiv>
-          <SubtitlePriority>High priority</SubtitlePriority>
-          {renderElements(3, 1)}
-        </CardContainerDiv>
-      </ShortTermDiv>
+        // render elements based on whether they match the supplied arguments
+        const renderElements = (priorityArg, timeArg) => {
+          return finalCardInfo.map(ele => {
+            if (ele.priority === priorityArg && ele.time === timeArg) {
+              return <TimelineCard name={ele.cardTitle} key={ele.id} />;
+            }
+            return null;
+          });
+        };
 
-      <MediumTermDiv>
-        <SubtitleTime>Med-Term</SubtitleTime>
-        <CardContainerDiv>{renderElements(1, 2)}</CardContainerDiv>
-        <CardContainerDiv>{renderElements(2, 2)}</CardContainerDiv>
-        <CardContainerDiv>{renderElements(3, 2)}</CardContainerDiv>
-      </MediumTermDiv>
+        return (
+          <div>
+            <SubtitleTimeline>Timeline</SubtitleTimeline>
+            <Arrow src={arrowPath} />
 
-      <LongTermDiv>
-        <SubtitleTime>Long-Term</SubtitleTime>
-        <CardContainerDiv>{renderElements(1, 3)}</CardContainerDiv>
-        <CardContainerDiv>{renderElements(2, 3)}</CardContainerDiv>
-        <CardContainerDiv>{renderElements(3, 3)}</CardContainerDiv>
-      </LongTermDiv>
-    </div>
+            <ShortTermDiv>
+              <SubtitleTime>Short-Term</SubtitleTime>
+              <CardContainerDiv>
+                <SubtitlePriority>Low priority</SubtitlePriority>
+                {renderElements('low', 'short')}
+              </CardContainerDiv>
+              <CardContainerDiv>
+                {renderElements('medium', 'short')}
+              </CardContainerDiv>
+              <CardContainerDiv>
+                <SubtitlePriority>High priority</SubtitlePriority>
+                {renderElements('high', 'short')}
+              </CardContainerDiv>
+            </ShortTermDiv>
+
+            <MediumTermDiv>
+              <SubtitleTime>Med-Term</SubtitleTime>
+              <CardContainerDiv>
+                {renderElements('low', 'mid')}
+              </CardContainerDiv>
+              <CardContainerDiv>
+                {renderElements('medium', 'mid')}
+              </CardContainerDiv>
+              <CardContainerDiv>
+                {renderElements('high', 'mid')}
+              </CardContainerDiv>
+            </MediumTermDiv>
+
+            <LongTermDiv>
+              <SubtitleTime>Long-Term</SubtitleTime>
+              <CardContainerDiv>
+                {renderElements('low', 'long')}
+              </CardContainerDiv>
+              <CardContainerDiv>
+                {renderElements('medium', 'long')}
+              </CardContainerDiv>
+              <CardContainerDiv>
+                {renderElements('high', 'long')}
+              </CardContainerDiv>
+            </LongTermDiv>
+          </div>
+        );
+      }}
+    </MyContext.Consumer>
   );
 };
 
