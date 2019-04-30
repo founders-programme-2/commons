@@ -23,14 +23,13 @@ import {
 class Methods extends Component {
   state = {
     resources: 15,
-    currentCardTitle: ''
+    currentCardTitle: '',
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
     const { resources } = this.state;
     return methodCardData.map(card => {
-
       return (
         <MethodCard
           key={card.id}
@@ -55,7 +54,7 @@ class Methods extends Component {
   };
 
   // renders Mini Method Cards dynamically
-  renderMiniMethodCards = () => {
+  renderMiniMethodCards = (event) => {
     const { selectedCards } = this.context;
     const miniCardTitles = [];
 

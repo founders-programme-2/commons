@@ -54,7 +54,6 @@ class CardComponent extends Component {
   toggleCheckbox = event => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
-    console.log('woooo', event);
   };
 
   // looks at number of resource points and pushes as many stars to card
