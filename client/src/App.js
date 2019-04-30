@@ -6,8 +6,6 @@ import { MyProvider } from './Context/ContextComponent';
 
 // error pages
 import Error404 from './Component/views/Error404';
-import ErrorResources from './Component/views/ErrorResources';
-import ErrorNoMoreResources from './Component/views/ErrorNoMoreResources';
 
 // burger menu components
 import Landing from './Component/views/Landing';
@@ -22,6 +20,7 @@ import YourScenario from './Component/views/YourScenario';
 import Priorities from './Component/views/Priorities';
 import Challenges from './Component/views/Challenges';
 import PrioritiesTools from './Component/views/PrioritiesTools';
+import Summary from './Component/views/Summary';
 
 class App extends Component {
   state = {};
@@ -41,13 +40,9 @@ class App extends Component {
             <Route path="/theory" component={Theory} />
             <Route path="/priorities" component={Priorities} />
             <Route path="/priority-tools" component={PrioritiesTools} />
+            <Route path="/summary" component={Summary} />
             <Route path="/error404" component={Error404} />
-            <Route path="/errorResources" component={ErrorResources} />
             <Route path="/yourScenario" component={YourScenario} />
-            <Route
-              path="/errorNoMoreResources"
-              component={ErrorNoMoreResources}
-            />
             <Route path="/challenges" component={Challenges} />
             <Redirect to="/error404" />
           </Switch>

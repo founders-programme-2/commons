@@ -21,6 +21,7 @@ export const ArrowIcon = styled.div`
 export const TitleText = styled.h2`
   height: 6rem;
   text-align: center;
+  margin-bottom: 2rem;
 `;
 
 export const ButtonWrapper = styled.div`

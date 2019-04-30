@@ -6,7 +6,7 @@ import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import MethodCard from '../MethodCard';
 import { PrevBtn, NextBtn } from './index.style';
-import methodCardData from '../../../fakeData/methodCardData';
+import methodCardData from '../../../data/methodCardData';
 import { MyContext } from '../../../Context/ContextComponent';
 
 class PrioritiesTools extends Component {
@@ -64,7 +64,6 @@ class PrioritiesTools extends Component {
                         use={card.use}
                         chooseMethod={null}
                         removeMethod={null}
-                        errorOverSpend={null}
                         id={card.id}
                         tools
                         priority
@@ -78,7 +77,7 @@ class PrioritiesTools extends Component {
         </div>
         <Footer
           backLink="/priorities"
-          nextLink="/priorities"
+          nextLink="/summary"
           reviewScenario={null}
         />
       </div>
