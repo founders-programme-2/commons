@@ -28,53 +28,47 @@ class PrioritiesTools extends Component {
   };
 
   render() {
+    const { selectedCards } = this.context;
+    const idArray = selectedCards.map(ele => ele.id);
+    const filteredCards = methodCardData.filter(card =>
+      idArray.includes(card.id)
+    );
     return (
       <div>
         {this.noSelectedCardsError()}
         <Header headerImg={null} titleText="Prioritize your tools" />
         <div>
-          <MyContext.Consumer>
-            {context => {
-              const { selectedCards } = context;
-              const idArray = selectedCards.map(ele => ele.id);
-              const filteredCards = methodCardData.filter(card =>
-                idArray.includes(card.id)
-              );
+          <Carousel
+            enableKeyboardControls
+            renderCenterLeftControls={({ previousSlide }) => (
+              <PrevBtn onClick={previousSlide}>.</PrevBtn>
+            )}
+            renderCenterRightControls={({ nextSlide }) => (
+              <NextBtn onClick={nextSlide}>.</NextBtn>
+            )}
+          >
+            {filteredCards.map(card => {
               return (
-                <Carousel
-                  enableKeyboardControls
-                  renderCenterLeftControls={({ previousSlide }) => (
-                    <PrevBtn onClick={previousSlide}>.</PrevBtn>
-                  )}
-                  renderCenterRightControls={({ nextSlide }) => (
-                    <NextBtn onClick={nextSlide}>.</NextBtn>
-                  )}
-                >
-                  {filteredCards.map(card => {
-                    return (
-                      <MethodCard
-                        key={card.id}
-                        cardTitle={card.cardTitle}
-                        description={card.description}
-                        resourcePoints={card.resourcePoints}
-                        cardImg={card.cardImg}
-                        difficulty={card.difficulty}
-                        category={card.category}
-                        requiredCards={card.requires}
-                        use={card.use}
-                        chooseMethod={null}
-                        removeMethod={null}
-                        errorOverSpend={null}
-                        id={card.id}
-                        tools
-                        priority
-                      />
-                    );
-                  })}
-                </Carousel>
+                <MethodCard
+                  key={card.id}
+                  cardTitle={card.cardTitle}
+                  description={card.description}
+                  resourcePoints={card.resourcePoints}
+                  cardImg={card.cardImg}
+                  difficulty={card.difficulty}
+                  category={card.category}
+                  requiredCards={card.requires}
+                  use={card.use}
+                  chooseMethod={null}
+                  removeMethod={null}
+                  errorOverSpend={null}
+                  id={card.id}
+                  tools
+                  priority
+                />
               );
-            }}
-          </MyContext.Consumer>
+            })}
+          </Carousel>
         </div>
         <Footer
           backLink="/priorities"
