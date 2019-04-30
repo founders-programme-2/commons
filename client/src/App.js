@@ -20,6 +20,7 @@ import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
 import Priorities from './Component/views/Priorities';
 import PrioritiesTools from './Component/views/PrioritiesTools';
+import Summary from './Component/views/Summary';
 
 class App extends Component {
   state = {};
@@ -39,6 +40,7 @@ class App extends Component {
             <Route path="/theory" component={Theory} />
             <Route path="/priorities" component={Priorities} />
             <Route path="/priority-tools" component={PrioritiesTools} />
+            <Route path="/summary" component={Summary} />
             <Route path="/error404" component={Error404} />
             <Route path="/errorResources" component={ErrorResources} />
             <Route
