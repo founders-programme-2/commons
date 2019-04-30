@@ -36,7 +36,6 @@ export const BackgroundWrapper = styled.header`
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#ffc729', GradientType=1 );
   transform: skewY(-12deg);
   height: 21rem;
-  width: 100vw;
   padding: 0;
   margin: -2rem;
   display: flex;
@@ -52,9 +51,15 @@ export const TitleText = styled.h1`
   margin: auto auto;
   display: block;
   text-align: center;
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 700;
   color: #000000;
+
+  @media (max-width: 360px) {
+    h1 {
+      font-size: 5rem;
+    }
+  }
 `;
 
 export const TitleTextSub = styled.h1`
