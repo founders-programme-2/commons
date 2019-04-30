@@ -4,13 +4,11 @@ import Footer from '../../Common/Footer';
 import {
   Wrapper,
   Subtitle,
-  ListContainer,
   LogoLink,
-  Logo,
-  ListItem,
   GroupSection,
-  TeamMember,
-  TeamPic,
+  GroupMember,
+  GroupPic,
+  FlaticonLogo,
 } from './index.style';
 import intersticiaLogo from '../../../assets/intersticia-logo-sml.png';
 import facLogo from '../../../assets/fac-logo.png';
@@ -27,71 +25,73 @@ const Credits = () => {
 
         <div>
           <LogoLink href="https://intersticia.org/" target="blank">
-            <Logo src={intersticiaLogo} />
+            <GroupPic src={intersticiaLogo} />
           </LogoLink>
         </div>
 
         <Subtitle>Developed by</Subtitle>
 
         <GroupSection>
-          <TeamMember>
-            <TeamPic src="https://i.ibb.co/PjrPjbQ/Screen-Shot-2019-04-30-at-4-25-40-PM.png" />
+          <GroupMember>
+            <GroupPic src="https://i.ibb.co/PjrPjbQ/Screen-Shot-2019-04-30-at-4-25-40-PM.png" />
             <LogoLink href="https://github.com/hshahwan" target="blank">
               Haneen
             </LogoLink>
-          </TeamMember>
+          </GroupMember>
 
-          <TeamMember>
-            <TeamPic src="https://avatars0.githubusercontent.com/u/36124895?s=460&v=4" />
+          <GroupMember>
+            <GroupPic src="https://avatars0.githubusercontent.com/u/36124895?s=460&v=4" />
             <LogoLink href="https://github.com/ali-7" target="blank">
               Ali
             </LogoLink>
-          </TeamMember>
+          </GroupMember>
 
-          <TeamMember>
-            <TeamPic src="https://avatars1.githubusercontent.com/u/37771591?s=460&v=4" />
+          <GroupMember>
+            <GroupPic src="https://avatars1.githubusercontent.com/u/37771591?s=460&v=4" />
             <LogoLink href="https://github.com/teenie-quaggard" target="blank">
               Kristina
             </LogoLink>
-          </TeamMember>
+          </GroupMember>
 
-          <TeamMember>
-            <TeamPic src="https://avatars3.githubusercontent.com/u/9094166?s=460&v=4?v=3&s=200" />
+          <GroupMember>
+            <GroupPic src="https://avatars3.githubusercontent.com/u/9094166?s=460&v=4?v=3&s=200" />
             <LogoLink href="https://github.com/oliversw" target="blank">
               Oliver
             </LogoLink>
-          </TeamMember>
+          </GroupMember>
         </GroupSection>
 
         <Subtitle>In conjunction with</Subtitle>
 
-        <ListContainer>
-          <ListItem>
-            <LogoLink href="https://networkedcity.london/start" target="blank">
-              <Logo src={nwcLogo} />
-            </LogoLink>
-          </ListItem>
-          <ListItem>
+        <GroupSection>
+          <GroupMember>
             <LogoLink href="https://www.foundersandcoders.com/" target="blank">
-              <Logo src={facLogo} />
+              <GroupPic src={facLogo} />
+              Founders and Coders
             </LogoLink>
-          </ListItem>
-          <ListItem>
+          </GroupMember>
+
+          <GroupMember>
             <LogoLink href="https://gazaskygeeks.com/" target="blank">
-              <Logo src={gsgLogo} />
+              <GroupPic src={gsgLogo} />
+              Gaza Sky Geeks
             </LogoLink>
-          </ListItem>
-        </ListContainer>
+          </GroupMember>
+        </GroupSection>
+
+        <GroupMember>
+          <LogoLink href="https://networkedcity.london/start" target="blank">
+            Networked City
+          </LogoLink>
+        </GroupMember>
 
         <Subtitle>Resources</Subtitle>
 
-        <ListContainer>
-          <ListItem>
-            <LogoLink href="https://www.flaticon.com/" target="blank">
-              Flaticon
-            </LogoLink>
-          </ListItem>
-        </ListContainer>
+        <div>
+          <LogoLink href="https://www.flaticon.com/" target="blank">
+            <FlaticonLogo src="https://media.flaticon.com/img/flaticon-logo-footer.svg" />
+          </LogoLink>
+        </div>
       </Wrapper>
 
       <Footer backLink="/summary" nextLink="{null}" reviewScenario={null} />

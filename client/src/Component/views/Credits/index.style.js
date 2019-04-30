@@ -10,26 +10,15 @@ export const Wrapper = styled.div`
 export const Subtitle = styled.h2`
   font-size: 2rem;
   text-align: center;
-`;
-
-export const ListContainer = styled.ul`
-  list-style: none;
-`;
-
-export const ListItem = styled.li`
-  text-align: center;
-`;
-
-export const Logo = styled.img`
-  width: 40%;
-  height: auto;
-  margin: 0 auto;
+  margin: 1rem;
 `;
 
 export const LogoLink = styled.a`
   display: flex;
   flex-direction: column;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  margin: 0.2rem;
+  text-align: center;
 `;
 
 export const GroupSection = styled.section`
@@ -39,8 +28,9 @@ export const GroupSection = styled.section`
   justify-content: center;
 `;
 
-export const TeamMember = styled.div`
-  height: 35%
+export const GroupMember = styled.div`
+  /* min-height helps to avoid problems with smaller logos */
+  min-height: 35%
   width: 35%;
   display: flex;
   flex-direction: column;
@@ -49,7 +39,14 @@ export const TeamMember = styled.div`
   margin: 1rem;
 `;
 
-export const TeamPic = styled.img`
+export const GroupPic = styled.img`
   width: 100%;
   border-radius: 8%;
+`;
+
+export const FlaticonLogo = styled(GroupPic)`
+  border-radius: 0;
+  padding: 1rem;
+  background-color: #585757;
+  margin-bottom: 2rem;
 `;
