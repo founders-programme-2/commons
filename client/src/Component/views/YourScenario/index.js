@@ -13,11 +13,18 @@ import houses from '../../../assets/houses.svg';
 class YourScenario extends Component {
   state = {
     slideIndex: 0,
-    // checked: false,
+    isChecked: true,
   };
 
   afterSlide = slideIndex => {
     this.setState({ slideIndex });
+    // console.log('slideIndex',slideIndex)
+  };
+
+  toggleChange = () => {
+    const { isChecked } = this.state;
+    this.setState({ isChecked: !isChecked });
+    console.log('checked', isChecked);
   };
 
   render() {
@@ -72,6 +79,16 @@ class YourScenario extends Component {
                     <CardTitle textAlign="center">{element.title}</CardTitle>
                     <Description>{element.text}</Description>
                   </Info>
+                  <label htmlFor="persona">
+                    <input
+                      type="checkbox"
+                      id="persona"
+                      value="persona"
+                      defaultChecked={this.isChecked}
+                      onChange={this.toggleChange}
+                    />
+                    choose only one porsana.
+                  </label>
                 </CardWrapper>
               );
             })}
