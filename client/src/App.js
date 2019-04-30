@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 // context
 import { MyProvider } from './Context/ContextComponent';
@@ -20,7 +20,7 @@ import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
 import Priorities from './Component/views/Priorities';
 import PrioritiesTools from './Component/views/PrioritiesTools';
-import Summary from "./Component/views/Summary";
+import Summary from './Component/views/Summary';
 
 class App extends Component {
   state = {};
