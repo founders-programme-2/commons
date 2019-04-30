@@ -16,7 +16,9 @@ import Methods from './Component/views/Methods';
 import KeyTerms from './Component/views/KeyTerms';
 import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
+import YourScenario from './Component/views/YourScenario';
 import Priorities from './Component/views/Priorities';
+import Challenges from './Component/views/Challenges';
 import PrioritiesTools from './Component/views/PrioritiesTools';
 import Summary from './Component/views/Summary';
 
@@ -40,6 +42,8 @@ class App extends Component {
             <Route path="/priority-tools" component={PrioritiesTools} />
             <Route path="/summary" component={Summary} />
             <Route path="/error404" component={Error404} />
+            <Route path="/yourScenario" component={YourScenario} />
+            <Route path="/challenges" component={Challenges} />
             <Redirect to="/error404" />
           </Switch>
         </MyProvider>
