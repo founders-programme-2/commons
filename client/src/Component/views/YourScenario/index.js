@@ -67,7 +67,7 @@ class YourScenario extends Component {
             {PersonaData.map(element => {
               return (
                 <CardWrapper key={element.id}>
-                  <Img heightImg="20rem" src={element.img} alt="PersonImg" />
+                  <Img heightImg="auto" src={element.img} alt="PersonImg" />
                   <Info>
                     <CardTitle textAlign="center">{element.title}</CardTitle>
                     <Description>{element.text}</Description>
