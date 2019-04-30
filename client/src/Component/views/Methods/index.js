@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import Header from '../../Common/Header';
 import MethodCard from '../MethodCard';
+import MiniMethodCard from './MiniMethodCard';
 import methodCardData from '../../../data/methodCardData';
 import { MyContext } from '../../../Context/ContextComponent';
 import {
@@ -127,6 +128,8 @@ class Methods extends Component {
     const { selectedCards } = this.context;
     return (
       <Fragment>
+        <MiniMethodCard title="Example" />
+
         <Header headerImg={null} titleText="Select your methods" />
         <Carousel
           wrapAround

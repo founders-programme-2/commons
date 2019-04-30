@@ -1,26 +1,26 @@
 import React, { Fragment } from 'react';
-import { CardWrapper, CardTop, CardInfo } from './index.style';
-import { MyContext } from '../../../../Context/ContextComponent';
+import PropTypes from 'prop-types';
+import { CardWrapper, XBtn, CardTop, Title, CardInfo } from './index.style';
 
-const MiniCard = () => {
-  const { selectedCards } = MyContext;
-
-  selectedCards.map(card, () => {});
+const MiniCard = props => {
+  const { title } = props;
 
   return (
-    <MyContext.Consumer>
-      {context => {
-        return (
-          <Fragment>
-            <CardWrapper>
-              <CardTop>Card Top</CardTop>
-              <CardInfo>Card info</CardInfo>
-            </CardWrapper>
-          </Fragment>
-        );
-      }}
-    </MyContext.Consumer>
+    <Fragment>
+      <CardWrapper>
+        <CardTop>
+          <XBtn>X</XBtn>
+        </CardTop>
+        <CardInfo>
+          <Title>{title}</Title>
+        </CardInfo>
+      </CardWrapper>
+    </Fragment>
   );
+};
+
+MiniCard.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default MiniCard;
