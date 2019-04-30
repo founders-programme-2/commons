@@ -124,53 +124,47 @@ class Methods extends Component {
 
   render() {
     const { resources } = this.state;
+    const { selectedCards } = this.context;
     return (
-      <MyContext.Consumer>
-        {context => {
-          const { selectedCards } = context;
-          return (
-            <Fragment>
-              <Header headerImg={null} titleText="Select your methods" />
-              <Carousel
-                wrapAround
-                enableKeyboardControls
-                renderCenterLeftControls={({ previousSlide }) => (
-                  <PrevBtn onClick={previousSlide}>.</PrevBtn>
-                )}
-                renderCenterRightControls={({ nextSlide }) => (
-                  <NextBtn onClick={nextSlide}>.</NextBtn>
-                )}
-              >
-                {this.renderMethodCards()}
-              </Carousel>
-              <Line />
+      <Fragment>
+        <Header headerImg={null} titleText="Select your methods" />
+        <Carousel
+          wrapAround
+          enableKeyboardControls
+          renderCenterLeftControls={({ previousSlide }) => (
+            <PrevBtn onClick={previousSlide}>.</PrevBtn>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <NextBtn onClick={nextSlide}>.</NextBtn>
+          )}
+        >
+          {this.renderMethodCards()}
+        </Carousel>
+        <Line />
 
-              <RemainingResources>
-                Remaining resources: <span>&nbsp;</span>
-                {resources}
-              </RemainingResources>
+        <RemainingResources>
+          Remaining resources: <span>&nbsp;</span>
+          {resources}
+        </RemainingResources>
 
-              <Line />
-              <Footer>
-                <FooterPrevious as={Link} to="./play" type="button" />
-                <BackToScenario>
-                  Review <br />
-                  Scenario
-                </BackToScenario>
-                <FooterNext
-                  as={Link}
-                  to="/priorities"
-                  type="button"
-                  onClick={event => {
-                    event.preventDefault();
-                    this.nextAlerts(selectedCards, resources);
-                  }}
-                />
-              </Footer>
-            </Fragment>
-          );
-        }}
-      </MyContext.Consumer>
+        <Line />
+        <Footer>
+          <FooterPrevious as={Link} to="./play" type="button" />
+          <BackToScenario>
+            Review <br />
+            Scenario
+          </BackToScenario>
+          <FooterNext
+            as={Link}
+            to="/priorities"
+            type="button"
+            onClick={event => {
+              event.preventDefault();
+              this.nextAlerts(selectedCards, resources);
+            }}
+          />
+        </Footer>
+      </Fragment>
     );
   }
 }

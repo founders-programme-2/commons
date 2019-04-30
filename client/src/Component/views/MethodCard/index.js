@@ -268,6 +268,7 @@ CardComponent.propTypes = {
   resourcePoints: PropTypes.number.isRequired,
   chooseMethod: PropTypes.func,
   removeMethod: PropTypes.func,
+  noMoreResources: PropTypes.func,
   description: PropTypes.string.isRequired,
   difficulty: PropTypes.string,
   requiredCards: PropTypes.string,
@@ -275,6 +276,7 @@ CardComponent.propTypes = {
   category: PropTypes.arrayOf(PropTypes.string).isRequired,
   tools: PropTypes.bool.isRequired,
   priority: PropTypes.bool.isRequired,
+  resources: PropTypes.number.isRequired,
 };
 
 CardComponent.defaultProps = {
@@ -284,6 +286,7 @@ CardComponent.defaultProps = {
   use: PropTypes.bool,
   chooseMethod: PropTypes.bool,
   removeMethod: PropTypes.bool,
+  noMoreResources: PropTypes.bool,
 };
 
 CardComponent.contextType = MyContext;
