@@ -14,11 +14,12 @@ class YourScenario extends Component {
   state = {
     slideIndex: 0,
     isChecked: true,
+    value:''
   };
 
   afterSlide = slideIndex => {
     this.setState({ slideIndex });
-    // console.log('slideIndex',slideIndex)
+    console.log('slideIndex',slideIndex);
   };
 
   toggleChange = () => {
@@ -81,13 +82,13 @@ class YourScenario extends Component {
                   </Info>
                   <label htmlFor="persona">
                     <input
-                      type="checkbox"
+                      type="radio"
                       id="persona"
                       value="persona"
                       defaultChecked={this.isChecked}
                       onChange={this.toggleChange}
                     />
-                    choose only one porsana.
+                    choose only one persona.
                   </label>
                 </CardWrapper>
               );
