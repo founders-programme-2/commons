@@ -54,12 +54,14 @@ class Methods extends Component {
   };
 
   // renders Mini Method Cards dynamically
-  renderMiniMethodCards = (event) => {
+  renderMiniMethodCards = event => {
     const { selectedCards } = this.context;
-    const miniCardTitles = [];
-
-    return selectedCards.map(miniCard => {
-      return <MiniCard title="Title" />;
+    const idArray = selectedCards.map(ele => ele.id);
+    const filteredCards = methodCardData.filter(card =>
+      idArray.includes(card.id)
+    );
+    return filteredCards.map(card => {
+      return <MiniCard title={card.cardTitle} key={card.id} />;
     });
   };
 
