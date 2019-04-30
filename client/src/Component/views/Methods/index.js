@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import Header from '../../Common/Header';
 import MethodCard from '../MethodCard';
-import MiniMethodCard from './MiniMethodCard';
+import MiniCard from './MiniMethodCard';
 import methodCardData from '../../../data/methodCardData';
 import { MyContext } from '../../../Context/ContextComponent';
 import {
@@ -17,18 +17,20 @@ import {
   FooterPrevious,
   FooterNext,
   BackToScenario,
+  SelectedMethods,
 } from './index.style';
 
 class Methods extends Component {
   state = {
     resources: 15,
-    data: methodCardData,
+    currentCardTitle: ''
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    const { resources, data } = this.state;
-    return data.map(card => {
+    const { resources } = this.state;
+    return methodCardData.map(card => {
+
       return (
         <MethodCard
           key={card.id}
@@ -49,6 +51,16 @@ class Methods extends Component {
           priority={false}
         />
       );
+    });
+  };
+
+  // renders Mini Method Cards dynamically
+  renderMiniMethodCards = () => {
+    const { selectedCards } = this.context;
+    const miniCardTitles = [];
+
+    return selectedCards.map(miniCard => {
+      return <MiniCard title="Title" />;
     });
   };
 
@@ -128,8 +140,6 @@ class Methods extends Component {
     const { selectedCards } = this.context;
     return (
       <Fragment>
-        <MiniMethodCard title="Example" />
-
         <Header headerImg={null} titleText="Select your methods" />
         <Carousel
           wrapAround
@@ -149,6 +159,17 @@ class Methods extends Component {
           Remaining resources: <span>&nbsp;</span>
           {resources}
         </RemainingResources>
+
+        <Line />
+
+        {selectedCards.length > 0 ? (
+          <SelectedMethods>
+            Your selected methods:
+            {this.renderMiniMethodCards()}
+          </SelectedMethods>
+        ) : (
+          <SelectedMethods>You haven't selected any methods!</SelectedMethods>
+        )}
 
         <Line />
         <Footer>

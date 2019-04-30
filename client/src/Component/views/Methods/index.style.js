@@ -66,3 +66,5 @@ export const BackToScenario = styled.button`
   font-weight: bold;
   font-family: 'Poppins';
 `;
+
+export const SelectedMethods = styled.section``;
