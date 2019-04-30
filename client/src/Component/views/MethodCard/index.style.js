@@ -9,6 +9,7 @@ export const CardWrapper = styled.section`
   flex-direction: column;
   margin: 2rem auto;
   padding: 2rem 0;
+  outline: none;
 `;
 
 export const InfoText = styled.p`
