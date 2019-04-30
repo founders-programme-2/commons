@@ -11,7 +11,7 @@ import {
   SubtitleTime,
 } from './index.style';
 import TimelineCard from './TimelineCards';
-import methodCardData from '../../fakeData/methodCardData';
+import methodCardData from '../../data/methodCardData';
 import { MyContext } from '../../Context/ContextComponent';
 
 const Timeline = () => {
