@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../Common/Header';
+import Footer from '../../Common/Footer';
 import Timeline from '../../Timeline';
 import {
   ContentAbout,
@@ -38,10 +39,16 @@ const Summary = props => {
       <MethodResourceList>
         <MethodResource>
           <a href="http://google.com" target="blank">
-            Network Map
+            This is where we might list links to resources
           </a>
         </MethodResource>
       </MethodResourceList>
+
+      <Footer
+        backLink="/priority-tools"
+        nextLink="/credits"
+        reviewScenario={null}
+      />
     </div>
   );
 };
