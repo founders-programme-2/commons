@@ -77,7 +77,7 @@ class PrioritiesTools extends Component {
         </div>
         <Footer
           backLink="/priorities"
-          nextLink="/priorities"
+          nextLink="/summary"
           reviewScenario={null}
         />
       </div>
