@@ -12,11 +12,7 @@ export const ListContainer = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  text-align: center;
 `;
 
 export const Logo = styled.img`
@@ -28,4 +24,24 @@ export const Logo = styled.img`
 export const LogoLink = styled.a`
   display: flex;
   flex-direction: column;
+`;
+
+export const TeamDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
+
+export const TeamMember = styled.div`
+  height: 35%
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TeamPic = styled.img`
+  width: 100%;
+  border-radius: 8%;
 `;

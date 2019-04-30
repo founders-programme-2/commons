@@ -7,6 +7,9 @@ import {
   Logo,
   ListItem,
   LogoLink,
+  TeamDiv,
+  TeamMember,
+  TeamPic,
 } from './index.style';
 import intersticiaLogo from '../../../assets/intersticia-logo-sml.png';
 
@@ -23,28 +26,35 @@ const Credits = () => {
           </LogoLink>
         </div>
         <h2>Developed by</h2>
-        <ListContainer>
-          <ListItem>
+        <TeamDiv>
+          <TeamMember>
+            <TeamPic src="https://avatars0.githubusercontent.com/u/32449667?s=460&v=4" />
             <a href="https://github.com/hshahwan" target="blank">
               Haneen
             </a>
-          </ListItem>
-          <ListItem>
+          </TeamMember>
+
+          <TeamMember>
+            <TeamPic src="https://avatars0.githubusercontent.com/u/36124895?s=460&v=4" />
             <a href="https://github.com/ali-7" target="blank">
               Ali
             </a>
-          </ListItem>
-          <ListItem>
+          </TeamMember>
+
+          <TeamMember>
+            <TeamPic src="https://avatars1.githubusercontent.com/u/37771591?s=460&v=4" />
             <a href="https://github.com/teenie-quaggard" target="blank">
               Kristina
             </a>
-          </ListItem>
-          <ListItem>
+          </TeamMember>
+
+          <TeamMember>
+            <TeamPic src="https://avatars3.githubusercontent.com/u/9094166?s=460&v=4?v=3&s=200" />
             <a href="https://github.com/oliversw" target="blank">
               Oliver
             </a>
-          </ListItem>
-        </ListContainer>
+          </TeamMember>
+        </TeamDiv>
         <h2>In conjunction with</h2>
         <ListContainer>
           <ListItem>
