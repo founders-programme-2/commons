@@ -1,8 +1,8 @@
-import React from 'react';
-import Header from '../../Common/Header';
-import Footer from '../../Common/Footer';
-import { Content } from './index.style';
-import conversation from '../../../assets/conversation.svg';
+import React from "react";
+import Header from "../../Common/Header";
+import Footer from "../../Common/Footer";
+import { Content } from "./index.style";
+import conversation from "../../../assets/conversation.svg";
 
 const About = () => {
   return (
