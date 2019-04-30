@@ -1,9 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import Carousel from 'nuka-carousel';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import Header from '../../Common/Header';
 import MethodCard from '../MethodCard';
-import methodCardData from '../../../fakeData/methodCardData';
+import methodCardData from '../../../data/methodCardData';
+import { MyContext } from '../../../Context/ContextComponent';
 import {
   RemainingResources,
   Line,
@@ -18,13 +21,12 @@ import {
 class Methods extends Component {
   state = {
     resources: 15,
-    redirect: false,
     data: methodCardData,
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    const { data } = this.state;
+    const { resources, data } = this.state;
     return data.map(card => {
       return (
         <MethodCard
@@ -39,7 +41,8 @@ class Methods extends Component {
           use={card.use}
           chooseMethod={this.chooseMethod}
           removeMethod={this.removeMethod}
-          errorOverSpend={this.errorOverSpend}
+          noMoreResources={this.noMoreResources}
+          resources={resources}
           id={card.id}
           tools={false}
           priority={false}
@@ -48,16 +51,17 @@ class Methods extends Component {
     });
   };
 
-  // Removes resource points from total 'resources' if checkbox is checked
-  removeMethod = (points, event) => {
+  // Returns resources when checkbox is unchecked
+  chooseMethod = (points, event) => {
+    let { resources } = this.state;
     this.setState(state => {
-      const resources = state.resources - points;
+      resources = state.resources - points;
       return { resources };
     });
   };
 
-  // Returns resources when checkbox is unchecked
-  chooseMethod = (points, event) => {
+  // Removes resource points from total 'resources' if checkbox is checked
+  removeMethod = (points, event) => {
     let { resources } = this.state;
     this.setState(nextState => {
       resources = nextState.resources + points;
@@ -65,30 +69,64 @@ class Methods extends Component {
     });
   };
 
-  // checks remaining resources and triggers redirect to error page if you've over spent
-  errorOverSpend = () => {
-    const { resources } = this.state;
-    if (resources < 0) {
-      this.setState({
-        redirect: true,
+  // Triggers if you try and overspend your resources
+  noMoreResources = () => {
+    Swal.fire({
+      type: 'error',
+      title: 'Oops!',
+      text: "You don't have enough resources!",
+      confirmButtonText: 'Go back and edit your selection.',
+      confirmButtonColor: '#faa634',
+      showCancelButton: true,
+      cancelButtonText: "Let's move on.",
+    }).then(value => {
+      const { history } = this.props;
+      if (value.dismiss === 'cancel') {
+        history.push('/priorities');
+      } else if (value.value === true) {
+        history.push('/methods');
+      }
+    });
+  };
+
+  // Triggers alerts on next click
+  nextAlerts = (selectedCards, resources) => {
+    if (selectedCards.length === 0) {
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'You must select your methods first!',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#faa634',
+      }).then(() => {
+        const { history } = this.props;
+        history.push('/methods');
+      });
+    } else if (resources > 0) {
+      Swal.fire({
+        type: 'info',
+        title: 'Are you sure you want to move forward?',
+        text: 'You still have resources left to spend!',
+        confirmButtonText: 'Go back and spend more resources.',
+        confirmButtonColor: '#faa634',
+        showCancelButton: true,
+        cancelButtonText: "Let's move on.",
+      }).then(value => {
+        const { history } = this.props;
+        if (value.dismiss === 'cancel') {
+          history.push('/priorities');
+        } else if (value.value === true) {
+          history.push('/methods');
+        }
       });
     }
   };
 
-  // renders redirect if there are no resources left
-  renderRedirect = () => {
-    const { redirect } = this.state;
-    if (redirect) {
-      return <Redirect to="/errorNoMoreResources" />;
-    }
-    return null;
-  };
-
   render() {
     const { resources } = this.state;
+    const { selectedCards } = this.context;
     return (
       <Fragment>
-        {this.renderRedirect()}
         <Header headerImg={null} titleText="Select your methods" />
         <Carousel
           wrapAround
@@ -116,11 +154,25 @@ class Methods extends Component {
             Review <br />
             Scenario
           </BackToScenario>
-          <FooterNext as={Link} to="/priorities" type="button" />
+          <FooterNext
+            as={Link}
+            to="/priorities"
+            type="button"
+            onClick={event => {
+              event.preventDefault();
+              this.nextAlerts(selectedCards, resources);
+            }}
+          />
         </Footer>
       </Fragment>
     );
   }
 }
+
+Methods.propTypes = {
+  history: ReactRouterPropTypes.history.isRequired,
+};
+
+Methods.contextType = MyContext;
 
 export default Methods;
