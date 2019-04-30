@@ -61,7 +61,16 @@ const Credits = () => {
           </GroupMember>
         </GroupSection>
 
-        <Subtitle>In conjunction with</Subtitle>
+        <Subtitle>In collaboration with</Subtitle>
+
+        <GroupSection>
+          <GroupMember>
+            <LogoLink href="https://networkedcity.london/start" target="blank">
+              <GroupPic src={nwcLogo} />
+              Networked City
+            </LogoLink>
+          </GroupMember>
+        </GroupSection>
 
         <GroupSection>
           <GroupMember>
@@ -79,12 +88,6 @@ const Credits = () => {
           </GroupMember>
         </GroupSection>
 
-        <GroupMember>
-          <LogoLink href="https://networkedcity.london/start" target="blank">
-            Networked City
-          </LogoLink>
-        </GroupMember>
-
         <Subtitle>Resources</Subtitle>
 
         <div>
@@ -94,7 +97,7 @@ const Credits = () => {
         </div>
       </Wrapper>
 
-      <Footer backLink="/summary" nextLink="{null}" reviewScenario={null} />
+      <Footer backLink="/summary" nextLink={null} reviewScenario={null} />
     </div>
   );
 };
