@@ -20,6 +20,7 @@ import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
 import Priorities from './Component/views/Priorities';
 import PrioritiesTools from './Component/views/PrioritiesTools';
+import Credits from './Component/views/Credits';
 
 class App extends Component {
   state = {};
@@ -45,6 +46,7 @@ class App extends Component {
               path="/errorNoMoreResources"
               component={ErrorNoMoreResources}
             />
+            <Route path="/credits" component={Credits} />
             <Redirect to="/error404" />
           </Switch>
         </MyProvider>
