@@ -4,7 +4,7 @@ import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import instruction from '../../../assets/instruction.svg';
 import { PulpIcon, BodyWrapper, Text } from './index.style';
-import instructionData from '../../../fakeData/instruction';
+import instructionData from '../../../data/instruction';
 
 const HowTo = () => {
   return (
