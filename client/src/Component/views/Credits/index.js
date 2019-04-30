@@ -8,11 +8,14 @@ import {
   LogoLink,
   Logo,
   ListItem,
-  TeamDiv,
+  GroupSection,
   TeamMember,
   TeamPic,
 } from './index.style';
 import intersticiaLogo from '../../../assets/intersticia-logo-sml.png';
+import facLogo from '../../../assets/fac-logo.png';
+import gsgLogo from '../../../assets/gsg-logo.png';
+import nwcLogo from '../../../assets/nwcLogo.png';
 
 const Credits = () => {
   return (
@@ -21,13 +24,16 @@ const Credits = () => {
 
       <Wrapper>
         <Subtitle>Supported by</Subtitle>
+
         <div>
           <LogoLink href="https://intersticia.org/" target="blank">
             <Logo src={intersticiaLogo} />
           </LogoLink>
         </div>
+
         <Subtitle>Developed by</Subtitle>
-        <TeamDiv>
+
+        <GroupSection>
           <TeamMember>
             <TeamPic src="https://i.ibb.co/PjrPjbQ/Screen-Shot-2019-04-30-at-4-25-40-PM.png" />
             <LogoLink href="https://github.com/hshahwan" target="blank">
@@ -55,26 +61,30 @@ const Credits = () => {
               Oliver
             </LogoLink>
           </TeamMember>
-        </TeamDiv>
+        </GroupSection>
+
         <Subtitle>In conjunction with</Subtitle>
+
         <ListContainer>
           <ListItem>
             <LogoLink href="https://networkedcity.london/start" target="blank">
-              Networked City
+              <Logo src={nwcLogo} />
             </LogoLink>
           </ListItem>
           <ListItem>
             <LogoLink href="https://www.foundersandcoders.com/" target="blank">
-              Founders and Coders
+              <Logo src={facLogo} />
             </LogoLink>
           </ListItem>
           <ListItem>
             <LogoLink href="https://gazaskygeeks.com/" target="blank">
-              Gaza Sky Geeks
+              <Logo src={gsgLogo} />
             </LogoLink>
           </ListItem>
         </ListContainer>
+
         <Subtitle>Resources</Subtitle>
+
         <ListContainer>
           <ListItem>
             <LogoLink href="https://www.flaticon.com/" target="blank">

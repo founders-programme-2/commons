@@ -32,7 +32,7 @@ export const LogoLink = styled.a`
   font-size: 1.3rem;
 `;
 
-export const TeamDiv = styled.div`
+export const GroupSection = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
