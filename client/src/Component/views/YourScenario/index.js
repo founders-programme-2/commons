@@ -3,18 +3,17 @@ import Carousel from 'nuka-carousel';
 import { PrevBtn, NextBtn } from '../Methods/index.style';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
-import { Description, HeadLine } from './index.style';
+import { Description, HeadLine, Label, Input } from './index.style';
 import { CardWrapper, Img, CardTitle, Info } from '../MethodCard/index.style';
 import { Content } from '../About/index.style';
 import { Line } from '../../Common/Header/index.style';
-import PersonaData from '../../../fakeData/persona';
+import PersonaData from '../../../data/persona';
 import houses from '../../../assets/houses.svg';
 
 class YourScenario extends Component {
   state = {
     slideIndex: 0,
     isChecked: true,
-    value:''
   };
 
   afterSlide = slideIndex => {
@@ -80,16 +79,16 @@ class YourScenario extends Component {
                     <CardTitle textAlign="center">{element.title}</CardTitle>
                     <Description>{element.text}</Description>
                   </Info>
-                  <label htmlFor="persona">
-                    <input
-                      type="radio"
+                  <Label htmlFor="persona">
+                    <Input
+                      type="checkbox"
                       id="persona"
                       value="persona"
                       defaultChecked={this.isChecked}
                       onChange={this.toggleChange}
                     />
                     choose only one persona.
-                  </label>
+                  </Label>
                 </CardWrapper>
               );
             })}

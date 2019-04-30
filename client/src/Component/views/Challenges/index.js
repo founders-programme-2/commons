@@ -3,12 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
-import challenges from '../../../fakeData/challenges';
+import challenges from '../../../data/challenges';
 import { PulpIcon, BodyWrapper, Text } from '../HowTo/index.style';
 import challenge from '../../../assets/challenge.svg';
 
 const Challenges = () => {
-  // const { fontSize } = props;
   return (
     <div>
       <Header headerImg={challenge} titleText=" Your challenge" />
