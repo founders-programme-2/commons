@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
+// component to scroll to top when loading new routes
+import ScrollToTopRoute from './Component/Common/ScrollToTop';
+
 // context
 import { MyProvider } from './Context/ContextComponent';
 
@@ -31,19 +34,22 @@ class App extends Component {
         <MyProvider>
           <Switch>
             <Route exact path="/" component={Landing} />
-            <Route path="/about" component={About} />
-            <Route path="/howTo" component={HowTo} />
-            <Route path="/play" component={Play} />
-            <Route path="/methods" component={Methods} />
-            <Route path="/keyTerms" component={KeyTerms} />
-            <Route path="/workshop" component={Workshop} />
-            <Route path="/theory" component={Theory} />
-            <Route path="/priorities" component={Priorities} />
-            <Route path="/priority-tools" component={PrioritiesTools} />
-            <Route path="/summary" component={Summary} />
-            <Route path="/error404" component={Error404} />
-            <Route path="/yourScenario" component={YourScenario} />
-            <Route path="/challenges" component={Challenges} />
+            <ScrollToTopRoute path="/about" component={About} />
+            <ScrollToTopRoute path="/howTo" component={HowTo} />
+            <ScrollToTopRoute path="/play" component={Play} />
+            <ScrollToTopRoute path="/methods" component={Methods} />
+            <ScrollToTopRoute path="/keyTerms" component={KeyTerms} />
+            <ScrollToTopRoute path="/workshop" component={Workshop} />
+            <ScrollToTopRoute path="/theory" component={Theory} />
+            <ScrollToTopRoute path="/priorities" component={Priorities} />
+            <ScrollToTopRoute
+              path="/priority-tools"
+              component={PrioritiesTools}
+            />
+            <ScrollToTopRoute path="/summary" component={Summary} />
+            <ScrollToTopRoute path="/error404" component={Error404} />
+            <ScrollToTopRoute path="/yourScenario" component={YourScenario} />
+            <ScrollToTopRoute path="/challenges" component={Challenges} />
             <Redirect to="/error404" />
           </Switch>
         </MyProvider>
