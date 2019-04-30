@@ -7,6 +7,11 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
+export const Subtitle = styled.h2`
+  font-size: 2rem;
+  text-align: center;
+`;
+
 export const ListContainer = styled.ul`
   list-style: none;
 `;
@@ -24,12 +29,14 @@ export const Logo = styled.img`
 export const LogoLink = styled.a`
   display: flex;
   flex-direction: column;
+  font-size: 1.3rem;
 `;
 
 export const TeamDiv = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const TeamMember = styled.div`
@@ -39,6 +46,7 @@ export const TeamMember = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 1rem;
 `;
 
 export const TeamPic = styled.img`

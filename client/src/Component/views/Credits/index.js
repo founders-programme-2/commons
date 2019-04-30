@@ -3,10 +3,11 @@ import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import {
   Wrapper,
+  Subtitle,
   ListContainer,
+  LogoLink,
   Logo,
   ListItem,
-  LogoLink,
   TeamDiv,
   TeamMember,
   TeamPic,
@@ -19,66 +20,66 @@ const Credits = () => {
       <Header headerImg={null} titleText="Credits" />
 
       <Wrapper>
-        <h2>Supported by</h2>
+        <Subtitle>Supported by</Subtitle>
         <div>
           <LogoLink href="https://intersticia.org/" target="blank">
             <Logo src={intersticiaLogo} />
           </LogoLink>
         </div>
-        <h2>Developed by</h2>
+        <Subtitle>Developed by</Subtitle>
         <TeamDiv>
           <TeamMember>
-            <TeamPic src="https://avatars0.githubusercontent.com/u/32449667?s=460&v=4" />
-            <a href="https://github.com/hshahwan" target="blank">
+            <TeamPic src="https://i.ibb.co/PjrPjbQ/Screen-Shot-2019-04-30-at-4-25-40-PM.png" />
+            <LogoLink href="https://github.com/hshahwan" target="blank">
               Haneen
-            </a>
+            </LogoLink>
           </TeamMember>
 
           <TeamMember>
             <TeamPic src="https://avatars0.githubusercontent.com/u/36124895?s=460&v=4" />
-            <a href="https://github.com/ali-7" target="blank">
+            <LogoLink href="https://github.com/ali-7" target="blank">
               Ali
-            </a>
+            </LogoLink>
           </TeamMember>
 
           <TeamMember>
             <TeamPic src="https://avatars1.githubusercontent.com/u/37771591?s=460&v=4" />
-            <a href="https://github.com/teenie-quaggard" target="blank">
+            <LogoLink href="https://github.com/teenie-quaggard" target="blank">
               Kristina
-            </a>
+            </LogoLink>
           </TeamMember>
 
           <TeamMember>
             <TeamPic src="https://avatars3.githubusercontent.com/u/9094166?s=460&v=4?v=3&s=200" />
-            <a href="https://github.com/oliversw" target="blank">
+            <LogoLink href="https://github.com/oliversw" target="blank">
               Oliver
-            </a>
+            </LogoLink>
           </TeamMember>
         </TeamDiv>
-        <h2>In conjunction with</h2>
+        <Subtitle>In conjunction with</Subtitle>
         <ListContainer>
           <ListItem>
-            <a href="https://networkedcity.london/start" target="blank">
+            <LogoLink href="https://networkedcity.london/start" target="blank">
               Networked City
-            </a>
+            </LogoLink>
           </ListItem>
           <ListItem>
-            <a href="https://www.foundersandcoders.com/" target="blank">
+            <LogoLink href="https://www.foundersandcoders.com/" target="blank">
               Founders and Coders
-            </a>
+            </LogoLink>
           </ListItem>
           <ListItem>
-            <a href="https://gazaskygeeks.com/" target="blank">
+            <LogoLink href="https://gazaskygeeks.com/" target="blank">
               Gaza Sky Geeks
-            </a>
+            </LogoLink>
           </ListItem>
         </ListContainer>
-        <h2>Resources</h2>
+        <Subtitle>Resources</Subtitle>
         <ListContainer>
           <ListItem>
-            <a href="https://www.flaticon.com/" target="blank">
+            <LogoLink href="https://www.flaticon.com/" target="blank">
               Flaticon
-            </a>
+            </LogoLink>
           </ListItem>
         </ListContainer>
       </Wrapper>
