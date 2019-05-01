@@ -20,13 +20,12 @@ import {
 
 class Methods extends Component {
   state = {
-    resources: 15,
     data: methodCardData,
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    const { resources, data } = this.state;
+    const { data } = this.state;
     return data.map(card => {
       return (
         <MethodCard
@@ -39,33 +38,14 @@ class Methods extends Component {
           category={card.category}
           requiredCards={card.requires}
           use={card.use}
-          chooseMethod={this.chooseMethod}
-          removeMethod={this.removeMethod}
+          // chooseMethod={this.chooseMethod}
+          // removeMethod={this.removeMethod}
           noMoreResources={this.noMoreResources}
-          resources={resources}
           id={card.id}
           tools={false}
           priority={false}
         />
       );
-    });
-  };
-
-  // Returns resources when checkbox is unchecked
-  chooseMethod = (points, event) => {
-    let { resources } = this.state;
-    this.setState(state => {
-      resources = state.resources - points;
-      return { resources };
-    });
-  };
-
-  // Removes resource points from total 'resources' if checkbox is checked
-  removeMethod = (points, event) => {
-    let { resources } = this.state;
-    this.setState(nextState => {
-      resources = nextState.resources + points;
-      return { resources };
     });
   };
 
@@ -123,8 +103,7 @@ class Methods extends Component {
   };
 
   render() {
-    const { resources } = this.state;
-    const { selectedCards } = this.context;
+    const { selectedCards, resources } = this.context;
     return (
       <Fragment>
         <Header headerImg={null} titleText="Select your methods" />
