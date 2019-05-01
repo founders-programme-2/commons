@@ -23,6 +23,8 @@ import PrioritiesTools from './Component/views/PrioritiesTools';
 import Credits from './Component/views/Credits';
 import Summary from './Component/views/Summary';
 
+import AboutMethods from './Component/views/AboutMethods';
+
 class App extends Component {
   state = {};
 
@@ -45,6 +47,7 @@ class App extends Component {
             <Route path="/error404" component={Error404} />
             <Route path="/yourScenario" component={YourScenario} />
             <Route path="/activities" component={Activities} />
+            <Route path="/aboutMethods" component={AboutMethods} />
             <Route path="/credits" component={Credits} />
             <Redirect to="/error404" />
           </Switch>

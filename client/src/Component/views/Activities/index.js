@@ -34,7 +34,7 @@ const Activities = () => {
       })}
       <Footer
         backLink="/yourScenario"
-        nextLink="/methods"
+        nextLink="/aboutMethods"
         reviewScenario={false}
       />
     </div>

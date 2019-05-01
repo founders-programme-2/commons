@@ -26,7 +26,7 @@ const Play = props => {
             />
             <Button
               buttonText="Play imagining your own community"
-              onClick={() => history.push('/methods')}
+              onClick={() => history.push('/activities')}
               height="7.5rem"
               width="20.4rem"
             />
