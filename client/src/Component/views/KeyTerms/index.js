@@ -3,7 +3,7 @@ import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import key from '../../../assets/key.svg';
 import { WrapperTitle, Img, Paragraph, Title } from './index.style';
-import keyTerms from '../../../fakeData/keyTerms';
+import keyTerms from '../../../data/keyTerms';
 
 const KeyTerms = () => {
   return (

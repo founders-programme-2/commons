@@ -77,7 +77,7 @@ class CardComponent extends Component {
       chooseMethod,
       datatestid,
       removeMethod,
-      errorOverSpend,
+      noMoreResources,
       description,
       requiredCards,
       use,
@@ -86,6 +86,7 @@ class CardComponent extends Component {
       id,
       tools,
       priority,
+      resources,
     } = this.props;
 
     const { checked, defaultPriority, defaultTime } = this.state;
@@ -132,15 +133,23 @@ class CardComponent extends Component {
                 type="checkbox"
                 checked={checked}
                 onChange={event => {
-                  this.toggleCheckbox(event);
-                  if (checked === false) {
-                    removeMethod(resourcePoints, event);
-                    addSelectedCard(id);
-                    errorOverSpend();
-                  } else if (checked === true) {
-                    chooseMethod(resourcePoints, event);
-                    removeSelectedCard(id);
-                    errorOverSpend();
+                  if (resources - resourcePoints >= 0) {
+                    this.toggleCheckbox(event);
+                    if (checked === false && resources - resourcePoints >= 0) {
+                      chooseMethod(resourcePoints, event);
+                      addSelectedCard(id);
+                    } else if (checked === true) {
+                      removeMethod(resourcePoints, event);
+                      removeSelectedCard(id);
+                    }
+                  } else if (resources - resourcePoints < 0) {
+                    if (checked === false) {
+                      noMoreResources();
+                    } else if (checked === true) {
+                      this.toggleCheckbox(event);
+                      removeMethod(resourcePoints, event);
+                      removeSelectedCard(id);
+                    }
                   }
                 }}
               />
@@ -262,7 +271,7 @@ CardComponent.propTypes = {
   resourcePoints: PropTypes.number.isRequired,
   chooseMethod: PropTypes.func,
   removeMethod: PropTypes.func,
-  errorOverSpend: PropTypes.func,
+  noMoreResources: PropTypes.func,
   description: PropTypes.string.isRequired,
   difficulty: PropTypes.string,
   requiredCards: PropTypes.string,
@@ -270,6 +279,7 @@ CardComponent.propTypes = {
   category: PropTypes.arrayOf(PropTypes.string).isRequired,
   tools: PropTypes.bool.isRequired,
   priority: PropTypes.bool.isRequired,
+  resources: PropTypes.number,
 };
 
 CardComponent.defaultProps = {
@@ -279,7 +289,8 @@ CardComponent.defaultProps = {
   use: PropTypes.bool,
   chooseMethod: PropTypes.bool,
   removeMethod: PropTypes.bool,
-  errorOverSpend: PropTypes.bool,
+  noMoreResources: PropTypes.bool,
+  resources: PropTypes.bool,
 };
 
 CardComponent.contextType = MyContext;

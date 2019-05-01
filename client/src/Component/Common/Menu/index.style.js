@@ -50,6 +50,7 @@ export const XIcon = styled.div`
     color: var(--highlight-color);
   }
   margin-top: 1rem;
+  outline: none;
 `;
 
 export const BurgerIcon = styled.div`

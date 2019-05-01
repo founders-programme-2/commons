@@ -16,5 +16,5 @@ export const Text = styled.p`
   padding: 1rem;
   font-weight: 700;
   font-family: 'Open Sans';
-  font-size: 1.11rem;
+  font-size: ${props => props.fontSize || '1.11rem'};
 `;
