@@ -10,7 +10,7 @@ export class MyProvider extends Component {
     selectedTime: [],
     resources: 15,
     // globalCheck: false,
-    checked: false,
+    // checked: false,
     checkedArray: [],
   };
 
@@ -33,7 +33,7 @@ export class MyProvider extends Component {
     } else {
       newCheckedArray.push({
         id,
-        checked: state,
+        checked: !state,
       });
     }
     this.setState({
@@ -124,12 +124,13 @@ export class MyProvider extends Component {
       resources,
       // globalCheck,
       checkedArray,
-      checked,
+      // checked,
     } = this.state;
-    console.log('resources:', resources);
-    // console.log('selectedTime:', selectedTime);
-    // console.log('selectedPriority:', selectedPriority);
-    // console.log('selectedCards:', selectedCards);
+    // console.log('resources:', resources);
+    // console.log('checkedArray:', checkedArray)
+    console.log('selectedTime:', selectedTime);
+    console.log('selectedPriority:', selectedPriority);
+    console.log('selectedCards:', selectedCards);
     return (
       <MyContext.Provider
         value={{
@@ -148,7 +149,7 @@ export class MyProvider extends Component {
           // globalCheck,
           checkedArray,
           updatedCheckedCards: this.updatedCheckedCards,
-          checked,
+          // checked,
         }}
       >
         {children}
