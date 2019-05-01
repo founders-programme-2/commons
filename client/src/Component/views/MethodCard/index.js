@@ -26,7 +26,6 @@ import star from '../../../assets/star.svg';
 
 class CardComponent extends Component {
   state = {
-    // checked: false,
     defaultPriority: '',
     defaultTime: '',
   };
@@ -49,17 +48,6 @@ class CardComponent extends Component {
     });
   };
 
-  // toggles checkbox on click
-  // eslint-disable-next-line no-unused-vars
-  // toggleCheckbox = event => {
-  //   const { checked } = this.state;
-  //   this.setState({ checked: !checked });
-  //   //   , () => {
-  //   //   const { updateCheckedCard } = this.context;
-  //   //   updateCheckedCard();
-  //   // });
-  // };
-
   // looks at number of resource points and pushes as many stars to card
   stars = points => {
     const starsCount = [];
@@ -78,8 +66,6 @@ class CardComponent extends Component {
       cardImg,
       cardTitle,
       resourcePoints,
-      // chooseMethod,
-      // removeMethod,
       noMoreResources,
       description,
       requiredCards,
@@ -89,7 +75,6 @@ class CardComponent extends Component {
       id,
       tools,
       priority,
-      // resources,
       checked,
     } = this.props;
 
@@ -100,7 +85,6 @@ class CardComponent extends Component {
       resources,
       chooseMethod,
       removeMethod,
-      // globalCheck,
       updatedCheckedCards,
     } = this.context;
     // saves func output to variable for render
@@ -145,22 +129,18 @@ class CardComponent extends Component {
                 checked={checked}
                 onChange={event => {
                   if (resources - resourcePoints >= 0) {
-                    // this.toggleCheckbox(event);
                     updatedCheckedCards(id, checked);
                     if (checked === false && resources - resourcePoints >= 0) {
                       chooseMethod(resourcePoints, event);
                       addSelectedCard(id);
-                      // updatedCheckedCards(id, checked);
                     } else if (checked === true) {
                       removeMethod(resourcePoints, event);
                       removeSelectedCard(id);
-                      // updatedCheckedCards(id, checked);
                     }
                   } else if (resources - resourcePoints < 0) {
                     if (checked === false) {
                       noMoreResources();
                     } else if (checked === true) {
-                      // this.toggleCheckbox(event);
                       updatedCheckedCards(id, checked);
                       removeMethod(resourcePoints, event);
                       removeSelectedCard(id);
@@ -283,8 +263,6 @@ CardComponent.propTypes = {
   cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
-  chooseMethod: PropTypes.func,
-  removeMethod: PropTypes.func,
   noMoreResources: PropTypes.func,
   description: PropTypes.string.isRequired,
   difficulty: PropTypes.string,
@@ -293,7 +271,7 @@ CardComponent.propTypes = {
   category: PropTypes.arrayOf(PropTypes.string).isRequired,
   tools: PropTypes.bool.isRequired,
   priority: PropTypes.bool.isRequired,
-  resources: PropTypes.number,
+  checked: PropTypes.bool.isRequired,
 };
 
 CardComponent.defaultProps = {
@@ -301,10 +279,7 @@ CardComponent.defaultProps = {
   difficulty: PropTypes.bool,
   requiredCards: PropTypes.bool,
   use: PropTypes.bool,
-  chooseMethod: PropTypes.bool,
-  removeMethod: PropTypes.bool,
   noMoreResources: PropTypes.bool,
-  resources: PropTypes.bool,
 };
 
 CardComponent.contextType = MyContext;
