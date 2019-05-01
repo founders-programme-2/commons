@@ -9,3 +9,18 @@ export const ButtonWrapper = styled.div`
   align-items: center;
   flex-direction: column;
 `;
+
+export const FooterStyle = styled.div``;
+
+export const ContentWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+`;
