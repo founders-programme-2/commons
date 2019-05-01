@@ -10,13 +10,44 @@ export class MyProvider extends Component {
     selectedTime: [],
     resources: 15,
     // globalCheck: false,
-    // checked: false,
+    checked: false,
+    checkedArray: [],
+  };
+
+  updatedCheckedCards = (id, state) => {
+    console.log('state:', state)
+    console.log('id:', id)
+    const { checkedArray } = this.state;
+    let newCheckedArray = [...checkedArray];
+    const found = newCheckedArray.find(({ id: foundId }) => id === foundId);
+    if (found) {
+      newCheckedArray = newCheckedArray.map(obj => {
+        if (obj.id === id) {
+          return {
+            id: obj.id,
+            checked: !state,
+          };
+        }
+        return obj;
+      });
+    } else {
+      newCheckedArray.push({
+        id,
+        checked: state,
+      });
+    }
+    this.setState({
+      checkedArray: newCheckedArray,
+    });
   };
 
   // add selected card ID to state
   addSelectedCard = id => {
+    // const selectedCards = [...this.state.selectedCards];
+    // selectedCards.push({id});
+    // this.setState({ selectedCards });
     this.setState(state => {
-      return state.selectedCards.push({ id });
+      state.selectedCards.push({ id });
     });
   };
 
@@ -92,6 +123,8 @@ export class MyProvider extends Component {
       selectedTime,
       resources,
       // globalCheck,
+      checkedArray,
+      checked,
     } = this.state;
     console.log('resources:', resources);
     // console.log('selectedTime:', selectedTime);
@@ -113,6 +146,9 @@ export class MyProvider extends Component {
           removeMethod: this.removeMethod,
           // updateCheckedCard: this.updateCheckedCard,
           // globalCheck,
+          checkedArray,
+          updatedCheckedCards: this.updatedCheckedCards,
+          checked,
         }}
       >
         {children}
