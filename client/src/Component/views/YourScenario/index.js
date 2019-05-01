@@ -131,7 +131,7 @@ class YourScenario extends Component {
         </div>
         <Footer
           backLink="/play"
-          nextLink="/challenges"
+          nextLink="/activities"
           reviewScenario={false}
         />
       </div>
