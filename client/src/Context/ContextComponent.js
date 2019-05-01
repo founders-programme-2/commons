@@ -58,12 +58,12 @@ export class MyProvider extends Component {
       if (state.selectedPriority.length === 0) {
         return state.selectedPriority.push({ id, priority });
       }
-      return state.selectedPriority.map((ele, index) => {
+      state.selectedPriority.map((ele, index) => {
         if (ele.id === id) {
           state.selectedPriority.splice(index);
         }
-        return state.selectedPriority.push({ id, priority });
       });
+      return state.selectedPriority.push({ id, priority });
     });
   };
 
@@ -72,12 +72,12 @@ export class MyProvider extends Component {
       if (state.selectedTime.length === 0) {
         return state.selectedTime.push({ id, time });
       }
-      return state.selectedTime.map((ele, index) => {
+      state.selectedTime.map((ele, index) => {
         if (ele.id === id) {
           state.selectedTime.splice(index);
         }
-        return state.selectedTime.push({ id, time });
       });
+      return state.selectedTime.push({ id, time });
     });
   };
 
@@ -110,8 +110,8 @@ export class MyProvider extends Component {
     } = this.state;
     // console.log('resources:', resources);
     // console.log('checkedArray:', checkedArray)
-    // console.log('selectedTime:', selectedTime);
-    // console.log('selectedPriority:', selectedPriority);
+    console.log('selectedTime:', selectedTime);
+    console.log('selectedPriority:', selectedPriority);
     // console.log('selectedCards:', selectedCards);
     return (
       <MyContext.Provider
