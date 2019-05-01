@@ -15,7 +15,6 @@ export const TermDiv = styled.div`
   background-color: rgba(255, 199, 41, 0.25);
   min-height: 15rem;
   width: 100%;
-  /* margin: 0 -2rem; */
   display: flex;
   flex-direction: row;
 
