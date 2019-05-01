@@ -19,13 +19,13 @@ const Play = props => {
         <ContentWrapper>
           <ButtonWrapper>
             <Button
-              buttonText="Play a random scenario"
+              buttonText="Play Slipham scenario"
               onClick={() => history.push('/yourScenario')}
               height="7.5rem"
               width="20.4rem"
             />
             <Button
-              buttonText="Play with your own context"
+              buttonText="Play imagining your own community"
               onClick={() => history.push('/methods')}
               height="7.5rem"
               width="20.4rem"
