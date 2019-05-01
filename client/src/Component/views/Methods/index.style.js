@@ -24,6 +24,7 @@ export const PrevBtn = styled.div`
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: -2rem;
 `;
 
 export const NextBtn = styled(PrevBtn)`
@@ -67,4 +68,17 @@ export const BackToScenario = styled.button`
   font-family: 'Poppins';
 `;
 
-export const SelectedMethods = styled.section``;
+export const SelectedMethods = styled.section`
+  margin: 2rem 0rem;
+  padding: 1rem;
+  font-size: 2rem;
+`;
+
+export const MiniCardStyle = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: auto;
+  font-size: 2rem;
+  margin: 2rem;
+`;

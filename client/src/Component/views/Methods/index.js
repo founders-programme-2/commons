@@ -18,12 +18,12 @@ import {
   FooterNext,
   BackToScenario,
   SelectedMethods,
+  MiniCardStyle,
 } from './index.style';
 
 class Methods extends Component {
   state = {
     resources: 15,
-    currentCardTitle: '',
   };
 
   // Renders method cards dynamically
@@ -54,7 +54,7 @@ class Methods extends Component {
   };
 
   // renders Mini Method Cards dynamically
-  renderMiniMethodCards = event => {
+  renderMiniMethodCards = () => {
     const { selectedCards } = this.context;
     const idArray = selectedCards.map(ele => ele.id);
     const filteredCards = methodCardData.filter(card =>
@@ -166,7 +166,18 @@ class Methods extends Component {
         {selectedCards.length > 0 ? (
           <SelectedMethods>
             Your selected methods:
-            {this.renderMiniMethodCards()}
+            <Carousel
+              wrapAround
+              enableKeyboardControls
+              renderCenterLeftControls={({ previousSlide }) => (
+                <PrevBtn onClick={previousSlide}>.</PrevBtn>
+              )}
+              renderCenterRightControls={({ nextSlide }) => (
+                <NextBtn onClick={nextSlide}>.</NextBtn>
+              )}
+            >
+              <MiniCardStyle>{this.renderMiniMethodCards()}</MiniCardStyle>
+            </Carousel>
           </SelectedMethods>
         ) : (
           <SelectedMethods>You haven't selected any methods!</SelectedMethods>

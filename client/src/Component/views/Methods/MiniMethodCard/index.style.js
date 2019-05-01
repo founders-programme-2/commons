@@ -17,13 +17,13 @@ export const XBtn = styled.button`
 export const CardTop = styled.div`
   border-radius: 5px 5px 0px 0px;
   background: var(--highlight-color);
-  width: 14rem;
-  height: 10rem;
+  width: 12rem;
+  height: 8rem;
 `;
 
 export const CardInfo = styled.div`
-  width: 14rem;
-  min-height: 10rem;
+  width: 12rem;
+  min-height: 8rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 5px 5px;
 `;
