@@ -9,14 +9,11 @@ export class MyProvider extends Component {
     selectedPriority: [],
     selectedTime: [],
     resources: 15,
-    // globalCheck: false,
-    // checked: false,
     checkedArray: [],
   };
 
+  // to toggle checked
   updatedCheckedCards = (id, state) => {
-    console.log('state:', state)
-    console.log('id:', id)
     const { checkedArray } = this.state;
     let newCheckedArray = [...checkedArray];
     const found = newCheckedArray.find(({ id: foundId }) => id === foundId);
@@ -43,9 +40,6 @@ export class MyProvider extends Component {
 
   // add selected card ID to state
   addSelectedCard = id => {
-    // const selectedCards = [...this.state.selectedCards];
-    // selectedCards.push({id});
-    // this.setState({ selectedCards });
     this.setState(state => {
       state.selectedCards.push({ id });
     });
@@ -105,16 +99,6 @@ export class MyProvider extends Component {
     });
   };
 
-  // updateCheckedCard = () => {
-  //   // const { globalCheck } = this.state;
-  //   // const newState = localCheck;
-  //   const { globalCheck } = this.state;
-  //   // this.setState({ globalCheck: !globalCheck }
-  //   this.setState({ globalCheck: !globalCheck }, () => {
-  //     console.log('context-change-update');
-  //   });
-  // };
-
   render() {
     const { children } = this.props;
     const {
@@ -122,15 +106,13 @@ export class MyProvider extends Component {
       selectedPriority,
       selectedTime,
       resources,
-      // globalCheck,
       checkedArray,
-      // checked,
     } = this.state;
     // console.log('resources:', resources);
     // console.log('checkedArray:', checkedArray)
-    console.log('selectedTime:', selectedTime);
-    console.log('selectedPriority:', selectedPriority);
-    console.log('selectedCards:', selectedCards);
+    // console.log('selectedTime:', selectedTime);
+    // console.log('selectedPriority:', selectedPriority);
+    // console.log('selectedCards:', selectedCards);
     return (
       <MyContext.Provider
         value={{
@@ -145,11 +127,8 @@ export class MyProvider extends Component {
           resources,
           chooseMethod: this.chooseMethod,
           removeMethod: this.removeMethod,
-          // updateCheckedCard: this.updateCheckedCard,
-          // globalCheck,
           checkedArray,
           updatedCheckedCards: this.updatedCheckedCards,
-          // checked,
         }}
       >
         {children}
