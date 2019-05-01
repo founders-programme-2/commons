@@ -51,14 +51,14 @@ class CardComponent extends Component {
 
   // toggles checkbox on click
   // eslint-disable-next-line no-unused-vars
-  toggleCheckbox = event => {
-    const { checked } = this.state;
-    this.setState({ checked: !checked });
-    //   , () => {
-    //   const { updateCheckedCard } = this.context;
-    //   updateCheckedCard();
-    // });
-  };
+  // toggleCheckbox = event => {
+  //   const { checked } = this.state;
+  //   this.setState({ checked: !checked });
+  //   //   , () => {
+  //   //   const { updateCheckedCard } = this.context;
+  //   //   updateCheckedCard();
+  //   // });
+  // };
 
   // looks at number of resource points and pushes as many stars to card
   stars = points => {
@@ -145,25 +145,25 @@ class CardComponent extends Component {
                 checked={checked}
                 onChange={event => {
                   if (resources - resourcePoints >= 0) {
-                    this.toggleCheckbox(event);
-                    // updatedCheckedCards(id, checked);
+                    // this.toggleCheckbox(event);
+                    updatedCheckedCards(id, checked);
                     if (checked === false && resources - resourcePoints >= 0) {
                       chooseMethod(resourcePoints, event);
                       addSelectedCard(id);
-                      updatedCheckedCards(id, !checked);
+                      // updatedCheckedCards(id, checked);
                     } else if (checked === true) {
                       removeMethod(resourcePoints, event);
                       removeSelectedCard(id);
-                      updatedCheckedCards(id, !checked);
+                      // updatedCheckedCards(id, checked);
                     }
                   } else if (resources - resourcePoints < 0) {
                     if (checked === false) {
                       noMoreResources();
                     } else if (checked === true) {
-                      this.toggleCheckbox(event);
+                      // this.toggleCheckbox(event);
+                      updatedCheckedCards(id, checked);
                       removeMethod(resourcePoints, event);
                       removeSelectedCard(id);
-                      updatedCheckedCards(id, !checked);
                     }
                   }
                 }}
