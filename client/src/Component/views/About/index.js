@@ -31,11 +31,9 @@ const About = () => {
           communication system. We call that team the hub, and their new system
           the community platform.
         </p>
-
-        <br />
         <br />
         <p>
-          For more information, see{' '}
+          For more information on commons, hubs and platforms, see{' '}
           <Link to="/keyTerms">
             <i>Key Terms</i>.
           </Link>
