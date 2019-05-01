@@ -8,6 +8,9 @@ export class MyProvider extends Component {
     selectedCards: [],
     selectedPriority: [],
     selectedTime: [],
+    resources: 15,
+    // globalCheck: false,
+    // checked: false,
   };
 
   // add selected card ID to state
@@ -53,9 +56,44 @@ export class MyProvider extends Component {
     });
   };
 
+  // Returns resources when checkbox is unchecked
+  chooseMethod = (points, event) => {
+    let { resources } = this.state;
+    this.setState(state => {
+      resources = state.resources - points;
+      return { resources };
+    });
+  };
+
+  // Removes resource points from total 'resources' if checkbox is checked
+  removeMethod = (points, event) => {
+    let { resources } = this.state;
+    this.setState(nextState => {
+      resources = nextState.resources + points;
+      return { resources };
+    });
+  };
+
+  // updateCheckedCard = () => {
+  //   // const { globalCheck } = this.state;
+  //   // const newState = localCheck;
+  //   const { globalCheck } = this.state;
+  //   // this.setState({ globalCheck: !globalCheck }
+  //   this.setState({ globalCheck: !globalCheck }, () => {
+  //     console.log('context-change-update');
+  //   });
+  // };
+
   render() {
     const { children } = this.props;
-    const { selectedCards, selectedPriority, selectedTime } = this.state;
+    const {
+      selectedCards,
+      selectedPriority,
+      selectedTime,
+      resources,
+      // globalCheck,
+    } = this.state;
+    console.log('resources:', resources);
     // console.log('selectedTime:', selectedTime);
     // console.log('selectedPriority:', selectedPriority);
     // console.log('selectedCards:', selectedCards);
@@ -70,6 +108,11 @@ export class MyProvider extends Component {
           removeSelectedCard: this.removeSelectedCard,
           selectedPriorityStore: this.selectedPriorityStore,
           selectedTimeStore: this.selectedTimeStore,
+          resources,
+          chooseMethod: this.chooseMethod,
+          removeMethod: this.removeMethod,
+          // updateCheckedCard: this.updateCheckedCard,
+          // globalCheck,
         }}
       >
         {children}
