@@ -57,7 +57,6 @@ class YourScenario extends Component {
           <Line />
           <br />
           <h2>Challenges</h2>
-          <br />
           <ul>
             <li>
               People don&#39;t know enough about what is going on in Slipham.
@@ -87,8 +86,12 @@ class YourScenario extends Component {
         <br />
         <h2>Community Connectors</h2>
         <HeadLine>
-          Here are some potential user personas that you can keep in mind while
-          while you choose your methods.
+          The role of the community connector is to use a range of methods, some
+          face-to-face and some online, to help people to address the challenges
+          as individuals, in groups, or by starting projects. Some connectors
+          are paid by the Slipham action centre, some are local volunteers. Here
+          are some community connectors. Who would you like to be, to meet the
+          challenges?
         </HeadLine>
         <div>
           <Carousel
@@ -127,7 +130,7 @@ class YourScenario extends Component {
           </Carousel>
         </div>
         <Footer
-          backLink="/yourScenario"
+          backLink="/play"
           nextLink="/challenges"
           reviewScenario={false}
         />
