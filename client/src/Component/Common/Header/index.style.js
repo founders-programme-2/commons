@@ -7,8 +7,8 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 8.5rem;
-  height: 8.5rem;
+  width: 7rem;
+  height: 7rem;
   display: block;
   margin: 2rem;
 `;
@@ -21,9 +21,8 @@ export const Line = styled.div`
 
 export const HeaderTitle = styled.div`
   display: flex;
-  margin: 2rem 2rem;
+  margin: 1.5rem;
   align-items: center;
-  justify-content: center;
 `;
 
 export const HeaderImg = styled.img`

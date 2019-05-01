@@ -97,7 +97,7 @@ class MenuBar extends Component {
         <BurgerIcon>
           <FontAwesomeIcon
             icon="bars"
-            size="8x"
+            size="7x"
             onClick={() => this.toggleMenu()}
           />
         </BurgerIcon>

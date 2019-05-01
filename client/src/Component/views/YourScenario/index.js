@@ -18,7 +18,7 @@ class YourScenario extends Component {
 
   afterSlide = slideIndex => {
     this.setState({ slideIndex });
-    console.log('slideIndex',slideIndex);
+    console.log('slideIndex', slideIndex);
   };
 
   toggleChange = () => {
@@ -48,15 +48,50 @@ class YourScenario extends Component {
           </p>
           <br />
           <p style={{ fontWeight: 'bold' }}>
-            Your goal is to select the tools that you would use to faciliate
-            creating this Connected Commons Program. You have a limited amount
-            of resources and must choose wisely.
+            Your goal as a community connector is to select the tools that you
+            would use to faciliate creating this Connected Commons Program. You
+            have a limited amount of resources and must choose wisely.
           </p>
+          <br />
+          <br />
+          <Line />
+          <br />
+          <h2>Challenges</h2>
+          <ul>
+            <li>
+              People don&#39;t know enough about what is going on in Slipham.
+            </li>
+            <li>
+              Groups and individuals lack ways to share skills, tools, and space
+            </li>
+            <li>Community connectors lack support</li>
+            <li>
+              There is no heritage trail of other way to discover and explore
+              Slipham&#39;s culture and history.
+            </li>
+            <li>People need help in developing idea into projects</li>
+            <li>
+              Social media is widely used, but messages are not shared across
+              systems.
+            </li>
+            <li>
+              Groups lack the knowledge and skills to use technology effectively
+            </li>
+            <li>Events are poorly organised with little follow through.</li>
+          </ul>
+          <br />
+          <p>Which challenges do you wish to address?</p>
         </Content>
         <Line />
+        <br />
+        <h2>Community Connectors</h2>
         <HeadLine>
-          Here are some potential user personas that you can keep in mind while
-          while you choose your methods.
+          The role of the community connector is to use a range of methods, some
+          face-to-face and some online, to help people to address the challenges
+          as individuals, in groups, or by starting projects. Some connectors
+          are paid by the Slipham action centre, some are local volunteers. Here
+          are some of the people in Slipham who are acting as community
+          connectors. Who would you like to be, to meet the challenges?
         </HeadLine>
         <div>
           <Carousel
@@ -96,7 +131,7 @@ class YourScenario extends Component {
         </div>
         <Footer
           backLink="/play"
-          nextLink="/challenges"
+          nextLink="/activities"
           reviewScenario={false}
         />
       </div>
