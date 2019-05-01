@@ -23,31 +23,10 @@ class Methods extends Component {
     data: methodCardData,
   };
 
-  // componentDidMount() {
-  //   const { data } = this.state;
-  //   // const { checkedArray } = this.context;
-  //   // const newArray = data.map(methodCard => {
-  //   //   const { id } = methodCard;
-  //   //   methodCard.checked = false;
-  //   //   const foundMethodCard = checkedArray.find(({ id: idFromContext }) => {
-  //   //     return id === idFromContext;
-  //   //   });
-  //   //   if (foundMethodCard) {
-  //   //     methodCard.checked = foundMethodCard.checked;
-  //   //     return methodCard;
-  //   //   }
-  //   //   return methodCard;
-  //   // });
-  //   this.setState({
-  //     data: newArray,
-  //   });
-  // }
-
   // Renders method cards dynamically
   renderMethodCards = () => {
     const { data } = this.state;
     const { checkedArray } = this.context;
-    console.log('checkedArray:', checkedArray)
     const newArray = data.map(methodCard => {
       const { id } = methodCard;
       methodCard.checked = false;
@@ -72,8 +51,6 @@ class Methods extends Component {
           category={card.category}
           requiredCards={card.requires}
           use={card.use}
-          // chooseMethod={this.chooseMethod}
-          // removeMethod={this.removeMethod}
           noMoreResources={this.noMoreResources}
           id={card.id}
           tools={false}
