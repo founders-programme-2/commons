@@ -107,7 +107,7 @@ class Methods extends Component {
         </Carousel>
         <Line />
 
-        <RemainingResources data-testid="bloop-bloop">
+        <RemainingResources>
           Remaining resources: {resources}
         </RemainingResources>
 
