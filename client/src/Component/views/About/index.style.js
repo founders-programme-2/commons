@@ -8,4 +8,5 @@ export const Content = styled.div`
   text-align: left;
   font-weight: normal;
   margin-bottom: 6rem;
+  padding: 0 2rem;
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Description = styled.p`
-  margin-top: 4rem;
+  margin: 2rem;
   font-size: 1.6rem;
   font-weight: normal;
   text-align: center;
@@ -9,10 +9,7 @@ export const Description = styled.p`
 `;
 
 export const HeadLine = styled.p`
-  margin-top: 2.5rem;
-  text-align: center;
-  font-size: 1.7rem;
-  font-family: 'Open Sans', sans-serif;
+  padding: 1rem;
 `;
 
 export const Label = styled.label`
