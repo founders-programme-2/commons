@@ -3,6 +3,7 @@ import Carousel from 'nuka-carousel';
 import { Redirect, Link } from 'react-router-dom';
 import Header from '../../Common/Header';
 import MethodCard from '../MethodCard';
+import { MyContext } from '../../../Context/ContextComponent';
 import methodCardData from '../../../fakeData/methodCardData';
 import {
   RemainingResources,
@@ -41,6 +42,7 @@ class Methods extends Component {
           removeMethod={this.removeMethod}
           errorOverSpend={this.errorOverSpend}
           id={card.id}
+          datatestid={card.cardTitle}
           tools={false}
           priority={false}
         />
@@ -78,6 +80,7 @@ class Methods extends Component {
   // renders redirect if there are no resources left
   renderRedirect = () => {
     const { redirect } = this.state;
+    // const { selectedCards } = this.context;
     if (redirect) {
       return <Redirect to="/errorNoMoreResources" />;
     }
@@ -94,19 +97,18 @@ class Methods extends Component {
           wrapAround
           enableKeyboardControls
           renderCenterLeftControls={({ previousSlide }) => (
-            <PrevBtn onClick={previousSlide}>.</PrevBtn>
+            <PrevBtn data-testid="prevBtn" onClick={previousSlide}>.</PrevBtn>
           )}
           renderCenterRightControls={({ nextSlide }) => (
-            <NextBtn onClick={nextSlide}>.</NextBtn>
+            <NextBtn data-testid="nextBtn" onClick={nextSlide}>.</NextBtn>
           )}
         >
           {this.renderMethodCards()}
         </Carousel>
         <Line />
 
-        <RemainingResources>
-          Remaining resources: <span>&nbsp;</span>
-          {resources}
+        <RemainingResources data-testid="bloop-bloop">
+          Remaining resources: {resources}
         </RemainingResources>
 
         <Line />
@@ -122,5 +124,7 @@ class Methods extends Component {
     );
   }
 }
+
+Methods.contextType = MyContext;
 
 export default Methods;

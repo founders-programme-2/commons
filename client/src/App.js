@@ -15,6 +15,7 @@ import About from './Component/views/About';
 import HowTo from './Component/views/HowTo';
 import Play from './Component/views/Play';
 import Methods from './Component/views/Methods';
+// import MethodCard from './Component/views/MethodCard';
 import KeyTerms from './Component/views/KeyTerms';
 import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
