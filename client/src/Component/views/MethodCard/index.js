@@ -26,7 +26,7 @@ import star from '../../../assets/star.svg';
 
 class CardComponent extends Component {
   state = {
-    checked: false,
+    // checked: false,
     defaultPriority: '',
     defaultTime: '',
   };
@@ -90,9 +90,10 @@ class CardComponent extends Component {
       tools,
       priority,
       // resources,
+      checked,
     } = this.props;
 
-    const { checked, defaultPriority, defaultTime } = this.state;
+    const { defaultPriority, defaultTime } = this.state;
     const {
       addSelectedCard,
       removeSelectedCard,
@@ -100,6 +101,7 @@ class CardComponent extends Component {
       chooseMethod,
       removeMethod,
       // globalCheck,
+      updatedCheckedCards,
     } = this.context;
     // saves func output to variable for render
     const starsRender = this.stars(resourcePoints);
@@ -144,12 +146,15 @@ class CardComponent extends Component {
                 onChange={event => {
                   if (resources - resourcePoints >= 0) {
                     this.toggleCheckbox(event);
+                    // updatedCheckedCards(id, checked);
                     if (checked === false && resources - resourcePoints >= 0) {
                       chooseMethod(resourcePoints, event);
                       addSelectedCard(id);
+                      updatedCheckedCards(id, !checked);
                     } else if (checked === true) {
                       removeMethod(resourcePoints, event);
                       removeSelectedCard(id);
+                      updatedCheckedCards(id, !checked);
                     }
                   } else if (resources - resourcePoints < 0) {
                     if (checked === false) {
@@ -158,6 +163,7 @@ class CardComponent extends Component {
                       this.toggleCheckbox(event);
                       removeMethod(resourcePoints, event);
                       removeSelectedCard(id);
+                      updatedCheckedCards(id, !checked);
                     }
                   }
                 }}
