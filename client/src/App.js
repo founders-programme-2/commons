@@ -20,6 +20,7 @@ import YourScenario from './Component/views/YourScenario';
 import Priorities from './Component/views/Priorities';
 import Challenges from './Component/views/Challenges';
 import PrioritiesTools from './Component/views/PrioritiesTools';
+import Credits from './Component/views/Credits';
 import Summary from './Component/views/Summary';
 
 class App extends Component {
@@ -44,6 +45,7 @@ class App extends Component {
             <Route path="/error404" component={Error404} />
             <Route path="/yourScenario" component={YourScenario} />
             <Route path="/challenges" component={Challenges} />
+            <Route path="/credits" component={Credits} />
             <Redirect to="/error404" />
           </Switch>
         </MyProvider>
