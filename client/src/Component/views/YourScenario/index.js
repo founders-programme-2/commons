@@ -95,7 +95,7 @@ class YourScenario extends Component {
           </Carousel>
         </div>
         <Footer
-          backLink="/yourScenario"
+          backLink="/play"
           nextLink="/challenges"
           reviewScenario={false}
         />
