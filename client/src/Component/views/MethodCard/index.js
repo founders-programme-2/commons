@@ -54,6 +54,10 @@ class CardComponent extends Component {
   toggleCheckbox = event => {
     const { checked } = this.state;
     this.setState({ checked: !checked });
+    //   , () => {
+    //   const { updateCheckedCard } = this.context;
+    //   updateCheckedCard();
+    // });
   };
 
   // looks at number of resource points and pushes as many stars to card
@@ -74,8 +78,8 @@ class CardComponent extends Component {
       cardImg,
       cardTitle,
       resourcePoints,
-      chooseMethod,
-      removeMethod,
+      // chooseMethod,
+      // removeMethod,
       noMoreResources,
       description,
       requiredCards,
@@ -85,11 +89,18 @@ class CardComponent extends Component {
       id,
       tools,
       priority,
-      resources,
+      // resources,
     } = this.props;
 
     const { checked, defaultPriority, defaultTime } = this.state;
-    const { addSelectedCard, removeSelectedCard } = this.context;
+    const {
+      addSelectedCard,
+      removeSelectedCard,
+      resources,
+      chooseMethod,
+      removeMethod,
+      // globalCheck,
+    } = this.context;
     // saves func output to variable for render
     const starsRender = this.stars(resourcePoints);
     return (
