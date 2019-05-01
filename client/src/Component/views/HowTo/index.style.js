@@ -13,8 +13,7 @@ export const PulpIcon = styled.div`
 `;
 
 export const Text = styled.p`
-  padding: 1rem;
+  padding: 1.5rem;
   font-weight: 700;
   font-family: 'Open Sans';
-  font-size: ${props => props.fontSize || '1.11rem'};
 `;
