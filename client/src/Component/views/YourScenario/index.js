@@ -48,9 +48,9 @@ class YourScenario extends Component {
           </p>
           <br />
           <p style={{ fontWeight: 'bold' }}>
-            Your goal is to select the tools that you would use to faciliate
-            creating this Connected Commons Program. You have a limited amount
-            of resources and must choose wisely.
+            Your goal as a community connector is to select the tools that you
+            would use to faciliate creating this Connected Commons Program. You
+            have a limited amount of resources and must choose wisely.
           </p>
           <br />
           <br />
@@ -90,8 +90,8 @@ class YourScenario extends Component {
           face-to-face and some online, to help people to address the challenges
           as individuals, in groups, or by starting projects. Some connectors
           are paid by the Slipham action centre, some are local volunteers. Here
-          are some community connectors. Who would you like to be, to meet the
-          challenges?
+          are some of the people in Slipham who are acting as community
+          connectors. Who would you like to be, to meet the challenges?
         </HeadLine>
         <div>
           <Carousel
