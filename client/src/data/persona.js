@@ -22,21 +22,21 @@ module.exports = [
   },
   {
     id: '4',
-    img: 'https://imgur.com/4k0WLt0',
+    img: 'https://i.imgur.com/pB6hMvn.jpg',
     title: 'David',
     text:
       "David is the local newsagent; he also loves football and meets his mates every Monday to play on local grounds. He is quite tech literate and uses Twitter and Facebook to keep up with friends and family. He also uses specialist software in his business and he wants to expand his online capabilities. David's shops display adverts and events and he wants to create a community news site.",
   },
   {
     id: '5',
-    img: 'https://imgur.com/G4CZlAL',
+    img: 'https://i.imgur.com/HcDyFtl.jpg',
     title: 'Mary',
     text:
       'Mary is 48 years old and is a childminder. She was born in Golsen and has been living there all her life. She attends sessions at the local Family Centre. She is not very familiar with technology although she uses a smartphone. She prefers face to face communication. Mary is keen on local history and promotes intergenerational learning.',
   },
   {
     id: '6',
-    img: 'https://imgur.com/DtIZlBD',
+    img: 'https://i.imgur.com/bI1W92H.jpg',
     title: 'Sophie',
     text:
       'Sophie is 34 years old and is a hairdresser; she has three kids going to local primary and secondary schools, knows lots of other parents from school and has daily conversations with them at the school gate. She is not very tech literate (although she uses Facebook) but is a good networker through her business and school contacts. She wants to extend the toy library.',

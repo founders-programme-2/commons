@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: -2rem;
 `;
 
