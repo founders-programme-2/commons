@@ -21,7 +21,11 @@ const Challenges = () => {
           </BodyWrapper>
         );
       })}
-      <Footer backLink="/" nextLink="/methods" reviewScenario={false} />
+      <Footer
+        backLink="/yourscenario"
+        nextLink="/methods"
+        reviewScenario={false}
+      />
     </div>
   );
 };

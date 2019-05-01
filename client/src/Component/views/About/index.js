@@ -7,7 +7,7 @@ import conversation from '../../../assets/conversation.svg';
 const About = () => {
   return (
     <div>
-      <Header headerImg={conversation} titleText="About us" />
+      <Header headerImg={conversation} titleText="About Commons" />
       <Content>
         <p>
           This game will help you create a Commons - a set of places online and
