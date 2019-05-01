@@ -8,7 +8,7 @@ const Home = props => {
       <Banner title="Commons" subtitle={null} />
       <BannerFooter
         arrow
-        text="A game strategizing collaboration between communities and networks."
+        text="A game about strategizing collaboration between communities and networks."
         select={null}
         {...props}
       />
