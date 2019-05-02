@@ -20,14 +20,26 @@ import {
 
 class Methods extends Component {
   state = {
-    resources: 15,
     data: methodCardData,
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    const { resources, data } = this.state;
-    return data.map(card => {
+    const { data } = this.state;
+    const { checkedArray } = this.context;
+    const newArray = data.map(methodCard => {
+      const { id } = methodCard;
+      methodCard.checked = false;
+      const foundMethodCard = checkedArray.find(({ id: idFromContext }) => {
+        return id === idFromContext;
+      });
+      if (foundMethodCard) {
+        methodCard.checked = foundMethodCard.checked;
+        return methodCard;
+      }
+      return methodCard;
+    });
+    return newArray.map(card => {
       return (
         <MethodCard
           key={card.id}
@@ -39,34 +51,14 @@ class Methods extends Component {
           category={card.category}
           requiredCards={card.requires}
           use={card.use}
-          chooseMethod={this.chooseMethod}
-          removeMethod={this.removeMethod}
           noMoreResources={this.noMoreResources}
-          resources={resources}
           id={card.id}
           datatestid={card.cardTitle}
           tools={false}
           priority={false}
+          checked={card.checked}
         />
       );
-    });
-  };
-
-  // Returns resources when checkbox is unchecked
-  chooseMethod = (points, event) => {
-    let { resources } = this.state;
-    this.setState(state => {
-      resources = state.resources - points;
-      return { resources };
-    });
-  };
-
-  // Removes resource points from total 'resources' if checkbox is checked
-  removeMethod = (points, event) => {
-    let { resources } = this.state;
-    this.setState(nextState => {
-      resources = nextState.resources + points;
-      return { resources };
     });
   };
 
@@ -124,8 +116,7 @@ class Methods extends Component {
   };
 
   render() {
-    const { resources } = this.state;
-    const { selectedCards } = this.context;
+    const { selectedCards, resources } = this.context;
     return (
       <Fragment>
         <Header headerImg={null} titleText="Select your methods" />

@@ -35,6 +35,7 @@ export const Info = styled.section`
   border-radius: 0px 0px 5px 5px;
   width: 22rem;
   height: auto;
+  padding-bottom: 2rem;
 `;
 
 export const CardTitle = styled.h2`

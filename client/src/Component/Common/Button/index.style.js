@@ -7,6 +7,8 @@ export const PrimaryButton = styled.button`
   width: ${props => props.width || '12.5rem'};
   border: none;
   font-size: 1.5rem;
+  font-family: 'Poppins';
+  font-weight: 700;
   border-radius: 0.5rem;
   color: black;
   font-weight: 800;

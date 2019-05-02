@@ -15,7 +15,7 @@ import {
   Play,
   Methods,
   KeyTerms,
-  Workshop,
+  Credits,
   Theory,
 } from '../../../assets/menuImages/MenuImages';
 
@@ -84,20 +84,20 @@ class MenuBar extends Component {
             <MenuText>Key Terms</MenuText>
           </MenuChild>
 
-          <MenuChild to="./workshop" onClick={() => this.toggleMenu()}>
-            <Workshop />
-            <MenuText>Workshop</MenuText>
-          </MenuChild>
-
           <MenuChild to="./theory" onClick={() => this.toggleMenu()}>
             <Theory />
             <MenuText>Theory</MenuText>
+          </MenuChild>
+
+          <MenuChild to="/credits" onClick={() => this.toggleMenu()}>
+            <Credits />
+            <MenuText>Credits</MenuText>
           </MenuChild>
         </BurgerMenu>
         <BurgerIcon>
           <FontAwesomeIcon
             icon="bars"
-            size="8x"
+            size="7x"
             onClick={() => this.toggleMenu()}
           />
         </BurgerIcon>
