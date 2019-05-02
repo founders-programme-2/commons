@@ -9,9 +9,17 @@ export const CardWrapper = styled.section`
 
 export const XBtn = styled.button`
   float: right;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   font-weight: bold;
   font-size: 2rem;
+  background: none;
+  border: none;
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    color: white;
+    transform: scale(1.3);
+  }
 `;
 
 export const CardTop = styled.div`

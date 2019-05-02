@@ -9,7 +9,7 @@ const MiniCard = props => {
     <Fragment>
       <CardWrapper>
         <CardTop>
-          <XBtn>X</XBtn>
+          <XBtn>x</XBtn>
         </CardTop>
         <CardInfo>
           <Title>{title}</Title>
