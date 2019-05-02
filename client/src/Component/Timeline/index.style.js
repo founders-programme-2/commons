@@ -50,7 +50,6 @@ export const Subtitle = styled.h3`
   font-family: Poppins;
   font-weight: 800;
   font-size: 1.5rem;
-  text-align: center;
   z-index: 1;
 `;
 
