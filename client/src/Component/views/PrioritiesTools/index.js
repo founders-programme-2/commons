@@ -85,6 +85,7 @@ class PrioritiesTools extends Component {
                   removeMethod={null}
                   tools
                   priority
+                  checked={false}
                 />
               );
             })}
