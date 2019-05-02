@@ -59,6 +59,11 @@ export const BurgerIcon = styled.div`
     color: var(--highlight-color);
   }
   margin: 2rem;
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const MenuChild = styled(Link)`
