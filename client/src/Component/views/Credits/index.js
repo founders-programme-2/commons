@@ -9,6 +9,7 @@ import {
   GroupMember,
   GroupPic,
   FlaticonLogo,
+  Thanks,
 } from './index.style';
 import intersticiaLogo from '../../../assets/intersticia-logo-sml.png';
 import facLogo from '../../../assets/fac-logo.png';
@@ -91,9 +92,59 @@ const Credits = () => {
         <Subtitle>Resources</Subtitle>
 
         <div>
-          <LogoLink href="https://www.flaticon.com/" target="blank">
+          <LogoLink href="https://www.flaticon.com/" target="_blank">
             <FlaticonLogo src="https://media.flaticon.com/img/flaticon-logo-footer.svg" />
           </LogoLink>
+          <Thanks>
+            <p>Icons created by: </p>
+            <LogoLink
+              href="https://www.flaticon.com/authors/icongeek26"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Icongeek26
+            </LogoLink>
+
+            <LogoLink
+              href="https://www.flaticon.com/authors/smashicons"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Smashicons
+            </LogoLink>
+
+            <LogoLink
+              href="https://www.flaticon.com/authors/good-ware"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Good Ware
+            </LogoLink>
+
+            <LogoLink
+              href="https://www.flaticon.com/authors/mynamepong"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mynamepong
+            </LogoLink>
+
+            <LogoLink
+              href="https://www.freepik.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Freepic
+            </LogoLink>
+
+            <LogoLink
+              href="https://www.flaticon.com/authors/eucalyp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Eucalyp
+            </LogoLink>
+          </Thanks>
         </div>
       </Wrapper>
 

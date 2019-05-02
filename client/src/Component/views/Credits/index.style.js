@@ -50,3 +50,12 @@ export const FlaticonLogo = styled(GroupPic)`
   background-color: #585757;
   margin-bottom: 2rem;
 `;
+
+export const Thanks = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans';
+  margin-bottom: 2rem;
+`;
