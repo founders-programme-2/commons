@@ -20,5 +20,4 @@ export const PrimaryButton = styled.button`
     cursor: pointer;
     background: var(--highlight-color);
   }
-
 `;
