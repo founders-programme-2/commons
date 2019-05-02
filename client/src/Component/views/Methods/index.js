@@ -61,7 +61,7 @@ class Methods extends Component {
       idArray.includes(card.id)
     );
     return filteredCards.map(card => {
-      return <MiniCard title={card.cardTitle} key={card.id} />;
+      return <MiniCard title={card.cardTitle} id={card.id} key={card.id} />;
     });
   };
 
@@ -173,7 +173,7 @@ class Methods extends Component {
         )}
 
         <Line />
-        
+
         <Footer>
           <FooterPrevious as={Link} to="./play" type="button" />
           <BackToScenario>
