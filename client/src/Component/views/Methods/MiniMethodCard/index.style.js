@@ -5,6 +5,11 @@ export const CardWrapper = styled.section`
   display: flex;
   flex-direction: column;
   margin: 2rem;
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const XBtn = styled.button`
