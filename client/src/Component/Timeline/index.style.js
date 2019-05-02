@@ -14,10 +14,14 @@ export const Arrow = styled.img`
 export const TermDiv = styled.div`
   background-color: rgba(255, 199, 41, 0.25);
   min-height: 15rem;
-  width: 100vw;
-  margin: 0 -2rem;
+  width: 100%;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 426px) {
+    width: 100vw;
+    margin: 0 -2rem;
+  }
 `;
 
 export const ShortTermDiv = styled(TermDiv)`
@@ -47,6 +51,7 @@ export const Subtitle = styled.h3`
   font-weight: 800;
   font-size: 1.5rem;
   text-align: center;
+  z-index: 1;
 `;
 
 export const SubtitleTimeline = styled(Subtitle)`

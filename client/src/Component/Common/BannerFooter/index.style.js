@@ -18,10 +18,12 @@ export const ArrowIcon = styled.div`
   }
 `;
 
-export const TitleText = styled.h2`
+export const TitleText = styled.p`
   height: 6rem;
   text-align: center;
   margin-bottom: 2rem;
+  font-family: 'Poppins';
+  font-weight: 700;
 `;
 
 export const ButtonWrapper = styled.div`
