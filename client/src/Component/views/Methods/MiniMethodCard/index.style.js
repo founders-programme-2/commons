@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const CardWrapper = styled.section`
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  margin: 2rem noAuto;
+  margin: 2rem;
 `;
 
 export const XBtn = styled.button`
@@ -22,6 +22,7 @@ export const CardTop = styled.div`
 `;
 
 export const CardInfo = styled.div`
+  min-width: 10rem;
   width: 12rem;
   min-height: 8rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

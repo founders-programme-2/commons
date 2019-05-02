@@ -76,7 +76,7 @@ export const SelectedMethods = styled.section`
 
 export const MiniCardStyle = styled.section`
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
   height: auto;
   font-size: 2rem;
