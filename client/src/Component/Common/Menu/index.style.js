@@ -42,14 +42,6 @@ export const BurgerMenu = styled(Menu)`
   justify-content: space-around;
   align-items: center;
   margin: 0;
-
-  @media screen and (min-width: 426px) {
-    height: 30%;
-  }
-
-  @media screen and (min-width: 550px) {
-    height: 30%;
-  }
 `;
 
 export const XIcon = styled.div`
@@ -80,12 +72,6 @@ export const MenuChild = styled(Link)`
   &:hover {
     cursor: pointer;
     color: var(--highlight-color);
-  }
-
-  @media screen and (min-width: 426px) {
-    font-size: 0.5rem;
-    padding: 0.2rem 10rem;
-    width: 50vw;
   }
 `;
 
