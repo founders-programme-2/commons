@@ -132,12 +132,10 @@ class Methods extends Component {
           {this.renderMethodCards()}
         </Carousel>
         <Line />
-
         <RemainingResources>
           Remaining resources: <span>&nbsp;</span>
           {resources}
         </RemainingResources>
-
         <Line />
         <Footer>
           <FooterPrevious as={Link} to="./play" type="button" />

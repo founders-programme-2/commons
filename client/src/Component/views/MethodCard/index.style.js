@@ -39,7 +39,7 @@ export const Info = styled.section`
 `;
 
 export const CardTitle = styled.h2`
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-family: Poppins;
   margin: 0 0 -2rem 0;
   text-align: ${props => props.textAlign || 'left'};
