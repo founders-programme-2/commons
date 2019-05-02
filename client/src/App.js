@@ -21,10 +21,12 @@ import Workshop from './Component/views/Workshop';
 import Theory from './Component/views/Theory';
 import YourScenario from './Component/views/YourScenario';
 import Priorities from './Component/views/Priorities';
-import Challenges from './Component/views/Challenges';
+import Activities from './Component/views/Activities';
 import PrioritiesTools from './Component/views/PrioritiesTools';
 import Credits from './Component/views/Credits';
 import Summary from './Component/views/Summary';
+
+import AboutMethods from './Component/views/AboutMethods';
 
 class App extends Component {
   state = {};
@@ -50,7 +52,8 @@ class App extends Component {
             <ScrollToTopRoute path="/summary" component={Summary} />
             <ScrollToTopRoute path="/error404" component={Error404} />
             <ScrollToTopRoute path="/yourScenario" component={YourScenario} />
-            <ScrollToTopRoute path="/challenges" component={Challenges} />
+            <RouScrollToTopRoutete path="/activities" component={Activities} />
+            <ScrollToTopRoute path="/aboutMethods" component={AboutMethods} />
             <ScrollToTopRoute path="/credits" component={Credits} />
             <Redirect to="/error404" />
           </Switch>

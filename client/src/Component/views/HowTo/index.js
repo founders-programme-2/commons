@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
@@ -8,8 +8,15 @@ import instructionData from '../../../data/instruction';
 
 const HowTo = () => {
   return (
-    <div>
+    <Fragment>
       <Header headerImg={instruction} titleText="How to play" />
+      <br />
+      <Text>
+        The game will lead you through a series of choices and reflective
+        periods where you will address some of the challenges of creating a
+        <i> Commons</i> for your community. Throughout the game, you will be
+        asked to:{' '}
+      </Text>
       {instructionData.map(element => {
         return (
           <BodyWrapper key={element.id}>
@@ -21,7 +28,7 @@ const HowTo = () => {
         );
       })}
       <Footer backLink="/about" nextLink="/play" reviewScenario={false} />
-    </div>
+    </Fragment>
   );
 };
 
