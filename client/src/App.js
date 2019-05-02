@@ -52,8 +52,15 @@ class App extends Component {
             <ScrollToTopRoute path="/summary" component={Summary} />
             <ScrollToTopRoute path="/error404" component={Error404} />
             <ScrollToTopRoute path="/yourScenario" component={YourScenario} />
+<<<<<<< HEAD
             <ScrollToTopRoute path="/activities" component={Activities} />
             <ScrollToTopRoute path="/aboutMethods" component={AboutMethods} />
+||||||| merged common ancestors
+            <ScrollToTopRoute path="/challenges" component={Challenges} />
+=======
+            <RouScrollToTopRoutete path="/activities" component={Activities} />
+            <ScrollToTopRoute path="/aboutMethods" component={AboutMethods} />
+>>>>>>> 39cb4b49c74fe3bfa774298cae3c01f2cd141fa7
             <ScrollToTopRoute path="/credits" component={Credits} />
             <Redirect to="/error404" />
           </Switch>
