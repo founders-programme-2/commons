@@ -61,7 +61,15 @@ class Methods extends Component {
       idArray.includes(card.id)
     );
     return filteredCards.map(card => {
-      return <MiniCard title={card.cardTitle} id={card.id} key={card.id} />;
+      return (
+        <MiniCard
+          title={card.cardTitle}
+          id={card.id}
+          key={card.id}
+          resourcePoints={card.resourcePoints}
+          removeMethod={this.removeMethod}
+        />
+      );
     });
   };
 
