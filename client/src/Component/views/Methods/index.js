@@ -164,7 +164,7 @@ class Methods extends Component {
         <Line />
         <Footer>
           <FooterPrevious as={Link} to="./play" type="button" />
-          <BackToScenario as={Link} onClick={this.displayScenario}>
+          <BackToScenario onClick={this.displayScenario}>
             <BackScenarioText>Review Scenario</BackScenarioText>
           </BackToScenario>
           <FooterNext
