@@ -24,11 +24,12 @@ import {
 class Methods extends Component {
   state = {
     resources: 15,
+    updateCheckbox: null,
   };
 
   // Renders method cards dynamically
   renderMethodCards = () => {
-    const { resources } = this.state;
+    const { resources, updateCheckbox } = this.state;
     return methodCardData.map(card => {
       return (
         <MethodCard
@@ -48,9 +49,14 @@ class Methods extends Component {
           id={card.id}
           tools={false}
           priority={false}
+          updateCheckbox={updateCheckbox}
         />
       );
     });
+  };
+
+  toggleCheckboxMiniCards = (event, id) => {
+    this.setState({ updateCheckbox: id });
   };
 
   // renders Mini Method Cards dynamically
@@ -68,6 +74,7 @@ class Methods extends Component {
           key={card.id}
           resourcePoints={card.resourcePoints}
           removeMethod={this.removeMethod}
+          toggleCheckbox={this.toggleCheckboxMiniCards}
         />
       );
     });

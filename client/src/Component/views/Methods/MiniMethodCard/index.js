@@ -4,7 +4,7 @@ import { CardWrapper, XBtn, CardTop, Title, CardInfo } from './index.style';
 import { MyContext } from '../../../../Context/ContextComponent';
 
 const MiniCard = props => {
-  const { title, id, removeMethod, resourcePoints } = props;
+  const { title, id, removeMethod, resourcePoints, toggleCheckbox } = props;
   return (
     <MyContext.Consumer>
       {context => {
@@ -18,6 +18,7 @@ const MiniCard = props => {
                   onClick={event => {
                     removeSelectedCard(id);
                     removeMethod(resourcePoints, event);
+                    toggleCheckbox(event, id);
                   }}
                 >
                   x

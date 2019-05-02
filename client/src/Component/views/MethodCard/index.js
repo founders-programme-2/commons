@@ -56,6 +56,12 @@ class CardComponent extends Component {
     this.setState({ checked: !checked });
   };
 
+  updateCheckboxMiniCard = (id, updateCheckbox) => {
+    if (id === updateCheckbox) {
+      this.toggleCheckbox();
+    }
+  };
+
   // looks at number of resource points and pushes as many stars to card
   stars = points => {
     const starsCount = [];
@@ -68,6 +74,11 @@ class CardComponent extends Component {
     }
     return starsCount;
   };
+
+  componentDidUpdate() {
+    const { id, updateCheckbox } = this.props;
+    this.updateCheckboxMiniCard(id, updateCheckbox);
+  }
 
   render() {
     const {
@@ -86,6 +97,7 @@ class CardComponent extends Component {
       tools,
       priority,
       resources,
+      updateCheckbox,
     } = this.props;
 
     const { checked, defaultPriority, defaultTime } = this.state;
