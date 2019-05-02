@@ -6,6 +6,11 @@ export const Buttons = styled.div`
   justify-content: space-between;
   padding: 0.9rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+
+  :hover {
+    cursor: pointer;
+    color: var(--highlight-color);
+  }
 `;
 
 export const PreviousButton = styled.button`
@@ -17,6 +22,11 @@ export const PreviousButton = styled.button`
   border: none;
   border-radius: 0.5rem;
   height: 4.9rem;
+
+  :hover {
+    cursor: pointer;
+    color: var(--highlight-color);
+  }
 `;
 
 export const NextButton = styled(PreviousButton)`
@@ -35,6 +45,11 @@ export const BackToScenario = styled.button`
   color: black;
   font-weight: bold;
   font-family: 'Poppins';
+
+  :hover {
+    cursor: pointer;
+    color: var(--highlight-color);
+  }
 `;
 
 export const Line = styled.div`

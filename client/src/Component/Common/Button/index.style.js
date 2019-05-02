@@ -18,6 +18,7 @@ export const PrimaryButton = styled.button`
 
   :hover {
     cursor: pointer;
-    background: var(--line-color);
+    background: var(--highlight-color);
   }
+
 `;
