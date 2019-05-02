@@ -16,6 +16,7 @@ import {
   FooterPrevious,
   FooterNext,
   BackToScenario,
+  BackScenarioText,
 } from './index.style';
 
 class Methods extends Component {
@@ -164,8 +165,7 @@ class Methods extends Component {
         <Footer>
           <FooterPrevious as={Link} to="./play" type="button" />
           <BackToScenario as={Link} onClick={this.displayScenario}>
-            Review <br />
-            Scenario
+            <BackScenarioText>Review Scenario</BackScenarioText>
           </BackToScenario>
           <FooterNext
             as={Link}
