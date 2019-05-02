@@ -9,23 +9,44 @@ import { Content } from '../About/index.style';
 import { Line } from '../../Common/Header/index.style';
 import PersonaData from '../../../data/persona';
 import houses from '../../../assets/houses.svg';
+// import { MyContext } from '../../../Context/ContextComponent';
 
 class YourScenario extends Component {
   state = {
     slideIndex: 0,
-    isChecked: true,
+    isChecked: false,
+    selectedPersona: [],
   };
 
   afterSlide = slideIndex => {
     this.setState({ slideIndex });
-    console.log('slideIndex', slideIndex);
   };
 
-  toggleChange = () => {
-    const { isChecked } = this.state;
-    this.setState({ isChecked: !isChecked });
-    console.log('checked', isChecked);
-  };
+  toggleChange = ({ target: { id, value, defaultChecked } }) => {
+    const { selectedPersona, isChecked } = this.state;
+    if (selectedPersona.length == 0) {
+      const { result } = selectedPersona.push(id);
+      console.log('result', 'newchecked', this.state.selectedPersona);
+      this.setState({
+        selectedPersona: selectedPersona.push(id),
+        isChecked: true,
+      });
+    } else {
+      this.setState({ selectedPersona: [], isChecked: false });
+      // console.log(isChecked,'isChecked')
+    }
+  }
+
+  // handleCheckbox = (e, s) => {
+  //   const { selectedPersona } = this.state.selectedPersona;
+  //   if (e.target.checked) {
+  //     selectedPersona.push(s);
+  //   } else {
+  //     const index = selectedPersona.findIndex(ch => ch.roomId === s.roomId);
+  //     selectedPersona.splice(index, 1);
+  //   }
+  //   this.setState({ selectedPersona });
+  // };
 
   render() {
     return (
@@ -117,8 +138,8 @@ class YourScenario extends Component {
                   <Label htmlFor="persona">
                     <Input
                       type="checkbox"
-                      id="persona"
-                      value="persona"
+                      id={element.id}
+                      value={element.id}
                       defaultChecked={this.isChecked}
                       onChange={this.toggleChange}
                     />
