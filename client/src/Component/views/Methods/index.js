@@ -119,19 +119,20 @@ class Methods extends Component {
     Swal.fire({
       type: 'info',
       html:
-        '<h2 style="text-align:center;">>Your Scenario</h2>' +
+        '<h2 style="text-align:center;">Your Scenario</h2>' +
         '<p style="text-align:justify;">The Slipham social action centre is launching a Connected Commons programme, aiming to help people explore its heritage, find local opportunities and services, and support new projects for a better Slipham in the future. It will do this by mapping people, projects and groups to find what they can offer, what they need, and how they are connected at present. The Commons won&apos;t be just one physical space. It will be on-the-ground trails and gathering points, maps of doing what, a website and other communication tools, with guides for action. We&apos;ll have small grants to support projects, and help on fundraising. The overall aim is to create an environment within which connections and collaborations can take place - the Slipham Connected Commons.</p>' +
         '<br><br>' +
         '<b>Your goal as a community connector is to select the tools that you would use to faciliate creating this Connected Commons Program. You have a limited amount of resources and must choose wisely.</b>, ',
       width: 900,
       padding: '3em',
-      confirmButtonText: 'To Go To Your Scenario Page.',
+      confirmButtonText: 'Back',
       confirmButtonColor: '#faa634',
       showCancelButton: true,
-      cancelButtonText: 'Back',
+      cancelButtonText: 'To Go To Your Scenario Page.',
+      cancelButtonColor: '#939393',
     }).then(result => {
       const { history } = this.props;
-      if (result.value) {
+      if (result.dismiss) {
         history.push('/yourScenario');
       }
     });
