@@ -89,14 +89,9 @@ const Credits = () => {
           </GroupMember>
         </GroupSection>
 
-        <Subtitle>Resources</Subtitle>
-
+        <Subtitle>Icons provided by</Subtitle>
         <div>
-          <LogoLink href="https://www.flaticon.com/" target="_blank">
-            <FlaticonLogo src="https://media.flaticon.com/img/flaticon-logo-footer.svg" />
-          </LogoLink>
           <Thanks>
-            <p>Icons created by: </p>
             <LogoLink
               href="https://www.flaticon.com/authors/icongeek26"
               target="_blank"
@@ -145,6 +140,9 @@ const Credits = () => {
               Eucalyp
             </LogoLink>
           </Thanks>
+          <LogoLink href="https://www.flaticon.com/" target="_blank">
+            <FlaticonLogo src="https://media.flaticon.com/img/flaticon-logo-footer.svg" />
+          </LogoLink>
         </div>
       </Wrapper>
 

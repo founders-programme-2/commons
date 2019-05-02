@@ -57,5 +57,5 @@ export const Thanks = styled.div`
   align-items: center;
   justify-content: center;
   font-family: 'Open Sans';
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 `;
