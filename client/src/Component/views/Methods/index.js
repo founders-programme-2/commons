@@ -166,24 +166,14 @@ class Methods extends Component {
         {selectedCards.length > 0 ? (
           <SelectedMethods>
             Your selected methods:
-            <Carousel
-              wrapAround
-              enableKeyboardControls
-              renderCenterLeftControls={({ previousSlide }) => (
-                <PrevBtn onClick={previousSlide}>.</PrevBtn>
-              )}
-              renderCenterRightControls={({ nextSlide }) => (
-                <NextBtn onClick={nextSlide}>.</NextBtn>
-              )}
-            >
-              <MiniCardStyle>{this.renderMiniMethodCards()}</MiniCardStyle>
-            </Carousel>
+            <MiniCardStyle>{this.renderMiniMethodCards()}</MiniCardStyle>
           </SelectedMethods>
         ) : (
           <SelectedMethods>You haven't selected any methods!</SelectedMethods>
         )}
 
         <Line />
+        
         <Footer>
           <FooterPrevious as={Link} to="./play" type="button" />
           <BackToScenario>
