@@ -11,6 +11,11 @@ export const Logo = styled.img`
   height: 7rem;
   display: block;
   margin: 2rem;
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const Line = styled.div`
