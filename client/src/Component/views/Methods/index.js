@@ -127,14 +127,6 @@ class Methods extends Component {
       padding: '3em',
       confirmButtonText: 'Back',
       confirmButtonColor: '#faa634',
-      showCancelButton: true,
-      cancelButtonText: 'To Go To Your Scenario Page.',
-      cancelButtonColor: '#939393',
-    }).then(result => {
-      const { history } = this.props;
-      if (result.dismiss) {
-        history.push('/yourScenario');
-      }
     });
   };
 
