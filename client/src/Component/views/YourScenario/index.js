@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
 import { PrevBtn, NextBtn } from '../Methods/index.style';
@@ -14,39 +15,20 @@ import houses from '../../../assets/houses.svg';
 class YourScenario extends Component {
   state = {
     slideIndex: 0,
-    isChecked: false,
-    selectedPersona: [],
+    selectedBox: undefined,
   };
 
   afterSlide = slideIndex => {
     this.setState({ slideIndex });
+    console.log('slideIndex', slideIndex);
   };
 
-  toggleChange = ({ target: { id, value, defaultChecked } }) => {
-    const { selectedPersona, isChecked } = this.state;
-    if (selectedPersona.length == 0) {
-      const { result } = selectedPersona.push(id);
-      console.log('result', 'newchecked', this.state.selectedPersona);
-      this.setState({
-        selectedPersona: selectedPersona.push(id),
-        isChecked: true,
-      });
-    } else {
-      this.setState({ selectedPersona: [], isChecked: false });
-      // console.log(isChecked,'isChecked')
-    }
-  }
+  toggleChange = e => {
+    const { selectedBox } = this.state;
+    this.setState({ selectedBox: e.target.value });
+    console.log('selectedBox ', selectedBox);
+  };
 
-  // handleCheckbox = (e, s) => {
-  //   const { selectedPersona } = this.state.selectedPersona;
-  //   if (e.target.checked) {
-  //     selectedPersona.push(s);
-  //   } else {
-  //     const index = selectedPersona.findIndex(ch => ch.roomId === s.roomId);
-  //     selectedPersona.splice(index, 1);
-  //   }
-  //   this.setState({ selectedPersona });
-  // };
 
   render() {
     return (
@@ -140,7 +122,7 @@ class YourScenario extends Component {
                       type="checkbox"
                       id={element.id}
                       value={element.id}
-                      defaultChecked={this.isChecked}
+                      checked={this.state.selectedBox === element.id}
                       onChange={this.toggleChange}
                     />
                     choose only one persona.
