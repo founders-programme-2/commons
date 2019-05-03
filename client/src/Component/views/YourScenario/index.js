@@ -25,6 +25,7 @@ class YourScenario extends Component {
   toggleChange = e => {
     // eslint-disable-next-line no-unused-vars
     const { selectedBox } = this.state;
+
     this.setState({ selectedBox: e.target.value });
   };
 
@@ -123,7 +124,7 @@ class YourScenario extends Component {
                       checked={this.state.selectedBox === element.id}
                       onChange={this.toggleChange}
                     />
-                    choose only one persona.
+                    <p>Play as this community connectory</p>
                   </Label>
                 </CardWrapper>
               );
