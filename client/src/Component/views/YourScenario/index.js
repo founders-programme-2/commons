@@ -20,15 +20,13 @@ class YourScenario extends Component {
 
   afterSlide = slideIndex => {
     this.setState({ slideIndex });
-    console.log('slideIndex', slideIndex);
   };
 
   toggleChange = e => {
+    // eslint-disable-next-line no-unused-vars
     const { selectedBox } = this.state;
     this.setState({ selectedBox: e.target.value });
-    console.log('selectedBox ', selectedBox);
   };
-
 
   render() {
     return (
