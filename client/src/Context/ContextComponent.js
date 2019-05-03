@@ -133,8 +133,8 @@ export class MyProvider extends Component {
     } = this.state;
     // console.log('resources:', resources);
     // console.log('checkedArray:', checkedArray)
-    console.log('selectedTime:', selectedTime);
-    console.log('selectedPriority:', selectedPriority);
+    // console.log('selectedTime:', selectedTime);
+    // console.log('selectedPriority:', selectedPriority);
     // console.log('selectedCards:', selectedCards);
     return (
       <MyContext.Provider
