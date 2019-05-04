@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Page, Text, View, Document } from '@react-pdf/renderer';
+import PropTypes from 'prop-types';
 import methodCardData from '../../data/methodCardData';
 import styles from './index.style';
 
@@ -97,5 +98,11 @@ class PdfSummary extends Component {
     );
   }
 }
+
+PdfSummary.propTypes = {
+  selectedCards: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectedPriority: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectedTime: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default PdfSummary;
