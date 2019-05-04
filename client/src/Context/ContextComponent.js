@@ -55,30 +55,52 @@ export class MyProvider extends Component {
   };
 
   selectedPriorityStore = (priority, id) => {
-    this.setState(state => {
-      if (state.selectedPriority.length === 0) {
-        return state.selectedPriority.push({ id, priority });
-      }
-      state.selectedPriority.map((ele, index) => {
-        if (ele.id === id) {
-          state.selectedPriority.splice(index);
+    const { selectedPriority } = this.state;
+    let newSelectedProirity = [...selectedPriority];
+    const found = newSelectedProirity.find(({ id: foundId }) => id === foundId);
+    if (found) {
+      newSelectedProirity = newSelectedProirity.map(obj => {
+        if (obj.id === id) {
+          return {
+            id: obj.id,
+            priority,
+          };
         }
+        return obj;
       });
-      return state.selectedPriority.push({ id, priority });
+    } else {
+      newSelectedProirity.push({
+        id,
+        priority,
+      });
+    }
+    this.setState({
+      selectedPriority: newSelectedProirity,
     });
   };
 
   selectedTimeStore = (time, id) => {
-    this.setState(state => {
-      if (state.selectedTime.length === 0) {
-        return state.selectedTime.push({ id, time });
-      }
-      state.selectedTime.map((ele, index) => {
-        if (ele.id === id) {
-          state.selectedTime.splice(index);
+    const { selectedTime } = this.state;
+    let newSelectedTime = [...selectedTime];
+    const found = newSelectedTime.find(({ id: foundId }) => id === foundId);
+    if (found) {
+      newSelectedTime = newSelectedTime.map(obj => {
+        if (obj.id === id) {
+          return {
+            id: obj.id,
+            time,
+          };
         }
+        return obj;
       });
-      return state.selectedTime.push({ id, time });
+    } else {
+      newSelectedTime.push({
+        id,
+        time,
+      });
+    }
+    this.setState({
+      selectedTime: newSelectedTime,
     });
   };
 
