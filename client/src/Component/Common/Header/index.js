@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import MenuBar from '../Menu';
-import logo from '../../../assets/logo.svg';
+import logo2 from '../../../assets/logo2.svg';
 import {
   Title,
   Logo,
@@ -19,7 +19,7 @@ const Header = props => {
     <div>
       <HeaderWrapper>
         <Link to="/">
-          <Logo src={logo} alt="Commons network logo" />
+          <Logo src={logo2} alt="Commons network logo" />
         </Link>
         <MenuBar />
       </HeaderWrapper>
