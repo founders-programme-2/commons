@@ -2,35 +2,26 @@ module.exports = [
   {
     id: '1',
     text:
-      'Choose and understand your scenario - we offer the fictitious borough of Slipham, but you can also imagine your own context.',
+      'Choose and understand your scenario - we offer the fictitious borough of Slipham, but you can also imagine your own context. There are some tough challenges for connectors. Which do you wish to address?',
   },
   {
     id: '2',
     text:
-      'Choose one of the connector characters. These personas will help frame your choice of collaboration methodology later.',
+      'Choose one of the connector characters that you think has the skills and experience to address the key challenges, and once you have chosen, what activities they might undertake.  Write a short sentence outlining these.',
   },
   {
     id: '3',
     text:
-      'Consider challenges indicated in the chosen Slipham scenario and the advantages or disadvantages that the chosen persona may bring to that.',
+      'Now page through the methods that connectors might use to address the challenges. Choose a set of methods to support activities addressing the challenges. You will have a points budget.',
   },
   {
     id: '4',
     text:
-      'Consider the activities that your character will carry out to meet the challenges. Write a short sentence outlining these.',
+      'After choosing cards, you should prioritise them (High, Medium or Low),  and specify a timescale (Short, Medium or Long term). This provides a learning plan for a connector and also a development plan for the hub if you are playing a team. Work out what is realistic.',
   },
   {
     id: '5',
-    text: 'Choose a set of methods to support these activities.',
-  },
-  {
-    id: '6',
     text:
-      'The selection of methods at the end will indicate to you as a connector what you will need to learn. We provide links to howto materials, and an opportunity to join our learning community.',
-  },
-  {
-    id: '7',
-    text:
-      'The selection will also show the hub team what systems they will need to develop and support in order to enable the connectors and others in the  community. The team can play a number of connector roles to gain a broad understanding of what needs to be built.',
+      'At the end of the game, reflect on the insights it provides for your work, and find out more about developing a Commons by looking at the Networked City wiki.',
   },
 ];

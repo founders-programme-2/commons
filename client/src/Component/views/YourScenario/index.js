@@ -107,6 +107,7 @@ class YourScenario extends Component {
             renderCenterRightControls={({ nextSlide }) => (
               <NextBtn onClick={nextSlide}>.</NextBtn>
             )}
+            heightMode="current"
           >
             {PersonaData.map(element => {
               return (
