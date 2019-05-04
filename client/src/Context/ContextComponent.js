@@ -135,7 +135,7 @@ export class MyProvider extends Component {
     // console.log('checkedArray:', checkedArray)
     // console.log('selectedTime:', selectedTime);
     // console.log('selectedPriority:', selectedPriority);
-    console.log('selectedCards:', selectedCards);
+    // console.log('selectedCards:', selectedCards);
     return (
       <MyContext.Provider
         value={{
