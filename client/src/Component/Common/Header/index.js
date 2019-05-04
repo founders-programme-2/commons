@@ -19,7 +19,7 @@ const Header = props => {
     <div>
       <HeaderWrapper>
         <Link to="/">
-          <Logo src={logo} alt="logo" />
+          <Logo src={logo} alt="Commons network logo" />
         </Link>
         <MenuBar />
       </HeaderWrapper>
