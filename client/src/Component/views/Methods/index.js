@@ -69,17 +69,8 @@ class Methods extends Component {
       type: 'error',
       title: 'Oops!',
       text: "You don't have enough resources!",
-      confirmButtonText: 'Go back and edit your selection.',
+      confirmButtonText: 'OK',
       confirmButtonColor: '#faa634',
-      showCancelButton: true,
-      cancelButtonText: "Let's move on.",
-    }).then(value => {
-      const { history } = this.props;
-      if (value.dismiss === 'cancel') {
-        history.push('/priorities');
-      } else if (value.value === true) {
-        history.push('/methods');
-      }
     });
   };
 
