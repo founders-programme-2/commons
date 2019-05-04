@@ -12,6 +12,7 @@ import {
   Subtitle,
   MethodResourceList,
   MethodResource,
+  PDFWrapper,
 } from './index.style';
 
 class Summary extends Component {
@@ -42,7 +43,7 @@ class Summary extends Component {
         <Line />
         <Subtitle>Your Action Plan</Subtitle>
         <Timeline />
-        <div>
+        <PDFWrapper>
           <PDFDownloadLink
             document={
               <PDFDoc
@@ -56,14 +57,7 @@ class Summary extends Component {
               loading ? 'Loading document...' : 'Download Your Plan!'
             }
           </PDFDownloadLink>
-          {/* <PDFViewer>
-            <PDFDoc
-              selectedCards={selectedCards}
-              selectedPriority={selectedPriority}
-              selectedTime={selectedTime}
-            />
-          </PDFViewer> */}
-        </div>
+        </PDFWrapper>
         <Subtitle>Resources</Subtitle>
         <MethodResourceList>
           <MethodResource>
