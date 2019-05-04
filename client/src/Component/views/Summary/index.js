@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import PDFDoc from '../../PDFDoc';
-import Test from '../../PDFDoc/Test';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import Timeline from '../../Timeline';
@@ -20,7 +19,6 @@ class Summary extends Component {
 
   render() {
     const { selectedCards, selectedPriority, selectedTime } = this.context;
-    console.log('111111111111this.context:', this.context);
     return (
       <div>
         <Header headerImg={null} titleText="Selection Summary" />
@@ -50,7 +48,6 @@ class Summary extends Component {
             loading ? 'Loading document...' : 'Download Your Plan!'
           }
         </PDFDownloadLink> */}
-          {/* <Test /> */}
           <PDFViewer>
             <PDFDoc
               selectedCards={selectedCards}
