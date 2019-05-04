@@ -50,7 +50,7 @@ class Summary extends Component {
             loading ? 'Loading document...' : 'Download Your Plan!'
           }
         </PDFDownloadLink> */}
-          <Test />
+          {/* <Test /> */}
           <PDFViewer>
             <PDFDoc
               selectedCards={selectedCards}

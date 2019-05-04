@@ -1,37 +1,65 @@
 import React, { Component } from 'react';
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import methodCardData from '../../data/methodCardData';
-import { MyContext } from '../../Context/ContextComponent';
-// import {
-//   ShortTermDiv,
-//   MediumTermDiv,
-//   LongTermDiv,
-//   CardContainerDiv,
-//   SubtitlePriority,
-//   SubtitleTime,
-// } from '../Timeline/index.style';
 
-// Create styles
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'row',
     backgroundColor: '#E4E4E4',
   },
   section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
+    // flexDirection: 'row',
+    margin: 5,
+    padding: 5,
+    // flexGrow: 1,
+  },
+  commons: {
+    fontSize: 40,
+    marginTop: 30,
+    marginBottom: 1,
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  },
+  title: {
+    // fontFamily: 'Lato Bold',
+    fontSize: 30,
+    marginTop: 20,
+    marginBottom: 3,
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  },
+  subTitle: {
+    // fontFamily: 'Lato Bold',
+    fontSize: 20,
+    margin: 15,
+    marginLeft: 20,
+    // marginBottom: 20,
+    // textTransform: 'uppercase',
+    // textAlign: 'center',
+  },
+  name: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    // marginTop: 20,
+    // marginBottom: 20,
+    // padding: 10,
+    margin: 5,
+    marginLeft: 20,
+    color: 'red',
+  },
+  span: {
+    fontWeight: 'bolder',
+    textDecoration: 'underline',
   },
 });
 
 class PdfSummary extends Component {
-  state = { finalCardInfo: [] };
+  state = {
+    finalCardInfo: [],
+  };
 
   componentDidMount() {
-    console.log(111111111);
     const { selectedCards, selectedPriority, selectedTime } = this.props;
-    console.log('selectedCards:', selectedCards)
-  
+
     const idArray = selectedCards.map(ele => ele.id);
 
     const prioritizedCards = methodCardData.filter(card =>
@@ -51,7 +79,11 @@ class PdfSummary extends Component {
     const { finalCardInfo } = this.state;
     return finalCardInfo.map(ele => {
       if (ele.priority === priorityArg && ele.time === timeArg) {
-        return <Text key={ele.id}>{ele.cardTitle}</Text>;
+        return (
+          <Text key={ele.id} style={styles.name}>
+            {ele.cardTitle}
+          </Text>
+        );
       }
       return null;
     });
@@ -61,33 +93,52 @@ class PdfSummary extends Component {
     return (
       <Document>
         <Page size="A4" style={styles.page}>
+          <View style={styles.commons}>
+            <Text>Commons</Text>
+          </View>
+          <View style={styles.title}>
+            <Text>Your Action Plan</Text>
+          </View>
           <View style={styles.section}>
-            <Text>Short-Term</Text>
-
-            <Text>Low priority</Text>
+            <Text style={styles.subTitle}>
+              Short-Term/ <Text style={styles.span}>Low</Text> Priority
+            </Text>
             {this.renderElements('low', 'short')}
-
+            <Text style={styles.subTitle}>
+              Short-Term/ <Text style={styles.span}>Medium</Text> Priority
+            </Text>
             {this.renderElements('medium', 'short')}
-
-            <Text>High priority</Text>
+            <Text style={styles.subTitle}>
+              Short-Term/ <Text style={styles.span}>High</Text> Priority
+            </Text>
             {this.renderElements('high', 'short')}
           </View>
           <View style={styles.section}>
-            <Text>Med-Term</Text>
-
+            <Text style={styles.subTitle}>
+              Mid-Term/ <Text style={styles.span}>Low</Text> Priority
+            </Text>
             {this.renderElements('low', 'mid')}
-
+            <Text style={styles.subTitle}>
+              Mid-Term/ <Text style={styles.span}>Medium</Text> Priority
+            </Text>
             {this.renderElements('medium', 'mid')}
-
+            <Text style={styles.subTitle}>
+              Mid-Term/ <Text style={styles.span}>High</Text> Priority
+            </Text>
             {this.renderElements('high', 'mid')}
           </View>
           <View style={styles.section}>
-            <Text>Long-Term</Text>
-
+            <Text style={styles.subTitle}>
+              Long-Term/ <Text style={styles.span}>Low</Text> Priority
+            </Text>
             {this.renderElements('low', 'long')}
-
+            <Text style={styles.subTitle}>
+              Long-Term/ <Text style={styles.span}>Medium</Text> Priority
+            </Text>
             {this.renderElements('medium', 'long')}
-
+            <Text style={styles.subTitle}>
+              Long-Term/ <Text style={styles.span}>High</Text> Priority
+            </Text>
             {this.renderElements('high', 'long')}
           </View>
         </Page>
@@ -95,7 +146,5 @@ class PdfSummary extends Component {
     );
   }
 }
-
-PdfSummary.contextType = MyContext;
 
 export default PdfSummary;
