@@ -7,10 +7,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#E4E4E4',
   },
   section: {
-    // flexDirection: 'row',
     margin: 5,
     padding: 5,
-    // flexGrow: 1,
   },
   commons: {
     fontSize: 40,
@@ -20,7 +18,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   title: {
-    // fontFamily: 'Lato Bold',
     fontSize: 30,
     marginTop: 20,
     marginBottom: 3,
@@ -28,20 +25,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   subTitle: {
-    // fontFamily: 'Lato Bold',
     fontSize: 20,
     margin: 15,
     marginLeft: 20,
-    // marginBottom: 20,
-    // textTransform: 'uppercase',
-    // textAlign: 'center',
   },
   name: {
     fontWeight: 'bold',
     fontSize: 20,
-    // marginTop: 20,
-    // marginBottom: 20,
-    // padding: 10,
     margin: 5,
     marginLeft: 20,
     color: 'red',
