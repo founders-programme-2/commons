@@ -145,6 +145,8 @@ class Methods extends Component {
           renderCenterRightControls={({ nextSlide }) => (
             <NextBtn onClick={nextSlide}>.</NextBtn>
           )}
+          renderBottomCenterControls={null}
+          heightMode="current"
         >
           {this.renderMethodCards()}
         </Carousel>
