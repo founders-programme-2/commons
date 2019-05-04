@@ -1,4 +1,6 @@
 import React from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import PDFDoc from '../../PDFDoc';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import Timeline from '../../Timeline';
@@ -11,7 +13,7 @@ import {
   MethodResource,
 } from './index.style';
 
-const Summary = props => {
+const Summary = () => {
   return (
     <div>
       <Header headerImg={null} titleText="Selection Summary" />
@@ -35,6 +37,13 @@ const Summary = props => {
       <Line />
       <Subtitle>Your Action Plan</Subtitle>
       <Timeline />
+      <div>
+        <PDFDownloadLink document={<PDFDoc />}>
+          {({ loading }) =>
+            loading ? 'Loading document...' : 'Download Your Plan!'
+          }
+        </PDFDownloadLink>
+      </div>
       <Subtitle>Resources</Subtitle>
       <MethodResourceList>
         <MethodResource>
