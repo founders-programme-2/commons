@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
 import { PrevBtn, NextBtn } from '../Methods/index.style';
@@ -9,22 +10,23 @@ import { Content } from '../About/index.style';
 import { Line } from '../../Common/Header/index.style';
 import PersonaData from '../../../data/persona';
 import houses from '../../../assets/houses.svg';
+// import { MyContext } from '../../../Context/ContextComponent';
 
 class YourScenario extends Component {
   state = {
     slideIndex: 0,
-    isChecked: true,
+    selectedBox: undefined,
   };
 
   afterSlide = slideIndex => {
     this.setState({ slideIndex });
-    console.log('slideIndex', slideIndex);
   };
 
-  toggleChange = () => {
-    const { isChecked } = this.state;
-    this.setState({ isChecked: !isChecked });
-    console.log('checked', isChecked);
+  toggleChange = e => {
+    // eslint-disable-next-line no-unused-vars
+    const { selectedBox } = this.state;
+
+    this.setState({ selectedBox: e.target.value });
   };
 
   render() {
@@ -117,12 +119,12 @@ class YourScenario extends Component {
                   <Label htmlFor="persona">
                     <Input
                       type="checkbox"
-                      id="persona"
-                      value="persona"
-                      defaultChecked={this.isChecked}
+                      id={element.id}
+                      value={element.id}
+                      checked={this.state.selectedBox === element.id}
                       onChange={this.toggleChange}
                     />
-                    choose only one persona.
+                    <p>Play as this community connectory</p>
                   </Label>
                 </CardWrapper>
               );
