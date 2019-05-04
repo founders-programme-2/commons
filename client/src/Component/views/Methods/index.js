@@ -54,6 +54,7 @@ class Methods extends Component {
           use={card.use}
           noMoreResources={this.noMoreResources}
           id={card.id}
+          datatestid={card.cardTitle}
           tools={false}
           priority={false}
           checked={card.checked}
@@ -150,8 +151,7 @@ class Methods extends Component {
         <Line />
 
         <RemainingResources>
-          Remaining resources: <span>&nbsp;</span>
-          {resources}
+          Remaining resources: {resources}
         </RemainingResources>
 
         <Line />

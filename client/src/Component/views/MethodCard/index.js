@@ -66,6 +66,7 @@ class CardComponent extends Component {
       cardImg,
       cardTitle,
       resourcePoints,
+      datatestid,
       noMoreResources,
       description,
       requiredCards,
@@ -124,6 +125,7 @@ class CardComponent extends Component {
               Use this resource:
               <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <input
+                data-testid={datatestid}
                 id="method-checkbox"
                 type="checkbox"
                 checked={checked}
@@ -262,6 +264,7 @@ CardComponent.propTypes = {
   id: PropTypes.number.isRequired,
   cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
+  datatestid: PropTypes.string.isRequired,
   resourcePoints: PropTypes.number.isRequired,
   noMoreResources: PropTypes.func,
   description: PropTypes.string.isRequired,

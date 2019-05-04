@@ -1,15 +1,11 @@
 module.exports = {
-  "extends": [
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
+  "extends": ["airbnb", "prettier", "prettier/react"],
   // babel-eslint parser is used to support experimental features not supported in ESLint itself yet
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018,
     "ecmaFeatures": {
-      "impliedStrict": true, //enable global strict mode (if ecmaVersion is 5 or greater)
+      "impliedStrict": true //enable global strict mode (if ecmaVersion is 5 or greater)
     }
   },
   "env": {
@@ -22,10 +18,7 @@ module.exports = {
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "quotes": [
@@ -41,11 +34,9 @@ module.exports = {
       "error",
       {
         "trailingComma": "es5",
-        "singleQuote": true,
+        "singleQuote": true
       }
     ]
   },
-  "plugins": [
-    "prettier"
-  ]
+  "plugins": ["prettier"]
 };

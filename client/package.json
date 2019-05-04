@@ -42,7 +42,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint": "^5.12.0"
+    "eslint": "^5.12.0",
+    "react-testing-library": "^7.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
