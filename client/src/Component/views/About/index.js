@@ -39,7 +39,12 @@ const About = () => {
           </Link>
         </p>
       </Content>
-      <Footer backLink="/" nextLink="/howTo" reviewScenario={false} />
+      <Footer
+        backLink="/"
+        nextLink="/howTo"
+        reviewScenario={false}
+        tabIndex="0"
+      />
     </div>
   );
 };

@@ -97,7 +97,6 @@ class MenuBar extends Component {
         <BurgerIcon>
           <button type="submit" onClick={() => this.toggleMenu()}>
             <FontAwesomeIcon
-              tabIndex="0"
               icon="bars"
               size="7x"
               onClick={() => this.toggleMenu()}
