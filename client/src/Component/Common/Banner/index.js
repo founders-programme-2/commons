@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import logo from '../../../assets/logo2.svg';
+import logo2 from '../../../assets/logo2.svg';
 import {
   BackgroundWrapper,
   TitleText,
@@ -14,7 +14,7 @@ const BannerTitle = ({ title, subtitle }) => {
   if (subtitle) {
     return (
       <BannerWrapper>
-        <BannerLogo src={logo} />
+        <BannerLogo src={logo2} />
         <BackgroundWrapper>
           <TitleTextSub>{title}</TitleTextSub>
           <SubtitleText>{subtitle}</SubtitleText>
@@ -24,7 +24,7 @@ const BannerTitle = ({ title, subtitle }) => {
   }
   return (
     <BannerWrapper>
-      <BannerLogo src={logo} />
+      <BannerLogo src={logo2} />
       <BackgroundWrapper>
         <TitleText>{title}</TitleText>
       </BackgroundWrapper>
