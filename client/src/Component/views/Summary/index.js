@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import PDFDoc from '../../PDFDoc';
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
@@ -43,18 +43,26 @@ class Summary extends Component {
         <Subtitle>Your Action Plan</Subtitle>
         <Timeline />
         <div>
-          {/* <PDFDownloadLink document={<PDFDoc />}>
-          {({ loading }) =>
-            loading ? 'Loading document...' : 'Download Your Plan!'
-          }
-        </PDFDownloadLink> */}
-          <PDFViewer>
+          <PDFDownloadLink
+            document={
+              <PDFDoc
+                selectedCards={selectedCards}
+                selectedPriority={selectedPriority}
+                selectedTime={selectedTime}
+              />
+            }
+          >
+            {({ loading }) =>
+              loading ? 'Loading document...' : 'Download Your Plan!'
+            }
+          </PDFDownloadLink>
+          {/* <PDFViewer>
             <PDFDoc
               selectedCards={selectedCards}
               selectedPriority={selectedPriority}
               selectedTime={selectedTime}
             />
-          </PDFViewer>
+          </PDFViewer> */}
         </div>
         <Subtitle>Resources</Subtitle>
         <MethodResourceList>
