@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Buttons = styled.div`
+export const Buttons = styled.footer`
   display: flex;
   margin-top: 40.5rem;
   justify-content: space-between;

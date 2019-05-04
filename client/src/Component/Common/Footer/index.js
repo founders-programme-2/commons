@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   Buttons,
   NextButton,
@@ -14,14 +14,20 @@ const Footer = ({ nextLink, backLink, reviewScenario }) => {
     <Fragment>
       <Line />
       <Buttons>
-        <PreviousButton as={Link} to={backLink} type="button" />
+        <Link to={backLink}>
+          <PreviousButton type="button" />
+        </Link>
         {reviewScenario && (
-          <BackToScenario>
+          <BackToScenario type="button">
             Review <br />
             Scenario
           </BackToScenario>
         )}
-        {nextLink && <NextButton as={Link} to={nextLink} type="button" />}
+        {nextLink && (
+          <Link to={nextLink}>
+            <NextButton type="button" />
+          </Link>
+        )}
       </Buttons>
     </Fragment>
   );

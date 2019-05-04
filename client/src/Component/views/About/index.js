@@ -38,8 +38,23 @@ const About = () => {
             <i>Key Terms</i>.
           </Link>
         </p>
+        <br />
+        <p>
+          The app takes you through a process that helps you simulate making
+          choices. There are no “right” answers, and the app is best used to
+          stimulate your thinking, and discussion with others. See{' '}
+          <Link to="/theory">
+            <i>Theory </i>
+          </Link>
+          for more.
+        </p>
       </Content>
-      <Footer backLink="/" nextLink="/howTo" reviewScenario={false} />
+      <Footer
+        backLink="/"
+        nextLink="/howTo"
+        reviewScenario={false}
+        tabIndex="0"
+      />
     </div>
   );
 };

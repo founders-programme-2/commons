@@ -1,24 +1,24 @@
 module.exports = [
   {
     id: '1',
-    img: 'https://i.imgur.com/ifAbUdp.png',
-    title: 'Mark',
-    text:
-      'An experienced community development worker, Mark lives in Slipham with his family. His children attend local schools and he is very well connected to the local community in Golsen. Mark is passionate about sports and has a great understanding of key statutory sector and health processes, with middle management contacts. He is keen on the use of the internet and has experimented with various apps to expand his interests and contacts. Mark promotes organisation/community support and provides support to local groups.',
-  },
-  {
-    id: '2',
     img: 'https://i.imgur.com/pDFK9Ou.png',
     title: 'Shirley',
     text:
       'An experienced community involvement worker based at a local infrastructure organisation, Shirley lives locally and her child attends a local secondary school. She has very good people skills and understanding of local needs but is not very tech literate. Shirley wants to help young activists tell stories and believes that young people can contribute.',
   },
   {
-    id: '3',
+    id: '2',
     img: 'https://i.imgur.com/Yh4FlTb.png',
     title: 'Jake',
     text:
       'Jake manages the Slipham social action centre, and has community and organisational development experience. He now has to turn the vision of a Slipham Commons, hub and platform into reality. Jake has good tech skills and is a capable manager, but as a community connector he will now need to choose and learn some online methods. After selecting methods, he will have to tell the team developing the Commons how these can be used.',
+  },
+  {
+    id: '3',
+    img: 'https://i.imgur.com/ifAbUdp.png',
+    title: 'Mark',
+    text:
+      'An experienced community development worker, Mark lives in Slipham with his family. His children attend local schools and he is very well connected to the local community in Golsen. Mark is passionate about sports and has a great understanding of key statutory sector and health processes, with middle management contacts. He is keen on the use of the internet and has experimented with various apps to expand his interests and contacts. Mark promotes organisation/community support and provides support to local groups.',
   },
   {
     id: '4',
