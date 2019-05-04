@@ -28,7 +28,6 @@ class Methods extends Component {
   renderMethodCards = () => {
     const { data } = this.state;
     const { checkedArray } = this.context;
-    console.log('this.context:', this.context)
     const newArray = data.map(methodCard => {
       const { id } = methodCard;
       methodCard.checked = false;
