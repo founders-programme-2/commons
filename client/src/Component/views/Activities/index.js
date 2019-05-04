@@ -17,7 +17,12 @@ const Activities = () => {
       <Text>
         Now that you have become a community connector, and identifed some
         challenges you are going to meet, here are some ideas for activities you
-        carry out.
+        carry out. If you chose the Slipham scenario, you will have adopted a
+        community connector character and considered the challenges you are
+        going to meet. If you are imagining your own community, what are your
+        problems and opportunities? Hit the back button below if you want to see
+        what is happening in Slipham. Either way, here's some ideas for
+        activities, before you go on to chose some methods.
       </Text>
       {activities.map(element => {
         return (
