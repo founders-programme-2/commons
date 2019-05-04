@@ -65,4 +65,13 @@ export const BackToScenario = styled.button`
   color: black;
   font-weight: bold;
   font-family: 'Poppins';
+  text-decoration: none;
+  :hover {
+    cursor: pointer;
+  }
+`;
+
+export const BackScenarioText = styled.div`
+  text-align: center;
+  padding: 1rem;
 `;
