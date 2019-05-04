@@ -100,9 +100,9 @@ class PdfSummary extends Component {
 }
 
 PdfSummary.propTypes = {
-  selectedCards: PropTypes.arrayOf(PropTypes.string).isRequired,
-  selectedPriority: PropTypes.arrayOf(PropTypes.string).isRequired,
-  selectedTime: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectedCards: PropTypes.arrayOf(PropTypes.object).isRequired,
+  selectedPriority: PropTypes.arrayOf(PropTypes.object).isRequired,
+  selectedTime: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default PdfSummary;
