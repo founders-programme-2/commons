@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// eslint-disable-next-line import/prefer-default-export
 export const ContentAbout = styled.div`
   height: 100%;
   margin-top: 4rem;
@@ -40,4 +39,10 @@ export const MethodResourceList = styled.ul`
 
 export const MethodResource = styled.li`
   font-size: 1.5rem;
+`;
+
+export const PDFWrapper = styled.div`
+  margin-left: 0rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
 `;
