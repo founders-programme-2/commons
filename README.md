@@ -7,9 +7,9 @@ A project made under the Founders Program
 Founders and Coders, April 2019
 
 ## Introduction
-*Commons* was made by participants of the Founders Program in collaboration with [Networked City](https://www.networkedcity.london/start). It is the digitized version of a workshop game aimed at helping individuals begin to strategize community development, resource allocation and project planning.
+*Commons* was made by participants of the Founders Program in collaboration with [Networked City](https://www.networkedcity.london/start). It is the digitized version of a workshop game aimed at helping individuals begin to strategize community development, resource allocation and project planning. Designed mobile-first.
 
-See it online here: [Commons](https://commons-app.herokuapp.com)
+### See it online here: [Commons](https://commons-app.herokuapp.com)
 
 ### Mobile Screenshots
 ![](https://i.imgur.com/j7LyyaA.png)
