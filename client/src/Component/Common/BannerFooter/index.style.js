@@ -11,6 +11,11 @@ export const ArrowIcon = styled.div`
   align-items: center;
   justify-content: center;
   color: var(--arrow-color);
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    transform: scale(1.1);
+  }
 
   :hover {
     cursor: pointer;
