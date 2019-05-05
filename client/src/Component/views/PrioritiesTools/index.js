@@ -86,6 +86,7 @@ class PrioritiesTools extends Component {
                   tools
                   priority
                   checked={false}
+                  datatestid={null}
                 />
               );
             })}
