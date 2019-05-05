@@ -104,7 +104,10 @@ class Methods extends Component {
           history.push('/methods');
         }
       });
-    }
+    } else {
+      const { history } = this.props;
+      history.push('/priorities');
+    };
   };
 
   displayScenario = () => {

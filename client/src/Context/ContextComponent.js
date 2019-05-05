@@ -9,7 +9,7 @@ export class MyProvider extends Component {
     selectedCards: [],
     selectedPriority: [],
     selectedTime: [],
-    resources: 15,
+    resources: 10,
     checkedArray: [],
   };
 
