@@ -264,7 +264,7 @@ CardComponent.propTypes = {
   id: PropTypes.number.isRequired,
   cardImg: PropTypes.func,
   cardTitle: PropTypes.string.isRequired,
-  datatestid: PropTypes.string.isRequired,
+  datatestid: PropTypes.string,
   resourcePoints: PropTypes.number.isRequired,
   noMoreResources: PropTypes.func,
   description: PropTypes.string.isRequired,
@@ -283,6 +283,7 @@ CardComponent.defaultProps = {
   requiredCards: PropTypes.bool,
   use: PropTypes.bool,
   noMoreResources: PropTypes.bool,
+  datatestid: PropTypes.bool,
 };
 
 CardComponent.contextType = MyContext;
