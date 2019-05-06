@@ -3,17 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@react-pdf/renderer": "^1.5.4",
+    "babel-eslint": "^9.0.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.17.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "nuka-carousel": "^4.5.4",
+    "prettier": "^1.17.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-burger-menu": "^2.6.8",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-router-prop-types": "^1.0.4",
     "react-scripts": "2.1.8",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "sweetalert2": "^8.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage:client":"npm test -- --coverage"
+    "coverage:client": "npm test -- --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,15 +43,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
     "eslint": "^5.12.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-import": "^2.17.1",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.17.0"
+    "react-testing-library": "^7.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
